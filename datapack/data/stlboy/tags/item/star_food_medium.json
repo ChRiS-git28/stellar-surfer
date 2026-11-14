@@ -1,0 +1,37 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "minecraft:amethyst_shard",
+      "required": false
+    },
+    {
+      "id": "minecraft:ender_pearl",
+      "required": false
+    },
+    {
+      "id": "minecraft:blaze_powder",
+      "required": false
+    },
+    {
+      "id": "minecraft:prismarine_shard",
+      "required": false
+    },
+    {
+      "id": "minecraft:breeze_rod",
+      "required": false
+    },
+    {
+      "id": "minecraft:wind_charge",
+      "required": false
+    },
+    {
+      "id": "minecraft:emerald",
+      "required": false
+    },
+    {
+      "id": "minecraft:magma_cream",
+      "required": false
+    }
+  ]
+}

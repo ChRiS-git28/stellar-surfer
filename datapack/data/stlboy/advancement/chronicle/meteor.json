@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:fire_charge"
+    },
+    "title": {
+      "text": "Trial: Meteor Rain",
+      "color": "gold",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "The sky tears open when a star is born. §8(Trial · Rank 2 · +2 points · gift: diamonds)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.meteor.fx",
+        "fallback": "+20% knockback resistance, +1 cosmic damage on Constellations",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_2"
+}

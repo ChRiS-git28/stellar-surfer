@@ -1,0 +1,28 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:glowstone_dust"
+    },
+    "title": {
+      "text": "Rank 1 — Spark",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Aster stirs in the dark, and remembers how to glow. §8Fill the first bar (200 Stardust) by mining ores or slaying foes.",
+      "color": "gray"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:chronicle/root",
+  "rewards": {
+    "function": "stlboy:skills/point"
+  }
+}

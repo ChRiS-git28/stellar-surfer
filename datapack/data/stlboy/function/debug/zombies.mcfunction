@@ -1,0 +1,3 @@
+# Deux zombies de test immobiles, proteges du soleil : "Armure" (diamant complet) et "Nu"
+summon minecraft:zombie ^ ^ ^3 {PersistenceRequired:1b,NoAI:1b,Tags:["stlboy_test"],CustomName:'"Armure"',CustomNameVisible:1b,active_effects:[{id:"minecraft:fire_resistance",duration:-1,show_particles:0b}],ArmorItems:[{id:"minecraft:diamond_boots",count:1},{id:"minecraft:diamond_leggings",count:1},{id:"minecraft:diamond_chestplate",count:1},{id:"minecraft:diamond_helmet",count:1}],ArmorDropChances:[0f,0f,0f,0f]}
+summon minecraft:zombie ^2 ^ ^3 {PersistenceRequired:1b,NoAI:1b,Tags:["stlboy_test"],CustomName:'"Nu"',CustomNameVisible:1b,active_effects:[{id:"minecraft:fire_resistance",duration:-1,show_particles:0b}]}

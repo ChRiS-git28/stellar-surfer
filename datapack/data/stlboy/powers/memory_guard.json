@@ -1,0 +1,54 @@
+{
+  "type": "apoli:multiple",
+  "hidden": true,
+  "mirror_proj": {
+    "type": "apoli:modify_damage_taken",
+    "damage_condition": {
+      "type": "apoli:projectile"
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.1
+    },
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_mirror]",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  "mirror_magic": {
+    "type": "apoli:modify_damage_taken",
+    "damage_condition": {
+      "type": "apoli:in_tag",
+      "tag": "stlboy:magic"
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.1
+    },
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_mirror]",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  },
+  "sn_magic": {
+    "type": "apoli:modify_damage_taken",
+    "damage_condition": {
+      "type": "apoli:in_tag",
+      "tag": "stlboy:magic"
+    },
+    "modifier": {
+      "operation": "multiply_total_multiplicative",
+      "value": -0.08
+    },
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_supernova]",
+      "comparison": ">=",
+      "compare_to": 1
+    }
+  }
+}

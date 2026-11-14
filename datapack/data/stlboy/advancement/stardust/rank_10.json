@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:dragon_egg"
+    },
+    "title": {
+      "text": "Rank 10 — Firmament",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "The ten Memories sing as one. You are the sky itself."
+    },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "rank": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/offer_memories",
+  "rewards": {
+    "function": "stlboy:skills/point"
+  }
+}

@@ -1,0 +1,1 @@
+$execute at @s run summon minecraft:item ~$(x) ~$(y) ~$(z) {Tags:["stlboy_tr","stlboy_tr_mote"],NoGravity:1b,PickupDelay:0s,Item:{id:"minecraft:amethyst_shard",count:1,components:{"minecraft:custom_name":'{"text":"Stardust Mote","color":"light_purple","italic":false}'}}}

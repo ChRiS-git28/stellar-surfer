@@ -1,0 +1,51 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:dragon_head"
+    },
+    "title": {
+      "text": "The Last Light of Aster",
+      "color": "red",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "The sky's old tyrant falls. Aster's memory is whole — and you finally burn as bright as she did. §8(Defeat the Ender Dragon · +2 points · gifts)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.dragon.fx",
+        "fallback": "+3 hearts, +2 cosmic damage on Constellations, +1 reach",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:player_killed_entity",
+      "conditions": {
+        "entity": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "type": "minecraft:ender_dragon"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "stlboy:stardust/rank_5",
+  "rewards": {
+    "function": "stlboy:trial/on_dragon"
+  }
+}

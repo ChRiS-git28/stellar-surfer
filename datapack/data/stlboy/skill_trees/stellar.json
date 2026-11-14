@@ -1,0 +1,20 @@
+{
+  "name": {
+    "text": "Stellar Path",
+    "color": "light_purple"
+  },
+  "description": {
+    "text": "Ranks and the Trials of Aster grant Skill Points. Five branches, one star: choices are final."
+  },
+  "icon": {
+    "item": "minecraft:nether_star"
+  },
+  "frame": "goal",
+  "refundable": false,
+  "auto_grant": true,
+  "condition": {
+    "type": "origins:origin",
+    "layer": "origins:origin",
+    "origin": "stlboy:stellarsurfer"
+  }
+}

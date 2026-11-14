@@ -1,0 +1,398 @@
+{
+ "type": "apoli:multiple",
+ "name": "Stardust Sources",
+ "ore": {
+  "type": "apoli:action_on_block_break",
+  "only_when_harvested": true,
+  "block_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:in_tag",
+     "tag": "c:ores"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:ancient_debris",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:stardust_rank",
+    "comparison": "<=",
+    "compare_to": 3
+   },
+   "if_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:stardust_gain",
+    "change": 2,
+    "operation": "add"
+   }
+  }
+ },
+ "amethyst": {
+  "type": "apoli:action_on_block_break",
+  "only_when_harvested": true,
+  "block_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:block",
+     "block": "minecraft:amethyst_cluster"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:large_amethyst_bud"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:medium_amethyst_bud"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:small_amethyst_bud"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:amethyst_block"
+    },
+    {
+     "type": "apoli:block",
+     "block": "minecraft:budding_amethyst"
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:stardust_rank",
+    "comparison": "<=",
+    "compare_to": 5
+   },
+   "if_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:stardust_gain",
+    "change": 3,
+    "operation": "add"
+   }
+  }
+ },
+ "debris": {
+  "type": "apoli:action_on_block_break",
+  "only_when_harvested": true,
+  "block_condition": {
+   "type": "apoli:block",
+   "block": "minecraft:ancient_debris"
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:stardust_gain",
+   "change": 25,
+   "operation": "add"
+  }
+ },
+ "kill_1": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 15
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:1}"
+    }
+   ]
+  }
+ },
+ "kill_2": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 15
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 25
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:2}"
+    }
+   ]
+  }
+ },
+ "kill_3": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 25
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 35
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:3}"
+    }
+   ]
+  }
+ },
+ "kill_4": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 35
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 45
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:4}"
+    }
+   ]
+  }
+ },
+ "kill_5": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 45
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 55
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:5}"
+    }
+   ]
+  }
+ },
+ "kill_6": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 55
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 65
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:6}"
+    }
+   ]
+  }
+ },
+ "kill_7": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 65
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<",
+     "compare_to": 75
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:7}"
+    }
+   ]
+  }
+ },
+ "kill_8": {
+  "type": "apoli:self_action_on_kill",
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">=",
+     "compare_to": 75
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:dust/kill_gain {n:8}"
+    }
+   ]
+  }
+ },
+ "hidden": true
+}

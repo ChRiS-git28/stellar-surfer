@@ -1,0 +1,52 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_ray_rain",
+  "icon": {
+   "item": "minecraft:filled_map"
+  },
+  "cost": 6,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 9
+  },
+  "order": 11
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_neb_skymap.0",
+    "fallback": "sk_neb_skymap"
+   }
+  }
+ ],
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_skymap"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.4 0.7 0.4 0.08 30"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_skymap"
+  }
+ }
+}

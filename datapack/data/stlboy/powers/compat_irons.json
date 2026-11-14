@@ -1,0 +1,84 @@
+{
+  "type": "apoli:multiple",
+  "hidden": true,
+  "mana1": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "irons_spellbooks:max_mana",
+        "operation": "addition",
+        "value": 40
+      }
+    ]
+  },
+  "mana2": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 4
+    },
+    "modifiers": [
+      {
+        "attribute": "irons_spellbooks:max_mana",
+        "operation": "addition",
+        "value": 80
+      }
+    ]
+  },
+  "regen": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 2
+    },
+    "modifiers": [
+      {
+        "attribute": "irons_spellbooks:mana_regen",
+        "operation": "addition",
+        "value": 0.2
+      }
+    ]
+  },
+  "cdr": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 5
+    },
+    "modifiers": [
+      {
+        "attribute": "irons_spellbooks:cooldown_reduction",
+        "operation": "addition",
+        "value": 0.1
+      }
+    ]
+  },
+  "cast": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+    },
+    "modifiers": [
+      {
+        "attribute": "irons_spellbooks:cast_time_reduction",
+        "operation": "addition",
+        "value": 0.1
+      }
+    ]
+  }
+}

@@ -1,0 +1,1 @@
+$tellraw @s ["",{"text":"  ","color":"gray"},{"translate":"stlboy.journal.rank","fallback":"Rank","color":"light_purple"},{"text":" $(r) — ","color":"light_purple"},{"translate":"stlboy.rank.$(r)","fallback":"?","color":"gold","bold":true}]

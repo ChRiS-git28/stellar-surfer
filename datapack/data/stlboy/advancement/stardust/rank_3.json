@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_shard"
+    },
+    "title": {
+      "text": "Rank 3 — Comet",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Offer an Astral Crystal to set your tail ablaze."
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "rank": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_2",
+  "rewards": {
+    "function": "stlboy:skills/point"
+  }
+}

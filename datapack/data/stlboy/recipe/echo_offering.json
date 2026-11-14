@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "minecraft:echo_shard"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:ender_eye"
+    },
+    {
+      "item": "minecraft:amethyst_block"
+    },
+    {
+      "item": "minecraft:sculk_catalyst"
+    }
+  ],
+  "result": {
+    "id": "minecraft:turtle_scute",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "stlboy_offer": "echo"
+      },
+      "minecraft:custom_model_data": 7113,
+      "minecraft:item_name": "{\"text\":\"§3Void Echo\"}",
+      "minecraft:rarity": "epic",
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:lore": [
+        "{\"text\":\"§r§7Right-click at Rank 5 to offer it and open the way to Rank 6.\",\"italic\":false}"
+      ]
+    }
+  },
+  "group": "stlboy_offering"
+}

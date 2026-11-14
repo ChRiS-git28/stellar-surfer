@@ -1,0 +1,62 @@
+{
+ "type": "apoli:multiple",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_tide.0",
+    "fallback": "§7Swim §f+50%§7 faster in water. §8(You always breathe underwater.) §8(Rank 2+)"
+   }
+  }
+ ],
+ "skill": {
+  "parent": "stlboy:sk_move",
+  "icon": {
+   "item": "minecraft:heart_of_the_sea"
+  },
+  "cost": 2,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 3
+  },
+  "order": 6
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.8 1.1"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:and",
+   "actions": []
+  }
+ },
+ "attrs": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "neoforge:swim_speed",
+    "operation": "multiply_base",
+    "value": 0.3
+   }
+  ]
+ }
+}

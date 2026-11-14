@@ -1,0 +1,38 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_bet_shell",
+  "icon": {
+   "item": "minecraft:anvil"
+  },
+  "cost": 3,
+  "frame": "goal",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 4
+  },
+  "order": 30
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_bet_mass.0",
+    "fallback": "sk_bet_mass"
+   }
+  }
+ ],
+ "attrs": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.knockback_resistance",
+    "operation": "addition",
+    "value": 0.15
+   }
+  ]
+ }
+}

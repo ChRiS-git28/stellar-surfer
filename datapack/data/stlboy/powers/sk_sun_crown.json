@@ -1,0 +1,45 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_sun_comb",
+  "icon": {
+   "item": "minecraft:sunflower"
+  },
+  "cost": 4,
+  "frame": "goal",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 6
+  },
+  "order": 7
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_sun_crown.0",
+    "fallback": "sk_sun_crown"
+   }
+  }
+ ],
+ "aura": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:cls/sun_crown"
+    }
+   ]
+  }
+ }
+}

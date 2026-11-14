@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "title": {
+      "text": "Trial: The Ring Run",
+      "color": "aqua",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "Eight rings of her old orbit, and no time to waste. §8(Trial · Rank 1 · gift: amethyst)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.ring.fx",
+        "fallback": "+2 hearts, +4 safe fall distance",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_1"
+}

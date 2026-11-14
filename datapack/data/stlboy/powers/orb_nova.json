@@ -1,0 +1,8091 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "White Hole",
+ "description": "Repels everything from its heart.",
+ "drift": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/free_tick"
+    }
+   ]
+  }
+ },
+ "look": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 1 force"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.2 0.2 0.2 0.05 2 force"
+    },
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:execute_command",
+       "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "function stlboy:fx/nova"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "pulse_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/nova_tick_pulse"
+    }
+   ]
+  }
+ },
+ "age": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "age_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:orb_nova_age",
+   "comparison": "<",
+   "compare_to": 20
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:orb_nova_age",
+   "change": 1,
+   "operation": "add"
+  }
+ },
+ "dying": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "dying_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:orb_nova_dying",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:orb_nova_dying",
+     "change": 1,
+     "operation": "add"
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:orb_nova_dying",
+      "comparison": ">=",
+      "compare_to": 12
+     },
+     "if_action": {
+      "type": "apoli:execute_command",
+      "command": "kill @s"
+     }
+    }
+   ]
+  }
+ },
+ "push_0": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 4.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:homing_projectiles"
+       }
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.4,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.06,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.063,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.066,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.069,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.072,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.075,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.078,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.081,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.084,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.087,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.09,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.093,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.096,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.099,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.102,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.105,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.108,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.111,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.114,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.117,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.12,
+         "y": 0.03
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 0..6",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "push_1": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 5.2,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:homing_projectiles"
+       }
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.4,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.075,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.079,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.083,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.086,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.09,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.094,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.098,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.101,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.105,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.109,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.112,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.116,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.12,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.124,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.128,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.131,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.135,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.139,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.143,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.146,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.15,
+         "y": 0.03
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 7..13",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "push_2": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 6.4,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:homing_projectiles"
+       }
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.4,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.09,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.095,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.099,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.104,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.108,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.112,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.117,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.121,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.126,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.131,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.135,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.14,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.144,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.149,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.153,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.158,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.162,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.167,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.171,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.176,
+         "y": 0.03
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_touch"
+         }
+        },
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.18,
+         "y": 0.03
+        }
+       ]
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 14..20",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "knockback_0": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.pt matches 0",
+     "comparison": ">=",
+     "compare_to": 1
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.lvl matches 0..6",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 4.5,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.6,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.63,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.66,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.69,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.72,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.75,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.78,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.81,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.84,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.87,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.9,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.93,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.96,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.99,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.02,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.05,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.08,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.11,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.14,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.17,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.2,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ },
+ "knockback_1": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.pt matches 0",
+     "comparison": ">=",
+     "compare_to": 1
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.lvl matches 7..13",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 5.85,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.6,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.63,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.66,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.69,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.72,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.75,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.78,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.81,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.84,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.87,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.9,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.93,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.96,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.99,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.02,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.05,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.08,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.11,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.14,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.17,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.2,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ },
+ "knockback_2": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.pt matches 0",
+     "comparison": ">=",
+     "compare_to": 1
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if score @s stlboy.lvl matches 14..20",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 7.2,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 0",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.6,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 1",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.63,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 2",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.66,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 3",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.69,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 4",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.72,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 5",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.75,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 6",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.78,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 7",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.81,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 8",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.84,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 9",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.87,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 10",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.9,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 11",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.93,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 12",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.96,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 13",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 0.99,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 14",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.02,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 15",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.05,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 16",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.08,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 17",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.11,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 18",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.14,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 19",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.17,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:well_loot",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if score @s stlboy.lvl matches 20",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:add_velocity",
+         "reference": "position",
+         "z": 1.2,
+         "y": 0.25,
+         "set": true
+        },
+        {
+         "type": "apoli:target_action",
+         "action": {
+          "type": "apoli:execute_command",
+          "command": "function stlboy:orb/wh_fling"
+         }
+        }
+       ]
+      }
+     }
+    ]
+   }
+  }
+ }
+}

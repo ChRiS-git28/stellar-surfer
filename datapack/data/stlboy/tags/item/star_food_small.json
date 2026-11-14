@@ -1,0 +1,33 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "minecraft:glowstone_dust",
+      "required": false
+    },
+    {
+      "id": "minecraft:lapis_lazuli",
+      "required": false
+    },
+    {
+      "id": "minecraft:quartz",
+      "required": false
+    },
+    {
+      "id": "minecraft:prismarine_crystals",
+      "required": false
+    },
+    {
+      "id": "minecraft:gunpowder",
+      "required": false
+    },
+    {
+      "id": "minecraft:firework_star",
+      "required": false
+    },
+    {
+      "id": "minecraft:redstone",
+      "required": false
+    }
+  ]
+}

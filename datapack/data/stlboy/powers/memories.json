@@ -1,0 +1,173 @@
+{
+  "type": "apoli:multiple",
+  "hidden": true,
+  "m_ring": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_ring]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4.0
+      },
+      {
+        "attribute": "minecraft:generic.safe_fall_distance",
+        "operation": "addition",
+        "value": 4.0
+      }
+    ]
+  },
+  "m_meteor": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_meteor]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.knockback_resistance",
+        "operation": "addition",
+        "value": 0.2
+      }
+    ]
+  },
+  "m_constellation": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_constellation]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.luck",
+        "operation": "addition",
+        "value": 2.0
+      },
+      {
+        "attribute": "minecraft:player.entity_interaction_range",
+        "operation": "addition",
+        "value": 1.0
+      },
+      {
+        "attribute": "minecraft:player.block_interaction_range",
+        "operation": "addition",
+        "value": 1.0
+      }
+    ]
+  },
+  "m_motes": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_motes]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:player.block_break_speed",
+        "operation": "multiply_base",
+        "value": 0.25
+      }
+    ]
+  },
+  "m_echo": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_echo]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_base",
+        "value": 0.1
+      }
+    ]
+  },
+  "m_horizon": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_horizon]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4.0
+      },
+      {
+        "attribute": "minecraft:generic.fall_damage_multiplier",
+        "operation": "multiply_base",
+        "value": -0.5
+      }
+    ]
+  },
+  "m_wither": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_wither]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 4.0
+      }
+    ]
+  },
+  "m_supernova": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_supernova]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.movement_speed",
+        "operation": "multiply_base",
+        "value": 0.05
+      }
+    ]
+  },
+  "m_dragon": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:command",
+      "command": "execute if entity @s[tag=stlboy_t_dragon]",
+      "comparison": ">=",
+      "compare_to": 1
+    },
+    "modifiers": [
+      {
+        "attribute": "minecraft:generic.max_health",
+        "operation": "addition",
+        "value": 6.0
+      },
+      {
+        "attribute": "minecraft:player.entity_interaction_range",
+        "operation": "addition",
+        "value": 1.0
+      }
+    ]
+  }
+}

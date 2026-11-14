@@ -1,0 +1,52 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:cls_neptune",
+  "icon": {
+   "item": "minecraft:anvil"
+  },
+  "cost": 2,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 5
+  },
+  "order": 3
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_crash"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_crash"
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_nova_crash.0",
+    "fallback": "§7Foes flung by your §bWhite Hole§7 that §fslam into a wall§7 take §cimpact damage§7 (3 / 5 / 8 by speed). §8(Rank 5+)"
+   }
+  }
+ ]
+}

@@ -1,0 +1,58 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:stellar",
+  "icon": {
+   "item": "minecraft:sunflower"
+  },
+  "cost": 1,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "order": 20,
+  "excludes": [
+   "stlboy:cls_nebula",
+   "stlboy:cls_neptune",
+   "stlboy:cls_aurora",
+   "stlboy:cls_betelgeuse"
+  ]
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_cls_sun"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.4 0.7 0.4 0.08 30"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_cls_sun"
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.cls_sun.0",
+    "fallback": "cls_sun"
+   }
+  }
+ ]
+}

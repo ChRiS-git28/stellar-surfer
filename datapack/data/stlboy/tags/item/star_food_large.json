@@ -1,0 +1,41 @@
+{
+  "replace": true,
+  "values": [
+    {
+      "id": "minecraft:ender_eye",
+      "required": false
+    },
+    {
+      "id": "minecraft:echo_shard",
+      "required": false
+    },
+    {
+      "id": "minecraft:shulker_shell",
+      "required": false
+    },
+    {
+      "id": "minecraft:experience_bottle",
+      "required": false
+    },
+    {
+      "id": "minecraft:blaze_rod",
+      "required": false
+    },
+    {
+      "id": "minecraft:diamond",
+      "required": false
+    },
+    {
+      "id": "minecraft:ominous_bottle",
+      "required": false
+    },
+    {
+      "id": "minecraft:trial_key",
+      "required": false
+    },
+    {
+      "id": "minecraft:ghast_tear",
+      "required": false
+    }
+  ]
+}

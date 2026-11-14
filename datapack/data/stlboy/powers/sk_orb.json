@@ -1,0 +1,34 @@
+{
+ "type": "apoli:multiple",
+ "mark": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:stardust_rank",
+    "comparison": ">=",
+    "compare_to": 3
+   },
+   "if_action": {
+    "type": "apoli:execute_command",
+    "command": "tag @s add stlboy_sk_orb"
+   },
+   "else_action": {
+    "type": "apoli:execute_command",
+    "command": "tag @s remove stlboy_sk_orb"
+   }
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_orb.0",
+    "fallback": "§bOpens§7 the orb branch: Black Hole, White Hole & their augments. §8(Rank 2+)"
+   }
+  }
+ ]
+}

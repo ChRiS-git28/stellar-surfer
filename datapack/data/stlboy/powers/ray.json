@@ -1,0 +1,2915 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "Stellar Ray",
+ "len": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 255,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "cast": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stellar_breath_firing",
+     "comparison": "==",
+     "compare_to": 1
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if score #rayv stlboy.const matches 1",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:execute_command",
+       "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "function stlboy:breath/ray_prep"
+      }
+     ]
+    },
+    {
+     "type": "apoli:if_else_list",
+     "actions": [
+      {
+       "condition": {
+        "type": "apoli:command",
+        "command": "execute if score @s stlboy.rayt matches 0",
+        "comparison": ">=",
+        "compare_to": 1
+       },
+       "action": {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 2",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 6.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 24
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 3",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 9.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 36
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 4",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 12.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 48
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 5",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 15.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 60
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 6",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 18.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 72
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 7",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 21.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 84
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 8",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 24.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 96
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 9",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 27.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 108
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 10",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 30.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 120
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 11",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 33.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 132
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 12",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 36.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 144
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 13",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 39.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 156
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 14",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 42.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 168
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 15",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 45.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 180
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 16",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 48.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 192
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 17",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 51.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 204
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 18",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 54.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 0.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 216
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:command",
+        "command": "execute if score @s stlboy.rayt matches 1",
+        "comparison": ">=",
+        "compare_to": 1
+       },
+       "action": {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 2",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 6.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 24
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 3",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 9.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 36
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 4",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 12.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 48
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 5",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 15.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 60
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 6",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 18.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 72
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 7",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 21.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 84
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 8",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 24.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 96
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 9",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 27.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 108
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 10",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 30.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 120
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 11",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 33.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 132
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 12",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 36.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 144
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 13",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 39.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 156
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 14",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 42.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 168
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 15",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 45.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 180
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 16",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 48.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 192
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 17",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 51.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 204
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 18",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 54.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.0,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 216
+            }
+           }
+          }
+         }
+        ]
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:command",
+        "command": "execute if score @s stlboy.rayt matches 2",
+        "comparison": ">=",
+        "compare_to": 1
+       },
+       "action": {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 2",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 6.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 24
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 3",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 9.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 36
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 4",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 12.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 48
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 5",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 15.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 60
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 6",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 18.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 72
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 7",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 21.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 84
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 8",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 24.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 96
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 9",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 27.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 108
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 10",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 30.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 120
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 11",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 33.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 132
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 12",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 36.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 144
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 13",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 39.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 156
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 14",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 42.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 168
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 15",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 45.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 180
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 16",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 48.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 192
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 17",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 51.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 204
+            }
+           }
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:command",
+           "command": "execute if score @s stlboy.rayd matches 18",
+           "comparison": ">=",
+           "compare_to": 1
+          },
+          "action": {
+           "type": "apoli:raycast",
+           "distance": 54.0,
+           "block": true,
+           "entity": true,
+           "shape_type": "collider",
+           "fluid_handling": "none",
+           "pierce_entities": true,
+           "pierce_blocks": false,
+           "radius": 1.5,
+           "bientity_condition": {
+            "type": "apoli:target_condition",
+            "condition": {
+             "type": "apoli:command",
+             "command": "execute if entity @s[predicate=!stlboy:owner,tag=!stlboy_orb,type=!#stlboy:no_beam]",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           },
+           "bientity_action": {
+            "type": "apoli:target_action",
+            "action": {
+             "type": "apoli:execute_command",
+             "command": "tag @s add stlboy_rc"
+            }
+           },
+           "particle": {
+            "type": "minecraft:electric_spark"
+           },
+           "spacing": 3.5,
+           "hit_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": "distance * 4"
+            }
+           },
+           "miss_action": {
+            "type": "apoli:modify_resource",
+            "resource": "stlboy:ray_len",
+            "modifier": {
+             "operation": "set_base",
+             "value": 216
+            }
+           }
+          }
+         }
+        ]
+       }
+      }
+     ]
+    },
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:execute_command",
+       "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "function stlboy:breath/ray_post"
+      }
+     ]
+    }
+   ]
+  }
+ }
+}

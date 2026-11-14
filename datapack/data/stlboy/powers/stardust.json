@@ -1,0 +1,2058 @@
+{
+ "type": "apoli:multiple",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/gauge.png",
+   "text": {
+    "translate": "badge.stlboy.stardust.0",
+    "fallback": "§7Fill the bar → §dRank up§7 (10 Ranks, each bar far longer than the last). Ranks 3, 5, 6 & 7 need an §eoffering§7: craft it, hold it, right-click. §dRank 10§7 answers only to the §eten Memories§7."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/rank.png",
+   "text": {
+    "translate": "badge.stlboy.stardust.1",
+    "fallback": "§7Sources: ores, amethyst, ancient debris, capped kills, §6Trials of Aster§7 and bosses (Wither, Dragon, Warden, Guardian)."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/recipe.png",
+   "text": {
+    "translate": "badge.stlboy.stardust.4",
+    "fallback": "§7Your Rank never drops. §cDying costs a tenth of your current bar."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/gauge.png",
+   "text": {
+    "translate": "badge.stlboy.stardust.6",
+    "fallback": "§7You blaze like a star: monsters notice you from far away (§f+32 blocks§7 of detection). Your skin shines brighter with every Rank."
+   }
+  },
+  {
+   "type": "origins:crafting_recipe",
+   "sprite": "stlboy:textures/item/offer/astral.png",
+   "fallback": "origins:textures/gui/badge/isaacfanta/recipe.png",
+   "recipe": {
+    "id": "stlboy:astral_offering",
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+     "id": "minecraft:nautilus_shell",
+     "count": 1
+    },
+    "ingredients": [
+     {
+      "item": "minecraft:amethyst_shard"
+     },
+     {
+      "item": "minecraft:amethyst_shard"
+     },
+     {
+      "item": "minecraft:amethyst_shard"
+     },
+     {
+      "item": "minecraft:amethyst_shard"
+     },
+     {
+      "item": "minecraft:glowstone_dust"
+     },
+     {
+      "item": "minecraft:glowstone_dust"
+     },
+     {
+      "item": "minecraft:ender_pearl"
+     },
+     {
+      "item": "minecraft:diamond"
+     }
+    ]
+   },
+   "prefix": {
+    "translate": "badge.stlboy.recipe.astral_offering",
+    "fallback": "Recipe: Astral Crystal",
+    "color": "light_purple"
+   }
+  },
+  {
+   "type": "origins:crafting_recipe",
+   "sprite": "stlboy:textures/item/offer/core.png",
+   "fallback": "origins:textures/gui/badge/isaacfanta/recipe.png",
+   "recipe": {
+    "id": "stlboy:core_offering",
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+     "id": "minecraft:phantom_membrane",
+     "count": 1
+    },
+    "ingredients": [
+     {
+      "item": "minecraft:nether_star"
+     },
+     {
+      "item": "minecraft:netherite_scrap"
+     },
+     {
+      "item": "minecraft:netherite_scrap"
+     },
+     {
+      "item": "minecraft:netherite_scrap"
+     },
+     {
+      "item": "minecraft:blaze_rod"
+     },
+     {
+      "item": "minecraft:blaze_rod"
+     },
+     {
+      "item": "minecraft:magma_cream"
+     },
+     {
+      "item": "minecraft:ghast_tear"
+     }
+    ]
+   },
+   "prefix": {
+    "translate": "badge.stlboy.recipe.core_offering",
+    "fallback": "Recipe: Dead Star Core",
+    "color": "gold"
+   }
+  },
+  {
+   "type": "origins:crafting_recipe",
+   "sprite": "stlboy:textures/item/offer/echo.png",
+   "fallback": "origins:textures/gui/badge/isaacfanta/recipe.png",
+   "recipe": {
+    "id": "stlboy:echo_offering",
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+     "id": "minecraft:turtle_scute",
+     "count": 1
+    },
+    "ingredients": [
+     {
+      "item": "minecraft:echo_shard"
+     },
+     {
+      "item": "minecraft:echo_shard"
+     },
+     {
+      "item": "minecraft:echo_shard"
+     },
+     {
+      "item": "minecraft:echo_shard"
+     },
+     {
+      "item": "minecraft:ender_eye"
+     },
+     {
+      "item": "minecraft:ender_eye"
+     },
+     {
+      "item": "minecraft:amethyst_block"
+     },
+     {
+      "item": "minecraft:sculk_catalyst"
+     }
+    ]
+   },
+   "prefix": {
+    "translate": "badge.stlboy.recipe.echo_offering",
+    "fallback": "Recipe: Void Echo",
+    "color": "dark_aqua"
+   }
+  },
+  {
+   "type": "origins:crafting_recipe",
+   "sprite": "stlboy:textures/item/offer/heart.png",
+   "fallback": "origins:textures/gui/badge/isaacfanta/recipe.png",
+   "recipe": {
+    "id": "stlboy:heart_offering",
+    "type": "minecraft:crafting_shapeless",
+    "result": {
+     "id": "minecraft:disc_fragment_5",
+     "count": 1
+    },
+    "ingredients": [
+     {
+      "item": "minecraft:dragon_breath"
+     },
+     {
+      "item": "minecraft:nether_star"
+     },
+     {
+      "item": "minecraft:nether_star"
+     },
+     {
+      "item": "minecraft:heart_of_the_sea"
+     },
+     {
+      "item": "minecraft:netherite_ingot"
+     },
+     {
+      "item": "minecraft:netherite_ingot"
+     },
+     {
+      "item": "minecraft:echo_shard"
+     },
+     {
+      "item": "minecraft:totem_of_undying"
+     }
+    ]
+   },
+   "prefix": {
+    "translate": "badge.stlboy.recipe.heart_offering",
+    "fallback": "Recipe: Supernova Heart",
+    "color": "red"
+   }
+  },
+  {
+   "type": "origins:crafting_recipe",
+   "sprite": "stlboy:textures/item/star_ring.png",
+   "fallback": "origins:textures/gui/badge/isaacfanta/recipe.png",
+   "recipe": {
+    "id": "stlboy:star_ring",
+    "type": "minecraft:crafting_shaped",
+    "result": {
+     "id": "minecraft:echo_shard",
+     "count": 1
+    },
+    "pattern": [
+     " A ",
+     "GEG",
+     " G "
+    ],
+    "key": {
+     "A": {
+      "item": "minecraft:amethyst_shard"
+     },
+     "G": {
+      "item": "minecraft:gold_ingot"
+     },
+     "E": {
+      "item": "minecraft:ender_eye"
+     }
+    }
+   },
+   "prefix": {
+    "translate": "badge.stlboy.recipe.star_ring",
+    "fallback": "Recipe: Star Blessing Ring",
+    "color": "aqua"
+   }
+  }
+ ],
+ "gain": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 5000,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "rank": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 10,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_0": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 200,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_1": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 400,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_2": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 650,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_3": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1000,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_4": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1400,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_5": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1900,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_6": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 2500,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_7": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 3200,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_8": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 4000,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tier_9": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 5000,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lock_3": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lock_5": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lock_6": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lock_7": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lock_10": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "fill": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_gain",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:command",
+    "command": "execute if predicate stlboy:dust_tax",
+    "comparison": ">=",
+    "compare_to": 1
+   },
+   "if_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:stardust_gain",
+    "change": -1,
+    "operation": "add"
+   },
+   "else_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 0
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_0",
+          "comparison": "<",
+          "compare_to": 200
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_0",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 1
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_1",
+          "comparison": "<",
+          "compare_to": 400
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_1",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 2
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_2",
+          "comparison": "<",
+          "compare_to": 650
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_2",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        },
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_lock_3",
+          "comparison": "==",
+          "compare_to": 0
+         },
+         "action": {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 3
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_3",
+          "comparison": "<",
+          "compare_to": 1000
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_3",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 4
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_4",
+          "comparison": "<",
+          "compare_to": 1400
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_4",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        },
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_lock_5",
+          "comparison": "==",
+          "compare_to": 0
+         },
+         "action": {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 5
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_5",
+          "comparison": "<",
+          "compare_to": 1900
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_5",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        },
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_lock_6",
+          "comparison": "==",
+          "compare_to": 0
+         },
+         "action": {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 6
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_6",
+          "comparison": "<",
+          "compare_to": 2500
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_6",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        },
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_lock_7",
+          "comparison": "==",
+          "compare_to": 0
+         },
+         "action": {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 7
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_7",
+          "comparison": "<",
+          "compare_to": 3200
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_7",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 8
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_8",
+          "comparison": "<",
+          "compare_to": 4000
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_8",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 9
+      },
+      "action": {
+       "type": "apoli:if_else_list",
+       "actions": [
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_tier_9",
+          "comparison": "<",
+          "compare_to": 5000
+         },
+         "action": {
+          "type": "apoli:and",
+          "actions": [
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_gain",
+            "change": -1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_tier_9",
+            "change": 1,
+            "operation": "add"
+           },
+           {
+            "type": "apoli:change_resource",
+            "resource": "stlboy:stardust_total",
+            "change": 1,
+            "operation": "add"
+           }
+          ]
+         }
+        },
+        {
+         "condition": {
+          "type": "apoli:resource",
+          "resource": "stlboy:stardust_lock_10",
+          "comparison": "==",
+          "compare_to": 0
+         },
+         "action": {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         }
+        }
+       ]
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:stardust_rank",
+       "comparison": "==",
+       "compare_to": 10
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": "<",
+        "compare_to": 25000
+       },
+       "if_action": {
+        "type": "apoli:and",
+        "actions": [
+         {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_gain",
+          "change": -1,
+          "operation": "add"
+         },
+         {
+          "type": "apoli:change_resource",
+          "resource": "stlboy:stardust_total",
+          "change": 1,
+          "operation": "add"
+         }
+        ]
+       },
+       "else_action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_gain",
+        "change": 0,
+        "operation": "set"
+       }
+      }
+     }
+    ]
+   }
+  }
+ },
+ "rank_up": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_0",
+        "comparison": ">=",
+        "compare_to": 200
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_0",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:chronicle/root"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 1
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_1",
+        "comparison": ">=",
+        "compare_to": 400
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_1",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_2"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 2
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_2",
+        "comparison": ">=",
+        "compare_to": 650
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_lock_3",
+        "comparison": "==",
+        "compare_to": 1
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_2",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 3
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_3",
+        "comparison": ">=",
+        "compare_to": 1000
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_3",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_4"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 4
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_4",
+        "comparison": ">=",
+        "compare_to": 1400
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_lock_5",
+        "comparison": "==",
+        "compare_to": 1
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_4",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_5"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 5
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_5",
+        "comparison": ">=",
+        "compare_to": 1900
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_lock_6",
+        "comparison": "==",
+        "compare_to": 1
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_5",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 6
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_6",
+        "comparison": ">=",
+        "compare_to": 2500
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_lock_7",
+        "comparison": "==",
+        "compare_to": 1
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_6",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_7"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 7
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_7",
+        "comparison": ">=",
+        "compare_to": 3200
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_7",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 8
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_8",
+        "comparison": ">=",
+        "compare_to": 4000
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_8",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_9"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_rank",
+        "comparison": "==",
+        "compare_to": 9
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_tier_9",
+        "comparison": ">=",
+        "compare_to": 5000
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_lock_10",
+        "comparison": "==",
+        "compare_to": 1
+       }
+      ]
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_rank",
+        "change": 1,
+        "operation": "add"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_tier_9",
+        "change": 0,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:item.totem.use player @a ~ ~ ~ 1 1"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:totem_of_undying ~ ~1 ~ 0.4 0.8 0.4 0.6 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~1 ~ 0.6 0.8 0.6 0.12 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "advancement grant @s only stlboy:stardust/rank_10"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.8 1.3"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.5 1.0 0.5 0.4 80"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.9,to_color:[0.7,0.4,1.0]} ~ ~1.0 ~ 0.8 1.2 0.8 0 40"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:ui.toast.challenge_complete player @a ~ ~ ~ 1 0.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:flash ~ ~1 ~ 0 0 0 0 1"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "total": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 25000,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "level": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "level_calc": {
+  "type": "apoli:action_over_time",
+  "interval": 10,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:if_else_list",
+     "actions": [
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 20000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 20,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 19000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 19,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 18000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 18,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 17000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 17,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 16000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 16,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 15000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 15,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 14000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 14,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 13000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 13,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 12000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 12,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 11000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 11,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 10000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 10,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 9000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 9,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 8000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 8,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 7000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 7,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 6000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 6,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 5000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 5,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 4000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 4,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 3000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 3,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 2000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 2,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 1000
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 1,
+        "operation": "set"
+       }
+      },
+      {
+       "condition": {
+        "type": "apoli:resource",
+        "resource": "stlboy:stardust_total",
+        "comparison": ">=",
+        "compare_to": 0
+       },
+       "action": {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:stardust_level",
+        "change": 0,
+        "operation": "set"
+       }
+      }
+     ]
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "execute store result score @s stlboy.lvl run resource get @s stlboy:stardust_level"
+    }
+   ]
+  }
+ },
+ "figura_mark": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:fig/mark"
+    }
+   ]
+  }
+ }
+}

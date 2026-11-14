@@ -1,0 +1,15 @@
+{
+ "type": "apoli:replace_sound_emission",
+ "hidden": true,
+ "name": {
+  "translate": "power.stlboy.voice.name",
+  "fallback": "Starborn Voice"
+ },
+ "sounds": {
+  "entity.player.hurt": "minecraft:entity.allay.hurt",
+  "entity.player.hurt_drown": "minecraft:entity.allay.hurt",
+  "entity.player.hurt_on_fire": "minecraft:entity.allay.hurt",
+  "entity.player.hurt_freeze": "minecraft:entity.allay.hurt",
+  "entity.player.hurt_sweet_berry_bush": "minecraft:entity.allay.hurt"
+ }
+}

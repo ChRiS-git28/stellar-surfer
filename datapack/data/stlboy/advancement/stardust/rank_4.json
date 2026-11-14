@@ -1,0 +1,27 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:end_crystal"
+    },
+    "title": {
+      "text": "Rank 4 — Star",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "You shine with your own light."
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "rank": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_3",
+  "rewards": {
+    "function": "stlboy:skills/point"
+  }
+}

@@ -1,0 +1,37 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:shield"
+  },
+  "title": {
+   "text": "Trial: The Mirror",
+   "color": "aqua",
+   "bold": true
+  },
+  "description": [
+   {
+    "text": "Light that is thrown at you is only light waiting to be returned. §8(Trial · Rank 5 · needs White Hole · +1 point)",
+    "color": "gray"
+   },
+   {
+    "text": "\n✦ Memory: ",
+    "color": "gold"
+   },
+   {
+    "translate": "stlboy.memory.mirror.fx",
+    "fallback": "-10% projectile damage, -10% magic damage",
+    "color": "green"
+   }
+  ],
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "c": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "parent": "stlboy:stardust/rank_5"
+}

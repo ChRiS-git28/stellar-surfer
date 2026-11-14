@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:turtle_scute"
+    },
+    "title": {
+      "text": "Offering: Void Echo",
+      "color": "dark_aqua"
+    },
+    "description": {
+      "text": "Craft it (4 echo shards, 2 ender eyes, amethyst block, sculk catalyst), hold it and right-click at Rank 5. §8Needs the Memories of the Mirror & the Wither. Fill the bar to reach Rank 6 — Pulsar.",
+      "color": "gray"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_5"
+}

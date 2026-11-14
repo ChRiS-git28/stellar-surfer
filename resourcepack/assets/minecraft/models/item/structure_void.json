@@ -1,0 +1,122 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "minecraft:item/structure_void"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "custom_model_data": 7002
+      },
+      "model": "stlboy:item/star"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7003
+      },
+      "model": "stlboy:item/constellation"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7004
+      },
+      "model": "stlboy:item/star_line"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7012
+      },
+      "model": "stlboy:item/sn_core"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7113
+      },
+      "model": "stlboy:item/fx_mote_c"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7114
+      },
+      "model": "stlboy:item/fx_ring"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7115
+      },
+      "model": "stlboy:item/fx_mote_g"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7116
+      },
+      "model": "stlboy:item/fx_mote_v"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7120
+      },
+      "model": "stlboy:item/sb_body"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7121
+      },
+      "model": "stlboy:item/sb_cube"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7130
+      },
+      "model": "stlboy:item/ofx_well_core"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7131
+      },
+      "model": "stlboy:item/ofx_well_disk"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7132
+      },
+      "model": "stlboy:item/ofx_well_halo"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7133
+      },
+      "model": "stlboy:item/ofx_nova_core"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7134
+      },
+      "model": "stlboy:item/ofx_nova_flare"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7135
+      },
+      "model": "stlboy:item/ofx_nova_halo"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7136
+      },
+      "model": "stlboy:item/ofx_sn_neb"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7137
+      },
+      "model": "stlboy:item/ofx_sn_core"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7138
+      },
+      "model": "stlboy:item/ofx_sn_halo"
+    }
+  ]
+}

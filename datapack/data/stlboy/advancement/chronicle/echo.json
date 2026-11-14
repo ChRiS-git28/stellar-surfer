@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:echo_shard"
+    },
+    "title": {
+      "text": "Trial: Echo Siege",
+      "color": "light_purple",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "What she left behind still screams. Give it rest. §8(Trial · Rank 4 · +2 points · gift: netherite)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.echo.fx",
+        "fallback": "+10% speed, immune to Darkness",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_4"
+}

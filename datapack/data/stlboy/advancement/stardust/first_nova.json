@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:firework_star"
+  },
+  "title": {
+   "text": "White Hole",
+   "color": "light_purple"
+  },
+  "description": {
+   "text": "Rank 5: hold the White Hole key to summon a White Hole that repels."
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "c": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "parent": "stlboy:stardust/rank_5",
+ "rewards": {
+  "function": "stlboy:skills/point"
+ }
+}

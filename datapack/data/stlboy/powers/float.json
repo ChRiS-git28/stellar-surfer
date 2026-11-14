@@ -1,0 +1,3233 @@
+{
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/passive.png",
+   "text": {
+    "translate": "badge.stlboy.float.0",
+    "fallback": "§7Zero gravity: all 6 directions at the same speed."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/swap.png",
+   "text": {
+    "translate": "badge.stlboy.float.1",
+    "fallback": "§eDouble-tap A / D / S§7 → §bDodge§7 (3 s). Hit at its very start → §6Perfect Dodge§7: damage negated."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/weak.png",
+   "text": {
+    "translate": "badge.stlboy.float.2",
+    "fallback": "§eDouble-tap Sneak§7 → §bAnchor§7: stop dead."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.float.3",
+    "fallback": "§7You never need to breathe underwater."
+   }
+  }
+ ],
+ "type": "apoli:multiple",
+ "float": {
+  "type": "apoli:attribute",
+  "modifier": {
+   "attribute": "minecraft:generic.gravity",
+   "operation": "multiply_total",
+   "value": -1
+  },
+  "condition": {
+   "type": "apoli:fall_flying",
+   "inverted": true
+  }
+ },
+ "motion_probe": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation @s stlboy.py = @s stlboy.y"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "execute store result score @s stlboy.y run data get entity @s Pos[1] 1000"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation @s stlboy.vy = @s stlboy.y"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation @s stlboy.vy -= @s stlboy.py"
+    }
+   ]
+  }
+ },
+ "tap_left": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 6,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tap_right": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 6,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tap_back": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 6,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "tap_sneak": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 6,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "iframe": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 6,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "roll_fx": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 8,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "dodge_cd": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 60,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "clock": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_left",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_left",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_right",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_right",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_back",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_back",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_sneak",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_sneak",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_iframe",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_iframe",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_roll_fx",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_roll_fx",
+      "change": -1,
+      "operation": "add"
+     }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_cd",
+      "change": -1,
+      "operation": "add"
+     }
+    }
+   ]
+  }
+ },
+ "dodge_left": {
+  "type": "apoli:action_on_key_press",
+  "key": {
+   "key": "key.left"
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_left",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:food_level",
+      "comparison": ">",
+      "compare_to": 6
+     },
+     {
+      "type": "apoli:on_block",
+      "inverted": true
+     }
+    ]
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:fall_flying"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local",
+       "x": 0.4
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "x": 0.7
+      }
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_cd",
+      "change": 60,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_iframe",
+      "change": 6,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_roll_fx",
+      "change": 8,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_left",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.0
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.05
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 2
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.1
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 3
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.15
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 4
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.2
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 5
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.25
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 6
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.3
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 7
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.35
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 8
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.4
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 9
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.45
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 10
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.5
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 11
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.55
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 12
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.6
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 13
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.65
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 14
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.7
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 15
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.75
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 16
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.8
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 17
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.85
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 18
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.9
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 19
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.95
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 20
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 2.0
+        }
+       }
+      ]
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:dust{color:[0.45,0.85,1.0],scale:0.9} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+     }
+    ]
+   },
+   "else_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:float_tap_left",
+    "change": 6,
+    "operation": "set"
+   }
+  }
+ },
+ "dodge_right": {
+  "type": "apoli:action_on_key_press",
+  "key": {
+   "key": "key.right"
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_right",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:food_level",
+      "comparison": ">",
+      "compare_to": 6
+     },
+     {
+      "type": "apoli:on_block",
+      "inverted": true
+     }
+    ]
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:fall_flying"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local",
+       "x": -0.4
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "x": -0.7
+      }
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_cd",
+      "change": 60,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_iframe",
+      "change": 6,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_roll_fx",
+      "change": 8,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_right",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.0
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.05
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 2
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.1
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 3
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.15
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 4
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.2
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 5
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.25
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 6
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.3
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 7
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.35
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 8
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.4
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 9
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.45
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 10
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.5
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 11
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.55
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 12
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.6
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 13
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.65
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 14
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.7
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 15
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.75
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 16
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.8
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 17
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.85
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 18
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.9
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 19
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.95
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 20
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 2.0
+        }
+       }
+      ]
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:dust{color:[0.45,0.85,1.0],scale:0.9} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+     }
+    ]
+   },
+   "else_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:float_tap_right",
+    "change": 6,
+    "operation": "set"
+   }
+  }
+ },
+ "dodge_back": {
+  "type": "apoli:action_on_key_press",
+  "key": {
+   "key": "key.back"
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_tap_back",
+      "comparison": ">",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:flight_armed",
+      "comparison": "==",
+      "compare_to": 1,
+      "inverted": true
+     },
+     {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     {
+      "type": "apoli:food_level",
+      "comparison": ">",
+      "compare_to": 6
+     },
+     {
+      "type": "apoli:on_block",
+      "inverted": true
+     }
+    ]
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:fall_flying"
+      },
+      "if_action": {
+       "type": "apoli:add_velocity",
+       "space": "local",
+       "z": -0.4
+      },
+      "else_action": {
+       "type": "apoli:add_velocity",
+       "space": "local_horizontal_normalized",
+       "z": -0.7
+      }
+     },
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:flight_armed",
+       "comparison": "==",
+       "compare_to": 1
+      },
+      "if_action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_vx",
+         "change": "sin(rad(yaw)) * 650",
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_vy",
+         "change": "120",
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_vz",
+         "change": "-cos(rad(yaw)) * 650",
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_vinit",
+         "change": 1,
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_level",
+         "change": 6,
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_drift",
+         "change": 0,
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_dcharge",
+         "change": 0,
+         "operation": "set"
+        },
+        {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:flight_dtier",
+         "change": 0,
+         "operation": "set"
+        },
+        {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "set": true,
+         "x": "sin(rad(yaw)) * 0.65",
+         "y": "0.12",
+         "z": "-cos(rad(yaw)) * 0.65"
+        }
+       ]
+      }
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_cd",
+      "change": 60,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_iframe",
+      "change": 6,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_roll_fx",
+      "change": 8,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_back",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.0
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.05
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 2
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.1
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 3
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.15
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 4
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.2
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 5
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.25
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 6
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.3
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 7
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.35
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 8
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.4
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 9
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.45
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 10
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.5
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 11
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.55
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 12
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.6
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 13
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.65
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 14
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.7
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 15
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.75
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 16
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.8
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 17
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.85
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 18
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.9
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 19
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 1.95
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stardust_level",
+         "comparison": "==",
+         "compare_to": 20
+        },
+        "action": {
+         "type": "apoli:exhaust",
+         "amount": 2.0
+        }
+       }
+      ]
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:dust{color:[0.45,0.85,1.0],scale:0.9} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+     }
+    ]
+   },
+   "else_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:float_tap_back",
+    "change": 6,
+    "operation": "set"
+   }
+  }
+ },
+ "fov_roll": {
+  "type": "apoli:modify_fov",
+  "modifier": {
+   "operation": "multiply_base",
+   "value": 0.12
+  },
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:float_roll_fx",
+   "comparison": ">",
+   "compare_to": 0
+  }
+ },
+ "perfect_dodge": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:float_iframe",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "damage_condition": {
+   "type": "apoli:attacker"
+  },
+  "modifier": {
+   "operation": "set_total",
+   "value": 0
+  },
+  "self_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_dodge_cd",
+     "change": 0,
+     "operation": "set"
+    },
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_iframe",
+     "change": 0,
+     "operation": "set"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.resonate player @a ~ ~ ~ 1.0 1.6"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.select player @a ~ ~ ~ 0.7 2.0"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:flash ~ ~1.0 ~ 0 0 0 0 1"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:electric_spark ~ ~1.0 ~ 0.5 0.7 0.5 0.4 25"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1.0 ~ 0.4 0.6 0.4 0.2 15"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "title @s actionbar {\"text\":\"✦ Perfect Dodge ✦\",\"color\":\"gold\"}"
+    }
+   ]
+  }
+ },
+ "anchor": {
+  "type": "apoli:action_on_key_press",
+  "key": {
+   "key": "key.sneak"
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:float_tap_sneak",
+    "comparison": ">",
+    "compare_to": 0
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:add_velocity",
+      "space": "world",
+      "x": 0,
+      "y": 0,
+      "z": 0,
+      "set": true
+     },
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:flight_armed",
+       "comparison": "==",
+       "compare_to": 1
+      },
+      "if_action": {
+       "type": "apoli:change_resource",
+       "resource": "stlboy:flight_relaunch",
+       "change": 6,
+       "operation": "set"
+      }
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:flight_armed",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_tap_sneak",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound stlboy:cosmic.charge player @a ~ ~ ~ 0.6 1.6"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:block.conduit.activate player @a ~ ~ ~ 0.4 1.8"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:enchant ~ ~1.0 ~ 0.8 0.8 0.8 1.0 40"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.2 0.3 0.2 0.02 12"
+     }
+    ]
+   },
+   "else_action": {
+    "type": "apoli:change_resource",
+    "resource": "stlboy:float_tap_sneak",
+    "change": 6,
+    "operation": "set"
+   }
+  }
+ },
+ "move_forward": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.forward",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:sprinting"
+   },
+   "if_action": {
+    "type": "apoli:add_velocity",
+    "space": "local_horizontal_normalized",
+    "z": -0.01
+   },
+   "else_action": {
+    "type": "apoli:add_velocity",
+    "space": "local_horizontal_normalized",
+    "z": -0.004
+   }
+  }
+ },
+ "move_back": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.back",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:add_velocity",
+   "space": "local_horizontal_normalized",
+   "z": 0.004
+  }
+ },
+ "move_left": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.left",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:add_velocity",
+   "space": "local_horizontal_normalized",
+   "x": -0.004
+  }
+ },
+ "move_right": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.right",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:add_velocity",
+   "space": "local_horizontal_normalized",
+   "x": 0.004
+  }
+ },
+ "move_up": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.jump",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:or",
+    "conditions": [
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 1
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 34
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 1
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 17
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 2
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 28
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 2
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 14
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 3
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 22
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 3
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 11
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 4
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 16
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 4
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 8
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 5
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 10
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 5
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": "<",
+        "compare_to": 5
+       }
+      ]
+     }
+    ]
+   },
+   "if_action": {
+    "type": "apoli:add_velocity",
+    "space": "world",
+    "y": 0.012
+   }
+  }
+ },
+ "move_down": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 1,
+  "key": {
+   "key": "key.sneak",
+   "continuous": true
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:on_block",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:flight_level",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:or",
+    "conditions": [
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 1
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 1
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 2
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 2
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 3
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 3
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 4
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 4
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 5
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -40
+       }
+      ]
+     },
+     {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:starfrag_weight",
+        "comparison": "==",
+        "compare_to": 5
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.vy",
+        "comparison": ">",
+        "compare_to": -20
+       }
+      ]
+     }
+    ]
+   },
+   "if_action": {
+    "type": "apoli:add_velocity",
+    "space": "world",
+    "y": -0.012
+   }
+  }
+ },
+ "vertical_drag": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:and",
+     "conditions": [
+      {
+       "type": "apoli:on_block",
+       "inverted": true
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:flight_level",
+       "comparison": "==",
+       "compare_to": 0
+      }
+     ]
+    },
+    {
+     "type": "apoli:key_pressed",
+     "key": {
+      "key": "key.jump"
+     },
+     "inverted": true
+    },
+    {
+     "type": "apoli:key_pressed",
+     "key": {
+      "key": "key.sneak"
+     },
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": 30
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": 5
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -30
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -5
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 1
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": 10
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -15
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -50
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -25
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 2
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -10
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -35
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -70
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -45
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 3
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -30
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -55
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -90
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -65
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 4
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -50
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -75
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -110
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -85
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:starfrag_weight",
+      "comparison": "==",
+      "compare_to": 5
+     },
+     "action": {
+      "type": "apoli:if_else_list",
+      "actions": [
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -70
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": ">",
+         "compare_to": -95
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": -0.004
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -130
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.016
+        }
+       },
+       {
+        "condition": {
+         "type": "apoli:command",
+         "command": "scoreboard players get @s stlboy.vy",
+         "comparison": "<",
+         "compare_to": -105
+        },
+        "action": {
+         "type": "apoli:add_velocity",
+         "space": "world",
+         "y": 0.004
+        }
+       }
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "airtime": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "impact": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:on_block"
+   },
+   "if_action": {
+    "type": "apoli:if_else",
+    "condition": {
+     "type": "apoli:resource",
+     "resource": "stlboy:float_airtime",
+     "comparison": ">",
+     "compare_to": 2
+    },
+    "if_action": {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:add_velocity",
+       "space": "world",
+       "x": 0,
+       "y": 0,
+       "z": 0,
+       "set": true
+      },
+      {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:command",
+        "command": "scoreboard players get @s stlboy.fall",
+        "comparison": "<",
+        "compare_to": -250
+       },
+       "if_action": {
+        "type": "apoli:and",
+        "actions": [
+         {
+          "type": "apoli:execute_command",
+          "command": "playsound minecraft:entity.player.big_fall player @a ~ ~ ~ 1.0 0.7"
+         },
+         {
+          "type": "apoli:execute_command",
+          "command": "playsound stlboy:cosmic.deny player @a ~ ~ ~ 0.7 0.6"
+         },
+         {
+          "type": "apoli:execute_command",
+          "command": "particle minecraft:small_gust ~ ~0.1 ~ 0.3 0 0.3 0 3"
+         },
+         {
+          "type": "apoli:execute_command",
+          "command": "particle minecraft:reverse_portal ~ ~0.2 ~ 0.8 0.1 0.8 0.2 40"
+         },
+         {
+          "type": "apoli:execute_command",
+          "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.1 ~ 0.8 0.05 0.8 0 20"
+         }
+        ]
+       },
+       "else_action": {
+        "type": "apoli:and",
+        "actions": [
+         {
+          "type": "apoli:execute_command",
+          "command": "playsound minecraft:block.amethyst_block.step player @a ~ ~ ~ 0.6 1.4"
+         },
+         {
+          "type": "apoli:execute_command",
+          "command": "particle minecraft:reverse_portal ~ ~0.1 ~ 0.3 0.05 0.3 0.02 8"
+         }
+        ]
+       }
+      },
+      {
+       "type": "apoli:change_resource",
+       "resource": "stlboy:float_airtime",
+       "change": 0,
+       "operation": "set"
+      }
+     ]
+    },
+    "else_action": {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_airtime",
+     "change": 0,
+     "operation": "set"
+    }
+   },
+   "else_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:if_else",
+      "condition": {
+       "type": "apoli:resource",
+       "resource": "stlboy:float_airtime",
+       "comparison": "<",
+       "compare_to": 20
+      },
+      "if_action": {
+       "type": "apoli:change_resource",
+       "resource": "stlboy:float_airtime",
+       "change": 1,
+       "operation": "add"
+      }
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "scoreboard players operation @s stlboy.fall = @s stlboy.vy"
+     }
+    ]
+   }
+  }
+ },
+ "stabilize": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "reconnect": {
+  "type": "apoli:action_on_callback",
+  "entity_action_added": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_lift",
+     "change": 40,
+     "operation": "set"
+    },
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:change_resource",
+       "resource": "stlboy:float_stabilize",
+       "change": 20,
+       "operation": "set"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 1.5"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
+      }
+     ]
+    }
+   ]
+  },
+  "entity_action_respawned": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_lift",
+     "change": 40,
+     "operation": "set"
+    },
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:change_resource",
+       "resource": "stlboy:float_stabilize",
+       "change": 20,
+       "operation": "set"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.6 1.5"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "particle minecraft:reverse_portal ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "stabilize_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:float_stabilize",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:add_velocity",
+     "x": 0,
+     "y": 0,
+     "z": 0,
+     "set": true
+    },
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_stabilize",
+     "change": -1,
+     "operation": "add"
+    }
+   ]
+  }
+ },
+ "drift_hum": {
+  "type": "apoli:action_over_time",
+  "interval": 36,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:and",
+     "conditions": [
+      {
+       "type": "apoli:on_block",
+       "inverted": true
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:flight_level",
+       "comparison": "==",
+       "compare_to": 0
+      }
+     ]
+    },
+    {
+     "type": "apoli:or",
+     "conditions": [
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.forward"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.back"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.left"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.right"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.jump"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.sneak"
+       }
+      }
+     ]
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.conduit.ambient.short player @a ~ ~ ~ 0.3 1.4"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:reverse_portal ~ ~0.4 ~ 0.2 0.1 0.2 0.01 4"
+    }
+   ]
+  }
+ },
+ "idle_hum": {
+  "type": "apoli:action_over_time",
+  "interval": 80,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:and",
+     "conditions": [
+      {
+       "type": "apoli:on_block",
+       "inverted": true
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:flight_level",
+       "comparison": "==",
+       "compare_to": 0
+      }
+     ]
+    },
+    {
+     "type": "apoli:or",
+     "conditions": [
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.forward"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.back"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.left"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.right"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.jump"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.sneak"
+       }
+      }
+     ],
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "playsound stlboy:cosmic.hum player @s ~ ~ ~ 0.15 2.0"
+  }
+ },
+ "dodge_ready": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 60,
+  "start_value": 60,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "dodge_ready_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     "action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_ready",
+      "change": 60,
+      "operation": "set"
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_cd",
+      "comparison": ">=",
+      "compare_to": 59
+     },
+     "action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_ready",
+      "change": 1,
+      "operation": "set"
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:float_dodge_ready",
+      "comparison": "<",
+      "compare_to": 60
+     },
+     "action": {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:float_dodge_ready",
+      "change": 1,
+      "operation": "add"
+     }
+    }
+   ]
+  }
+ },
+ "lift": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 40,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "lift_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:float_lift",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:float_lift",
+     "change": -1,
+     "operation": "add"
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:on_block"
+     },
+     "if_action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:execute_command",
+        "command": "execute if block ~ ~2.5 ~ #stlboy:orb_passable if block ~ ~3.5 ~ #stlboy:orb_passable run tp @s ~ ~2.5 ~"
+       },
+       {
+        "type": "apoli:add_velocity",
+        "space": "world",
+        "set": true,
+        "x": 0,
+        "y": 0,
+        "z": 0
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:float_stabilize",
+        "change": 20,
+        "operation": "set"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:end_rod ~ ~0.5 ~ 0.3 0.6 0.3 0.05 15"
+       },
+       {
+        "type": "apoli:change_resource",
+        "resource": "stlboy:float_lift",
+        "change": 0,
+        "operation": "set"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ }
+}

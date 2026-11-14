@@ -1,0 +1,14 @@
+{
+  "fallback": "minecraft:empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "location": "stlboy:fallen_altar",
+        "projection": "rigid",
+        "processors": "stlboy:fallen_altar"
+      }
+    }
+  ]
+}

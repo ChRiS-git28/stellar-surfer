@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:amethyst_shard"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:glowstone_dust"
+    },
+    {
+      "item": "minecraft:ender_pearl"
+    },
+    {
+      "item": "minecraft:diamond"
+    }
+  ],
+  "result": {
+    "id": "minecraft:nautilus_shell",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "stlboy_offer": "astral"
+      },
+      "minecraft:custom_model_data": 7111,
+      "minecraft:item_name": "{\"text\":\"§dAstral Crystal\"}",
+      "minecraft:rarity": "epic",
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:lore": [
+        "{\"text\":\"§r§7Right-click at Rank 2 to offer it to the stars and open the way to Rank 3.\",\"italic\":false}"
+      ]
+    }
+  },
+  "group": "stlboy_offering"
+}

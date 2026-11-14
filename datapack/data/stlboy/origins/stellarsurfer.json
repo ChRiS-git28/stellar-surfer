@@ -1,0 +1,194 @@
+{
+ "icon": {
+  "texture": "stlboy:textures/item/origin_icon.png",
+  "width": 32,
+  "height": 32
+ },
+ "impact": 3,
+ "powers": [
+  "stlboy:float",
+  "stlboy:voice",
+  "stlboy:flight",
+  "stlboy:grace",
+  "stlboy:repul",
+  "stlboy:starfrag",
+  "stlboy:stardust",
+  "stlboy:dust_sources",
+  "stlboy:toolkit",
+  "stlboy:cosmic_arms",
+  "stlboy:hunted",
+  "stlboy:graviton",
+  "stlboy:starlight",
+  "stlboy:stellar_breath",
+  "stlboy:shard",
+  "stlboy:cosmic_fx",
+  "stlboy:ray",
+  "stlboy:memories",
+  "stlboy:memory_guard",
+  "stlboy:cleanup",
+  "stlboy:hud",
+  "stlboy:star_anchor",
+  "stlboy:mp",
+  "stlboy:sk_mag",
+  "stlboy:sk_orb",
+  "stlboy:sk_well",
+  "stlboy:sk_nova",
+  "stlboy:sk_sn",
+  "stlboy:sk_anchor"
+ ],
+ "name": {
+  "translate": "origin.stlboy.stellarsurfer.name",
+  "fallback": "Stellar Surfer",
+  "color": "#9FE8FF"
+ },
+ "description": {
+  "text": "",
+  "extra": [
+   {
+    "text": "",
+    "font": "stlboy:origin",
+    "color": "white",
+    "italic": false
+   },
+   {
+    "text": "\n\n\n\n"
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.description.a",
+    "fallback": ""
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.1",
+    "fallback": "S",
+    "color": "#9FE8FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.2",
+    "fallback": "t",
+    "color": "#A4E0FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.3",
+    "fallback": "e",
+    "color": "#AAD8FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.4",
+    "fallback": "",
+    "color": "#AFCFFF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.5",
+    "fallback": "l",
+    "color": "#B4C7FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.6",
+    "fallback": "l",
+    "color": "#B9BFFF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.7",
+    "fallback": "a",
+    "color": "#BEB6FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.8",
+    "fallback": "r",
+    "color": "#C4AEFF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.9",
+    "fallback": "",
+    "color": "#C9A6FF",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.10",
+    "fallback": " ",
+    "color": "#D0ACEE",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.11",
+    "fallback": "S",
+    "color": "#D6B1DE",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.12",
+    "fallback": "u",
+    "color": "#DDB6CD",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.13",
+    "fallback": "r",
+    "color": "#E4BCBC",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.14",
+    "fallback": "",
+    "color": "#EBC2AC",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.15",
+    "fallback": "f",
+    "color": "#F2C79B",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.16",
+    "fallback": "e",
+    "color": "#F8CC8B",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.gn.17",
+    "fallback": "r",
+    "color": "#FFD27A",
+    "italic": true,
+    "bold": true
+   },
+   {
+    "translate": "origin.stlboy.stellarsurfer.description.b",
+    "fallback": ""
+   },
+   {
+    "text": "\n"
+   },
+   {
+    "text": "",
+    "font": "stlboy:origin",
+    "color": "white",
+    "italic": false
+   }
+  ]
+ }
+}

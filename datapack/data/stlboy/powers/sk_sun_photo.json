@@ -1,0 +1,48 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_sun_comb",
+  "icon": {
+   "item": "minecraft:glowstone"
+  },
+  "cost": 3,
+  "frame": "goal",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 4
+  },
+  "order": 30
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_sun_photo.0",
+    "fallback": "sk_sun_photo"
+   }
+  }
+ ],
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_photo"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_photo"
+  }
+ }
+}

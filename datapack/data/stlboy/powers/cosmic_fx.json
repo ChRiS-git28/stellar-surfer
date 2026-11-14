@@ -1,0 +1,592 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "Cosmic FX",
+ "description": "Visual summons of the Stellar Surfer.",
+ "sn_flag": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "sn_summon": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:cosmic_fx_sn_flag",
+   "comparison": "==",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:cosmic_fx_sn_flag",
+     "change": 0,
+     "operation": "set"
+    },
+    {
+     "type": "apoli:summon_minion",
+     "follow_owner": false,
+     "scale": 1.0,
+     "invulnerable": true,
+     "max_life_ticks": 1200,
+     "summon_id": "stlboy:sn",
+     "powers": [
+      "stlboy:orb_sn"
+     ],
+     "offset": {
+      "x": 0,
+      "y": 0,
+      "z": 0
+     },
+     "space": "local",
+     "bientity_action": {
+      "type": "apoli:target_action",
+      "action": {
+       "type": "apoli:and",
+       "actions": [
+        {
+         "type": "apoli:execute_command",
+         "command": "tag @s add stlboy_orb"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "tag @s add stlboy_vsn"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "effect give @s minecraft:invisibility infinite 0 true"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "data merge entity @s {NoGravity:1b,Silent:1b}"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "attribute @s minecraft:generic.gravity base set 0"
+        },
+        {
+         "type": "apoli:execute_command",
+         "command": "execute at @e[type=minecraft:marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run tp @s ~ ~-0.6 ~"
+        }
+       ]
+      }
+     }
+    }
+   ]
+  }
+ },
+ "wheel_up": {
+  "type": "apoli:action_on_scroll_wheel",
+  "direction": "up",
+  "prevent_hotbar_change": true,
+  "condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:graviton_mode",
+     "comparison": "==",
+     "compare_to": 2
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:graviton_nmode",
+     "comparison": "==",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/wheel_up"
+    }
+   ]
+  }
+ },
+ "wheel_down": {
+  "type": "apoli:action_on_scroll_wheel",
+  "direction": "down",
+  "prevent_hotbar_change": true,
+  "condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:graviton_mode",
+     "comparison": "==",
+     "compare_to": 2
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:graviton_nmode",
+     "comparison": "==",
+     "compare_to": 1
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/wheel_down"
+    }
+   ]
+  }
+ },
+ "sky_start": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:dimension",
+    "dimension": "minecraft:overworld"
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:execute_command",
+      "command": "execute at @s positioned over motion_blocking_no_leaves run tp @s ~ ~20 ~"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "effect give @s minecraft:slow_falling 10 0 true"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "title @s actionbar {\"text\":\"✦ Born from the stars ✦\",\"color\":\"light_purple\"}"
+     }
+    ]
+   }
+  }
+ },
+ "magnet": {
+  "type": "apoli:action_over_time",
+  "interval": 2,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:magnet/tick"
+    }
+   ]
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:cosmic_fx_magnet_on",
+     "comparison": "==",
+     "compare_to": 1
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_sk_mag]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   ]
+  }
+ },
+ "offer_astral": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 10,
+  "key": {
+   "key": "key.use"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if items entity @s weapon.mainhand *[minecraft:custom_data~{stlboy_offer:\"astral\"}]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:offer/astral"
+    }
+   ]
+  }
+ },
+ "offer_core": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 10,
+  "key": {
+   "key": "key.use"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if items entity @s weapon.mainhand *[minecraft:custom_data~{stlboy_offer:\"core\"}]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:offer/core"
+    }
+   ]
+  }
+ },
+ "offer_echo": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 10,
+  "key": {
+   "key": "key.use"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if items entity @s weapon.mainhand *[minecraft:custom_data~{stlboy_offer:\"echo\"}]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:offer/echo"
+    }
+   ]
+  }
+ },
+ "offer_heart": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 10,
+  "key": {
+   "key": "key.use"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if items entity @s weapon.mainhand *[minecraft:custom_data~{stlboy_offer:\"heart\"}]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:offer/heart"
+    }
+   ]
+  }
+ },
+ "magnet_on": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 1,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "magnet_toggle": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 8,
+  "key": {
+   "key": "key.playerlist"
+  },
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:cosmic_fx_magnet_on",
+    "comparison": "==",
+    "compare_to": 1
+   },
+   "if_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:cosmic_fx_magnet_on",
+      "change": 0,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "title @s actionbar {\"text\":\"✦ Item magnet: OFF ✦\",\"color\":\"gray\"}"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound stlboy:cosmic.off player @s ~ ~ ~ 0.4 1.6"
+     }
+    ]
+   },
+   "else_action": {
+    "type": "apoli:and",
+    "actions": [
+     {
+      "type": "apoli:change_resource",
+      "resource": "stlboy:cosmic_fx_magnet_on",
+      "change": 1,
+      "operation": "set"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "title @s actionbar {\"text\":\"✦ Item magnet: ON ✦\",\"color\":\"aqua\"}"
+     },
+     {
+      "type": "apoli:execute_command",
+      "command": "playsound stlboy:cosmic.on player @s ~ ~ ~ 0.4 1.8"
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if entity @s[tag=stlboy_sk_mag]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "move": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if entity @s[tag=stlboy_sk_mv]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:skills/move_tick"
+    }
+   ]
+  }
+ },
+ "place": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 4,
+  "key": {
+   "key": "key.stlboy.place"
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:skills/place"
+    }
+   ]
+  }
+ },
+ "gills": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "execute if block ~ ~1.5 ~ minecraft:water run effect give @s minecraft:water_breathing 4 0 true"
+  }
+ },
+ "chronicle": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:trial/tick"
+    }
+   ]
+  }
+ },
+ "lock_mag": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 20,
+  "key": {
+   "key": "key.playerlist"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute unless entity @s[tag=stlboy_sk_mag]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "title @s actionbar {\"text\":\"✦ Magnetism locked — learn Stellar Magnetism in the Stellar Path (Rank 1) ✦\",\"color\":\"dark_purple\"}"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.deny player @s ~ ~ ~ 0.5 1.6"
+    }
+   ]
+  }
+ },
+ "lock_nova": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 20,
+  "key": {
+   "key": "key.stlboy.nova"
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute unless entity @s[tag=stlboy_sk_nova]",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "title @s actionbar {\"text\":\"✦ White Hole locked — learn White Hole in the Stellar Path (Rank 5) ✦\",\"color\":\"dark_purple\"}"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.deny player @s ~ ~ ~ 0.5 1.6"
+    }
+   ]
+  }
+ },
+ "trial_run": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.tr matches 1..",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:trial/run"
+    }
+   ]
+  }
+ },
+ "death_watch": {
+  "type": "apoli:action_over_time",
+  "interval": 4,
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.deaths matches 1..",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:death/lose"
+    }
+   ]
+  }
+ },
+ "journal_key": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 20,
+  "key": {
+   "key": "key.stlboy.journal"
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:journal/open"
+    }
+   ]
+  }
+ },
+ "memory_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:memory/tick"
+    }
+   ]
+  }
+ }
+}

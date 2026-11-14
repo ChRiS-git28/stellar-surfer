@@ -1,0 +1,37 @@
+{
+ "type": "apoli:multiple",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.0",
+    "fallback": "§eV§7 → place the held block in mid-air where you look. §8(Skill: Air Anchor)"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.1",
+    "fallback": "§eTab§7 → toggle the item magnet. §8(Skill: Stellar Magnetism)"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.2",
+    "fallback": "§7Right-click a §6shrine§7 (a pillar of light in the world) → begin a §6Trial of Aster§7."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.toolkit.4",
+    "fallback": "§eJ§7 → open §6Aster's Journal§7: Rank, bar, unlocked powers and Trials, live."
+   }
+  }
+ ]
+}

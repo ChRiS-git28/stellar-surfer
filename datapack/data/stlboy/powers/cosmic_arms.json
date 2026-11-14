@@ -1,0 +1,42 @@
+{
+ "type": "apoli:multiple",
+ "name": "Cosmic Arms",
+ "description": "§7§oYour astral body does not strike — it §d§ochannels§7§o. Mortal weapons slip through your fingers of light; only §b§ostarlight§7§o heeds your will.",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/weapon.png",
+   "text": "§7Melee & projectiles deal §c0 damage§7."
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/weak.png",
+   "text": "§cBows, crossbows & tridents§7 can't be used."
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": "§7Your powers deal §dcosmic damage§7 that §fignores armor§7."
+  }
+ ],
+ "no_physical": {
+  "type": "apoli:modify_damage_dealt",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:physical"
+  },
+  "modifier": {
+   "operation": "set_total",
+   "value": 0
+  }
+ },
+ "no_ranged": {
+  "type": "apoli:prevent_item_use",
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:forbidden_weapons"
+   }
+  }
+ }
+}

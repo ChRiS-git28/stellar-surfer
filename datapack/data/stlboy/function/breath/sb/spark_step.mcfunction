@@ -1,0 +1,5 @@
+# Un eclat tous les 1,5 bloc (une chance sur deux), en spirale autour du rayon (macro c, d)
+$execute if predicate stlboy:chance_quarter run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:8,lifetime_variation:3,size:0.22f,size_variation:0.05f,end_size:0.0f,color:"$(c)FF",end_color:"$(d)00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 4)"} ^ ^ ^ 0.25 0.25 0.25 0.06 1 force
+$execute if predicate stlboy:chance_quarter run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:6,lifetime_variation:3,size:0.14f,size_variation:0.05f,end_size:0.0f,color:"#FFFFFFFF",end_color:"$(c)00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 4)"} ^ ^ ^ 0.2 0.2 0.2 0.1 1 force
+scoreboard players remove #sn stlboy.tmp 1
+$execute if score #sn stlboy.tmp matches 1.. positioned ^ ^ ^1.5 run function stlboy:breath/sb/spark_step {c:"$(c)",d:"$(d)"}

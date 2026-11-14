@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:nether_star"
+  },
+  "title": {
+   "text": "Rank 7 — Supernova",
+   "color": "light_purple"
+  },
+  "description": {
+   "text": "The Supernova Heart has ignited. Three more skies await."
+  },
+  "frame": "goal",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "rank": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "parent": "stlboy:stardust/rank_6",
+ "rewards": {
+  "function": "stlboy:skills/point"
+ }
+}

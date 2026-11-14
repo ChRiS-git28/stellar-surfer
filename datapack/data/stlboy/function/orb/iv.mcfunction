@@ -1,0 +1,22 @@
+# Intervalle de pulsation (ticks) d'apres l indice de puissance de l orbe (en tant que l orbe)
+execute if score @s stlboy.lvl matches 0 run scoreboard players set #iv stlboy.tmp 20
+execute if score @s stlboy.lvl matches 1 run scoreboard players set #iv stlboy.tmp 20
+execute if score @s stlboy.lvl matches 2 run scoreboard players set #iv stlboy.tmp 19
+execute if score @s stlboy.lvl matches 3 run scoreboard players set #iv stlboy.tmp 18
+execute if score @s stlboy.lvl matches 4 run scoreboard players set #iv stlboy.tmp 17
+execute if score @s stlboy.lvl matches 5 run scoreboard players set #iv stlboy.tmp 17
+execute if score @s stlboy.lvl matches 6 run scoreboard players set #iv stlboy.tmp 16
+execute if score @s stlboy.lvl matches 7 run scoreboard players set #iv stlboy.tmp 15
+execute if score @s stlboy.lvl matches 8 run scoreboard players set #iv stlboy.tmp 14
+execute if score @s stlboy.lvl matches 9 run scoreboard players set #iv stlboy.tmp 14
+execute if score @s stlboy.lvl matches 10 run scoreboard players set #iv stlboy.tmp 13
+execute if score @s stlboy.lvl matches 11 run scoreboard players set #iv stlboy.tmp 12
+execute if score @s stlboy.lvl matches 12 run scoreboard players set #iv stlboy.tmp 11
+execute if score @s stlboy.lvl matches 13 run scoreboard players set #iv stlboy.tmp 11
+execute if score @s stlboy.lvl matches 14 run scoreboard players set #iv stlboy.tmp 10
+execute if score @s stlboy.lvl matches 15 run scoreboard players set #iv stlboy.tmp 9
+execute if score @s stlboy.lvl matches 16 run scoreboard players set #iv stlboy.tmp 8
+execute if score @s stlboy.lvl matches 17 run scoreboard players set #iv stlboy.tmp 8
+execute if score @s stlboy.lvl matches 18 run scoreboard players set #iv stlboy.tmp 7
+execute if score @s stlboy.lvl matches 19 run scoreboard players set #iv stlboy.tmp 6
+execute if score @s stlboy.lvl matches 20 run scoreboard players set #iv stlboy.tmp 5

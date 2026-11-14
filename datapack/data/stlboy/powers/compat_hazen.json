@@ -1,0 +1,84 @@
+{
+  "type": "apoli:multiple",
+  "hidden": true,
+  "p1": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 2
+    },
+    "modifiers": [
+      {
+        "attribute": "hazentouvelib:cosmic_spell_power",
+        "operation": "addition",
+        "value": 0.1
+      }
+    ]
+  },
+  "p2": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 4
+    },
+    "modifiers": [
+      {
+        "attribute": "hazentouvelib:cosmic_spell_power",
+        "operation": "addition",
+        "value": 0.15
+      }
+    ]
+  },
+  "p3": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 6
+    },
+    "modifiers": [
+      {
+        "attribute": "hazentouvelib:cosmic_spell_power",
+        "operation": "addition",
+        "value": 0.25
+      }
+    ]
+  },
+  "r1": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 3
+    },
+    "modifiers": [
+      {
+        "attribute": "hazentouvelib:cosmic_magic_resist",
+        "operation": "addition",
+        "value": 0.15
+      }
+    ]
+  },
+  "r2": {
+    "type": "apoli:attribute",
+    "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stardust_rank",
+      "comparison": ">=",
+      "compare_to": 5
+    },
+    "modifiers": [
+      {
+        "attribute": "hazentouvelib:cosmic_magic_resist",
+        "operation": "addition",
+        "value": 0.25
+      }
+    ]
+  }
+}

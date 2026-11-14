@@ -1,0 +1,65 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_speed3",
+  "icon": {
+   "item": "minecraft:nether_star"
+  },
+  "cost": 6,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 9
+  },
+  "order": 18
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "resource change @s stlboy:flight_vmul 3"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_ulight"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "resource change @s stlboy:flight_vmul -3"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_sk_ulight"
+    }
+   ]
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_ult_light.0",
+    "fallback": "§6Ultimate§7 · Max surf speed §f+25%§7. §cOnly one Ultimate per Surfer.§8 (Rank 9)"
+   }
+  }
+ ]
+}

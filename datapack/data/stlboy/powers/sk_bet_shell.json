@@ -1,0 +1,38 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_self_skin",
+  "icon": {
+   "item": "minecraft:turtle_helmet"
+  },
+  "cost": 2,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 3
+  },
+  "order": 30
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_bet_shell.0",
+    "fallback": "sk_bet_shell"
+   }
+  }
+ ],
+ "attrs": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   }
+  ]
+ }
+}

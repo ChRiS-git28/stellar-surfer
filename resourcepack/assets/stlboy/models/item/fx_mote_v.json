@@ -1,0 +1,43 @@
+{
+ "render_type": "minecraft:translucent",
+ "textures": {
+  "m": "stlboy:item/orb/mote_v",
+  "particle": "stlboy:item/orb/mote_v"
+ },
+ "elements": [
+  {
+   "from": [
+    0.0,
+    0.0,
+    8
+   ],
+   "to": [
+    16.0,
+    16.0,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#m"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#m"
+    }
+   }
+  }
+ ],
+ "display": {}
+}

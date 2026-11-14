@@ -1,0 +1,65 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:cls_aurora",
+  "icon": {
+   "item": "minecraft:experience_bottle"
+  },
+  "cost": 1,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "order": 3
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_magxp"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_sk_magxp"
+    }
+   ]
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_mag_xp.0",
+    "fallback": "§7Experience orbs within §f10 blocks§7 fly to you. §8(Rank 3+)"
+   }
+  }
+ ],
+ "pull": {
+  "type": "apoli:action_over_time",
+  "interval": 5,
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "tp @e[type=minecraft:experience_orb,distance=..10] @s"
+  }
+ }
+}

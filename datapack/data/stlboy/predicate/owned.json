@@ -1,0 +1,24 @@
+{
+ "condition": "minecraft:entity_scores",
+ "entity": "this",
+ "scores": {
+  "stlboy.own": {
+   "min": {
+    "type": "minecraft:score",
+    "target": {
+     "type": "minecraft:fixed",
+     "name": "#own"
+    },
+    "score": "stlboy.tmp"
+   },
+   "max": {
+    "type": "minecraft:score",
+    "target": {
+     "type": "minecraft:fixed",
+     "name": "#own"
+    },
+    "score": "stlboy.tmp"
+   }
+  }
+ }
+}

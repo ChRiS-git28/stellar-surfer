@@ -1,0 +1,5 @@
+# Applique les jauges (fonction macro)
+$resource set @s stlboy:graviton_well_life $(w)
+$resource set @s stlboy:graviton_nova_life $(n)
+$resource set @s stlboy:graviton_sn_life $(s)
+$resource set @s stlboy:graviton_sn_ready $(p)

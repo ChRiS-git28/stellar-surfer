@@ -1,0 +1,1 @@
+$execute positioned ~$(x) ~ ~$(z) positioned over motion_blocking_no_leaves if loaded ~ ~ ~ unless block ~ ~-1 ~ minecraft:water unless block ~ ~-1 ~ minecraft:lava run function stlboy:shrine/place_$(id)

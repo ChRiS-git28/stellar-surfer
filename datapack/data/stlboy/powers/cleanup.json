@@ -1,0 +1,17 @@
+{
+ "type": "apoli:action_on_callback",
+ "hidden": true,
+ "entity_action_lost": {
+  "type": "apoli:and",
+  "actions": [
+   {
+    "type": "apoli:execute_command",
+    "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+   },
+   {
+    "type": "apoli:execute_command",
+    "command": "function stlboy:origin/cleanup"
+   }
+  ]
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "#stlboy:star_food_small",
+    "#stlboy:star_food_medium",
+    "#stlboy:star_food_large",
+    "#stlboy:star_food_huge"
+  ]
+}

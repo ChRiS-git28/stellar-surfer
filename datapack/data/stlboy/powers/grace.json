@@ -1,0 +1,546 @@
+{
+ "type": "apoli:multiple",
+ "name": "Firmament's Grace",
+ "description": "§7§oThe stars watch over you as one of their own. Beneath their gaze your hands grow §e§oquick§7§o; but deep in the bowels of the earth, far from their light, your glow §8§odims§7§o and dies.",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/gauge.png",
+   "text": "§eGrace§7 rises under open sky, §ffaster at night§7, §dfar faster in the End§7. It falls underground and in the §cNether§7."
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/tool.png",
+   "text": "§aHigh Grace → Haste§7, §eHaste I§7, §eHaste II§7 in the End."
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/weak.png",
+   "text": "§cLow Grace§7 → Mining Fatigue, then §8Darkness§7."
+  }
+ ],
+ "gauge": {
+  "type": "apoli:resource",
+  "min": -100,
+  "max": 100,
+  "start_value": 0,
+  "hidden": true,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "end_gain": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:dimension",
+   "dimension": "minecraft:the_end"
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": 3
+   }
+  }
+ },
+ "nether_drain": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:dimension",
+   "dimension": "minecraft:the_nether"
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": -1
+   }
+  }
+ },
+ "day_gain": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:exposed_to_sky"
+    },
+    {
+     "type": "apoli:daytime"
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": 1
+   }
+  }
+ },
+ "night_gain": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:exposed_to_sky"
+    },
+    {
+     "type": "apoli:daytime",
+     "inverted": true
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": 2
+   }
+  }
+ },
+ "sky_recover": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:exposed_to_sky"
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": "<",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": 3
+   }
+  }
+ },
+ "abyss_drain": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:overworld"
+    },
+    {
+     "type": "apoli:exposed_to_sky",
+     "inverted": true
+    },
+    {
+     "type": "apoli:in_block",
+     "block_condition": {
+      "type": "apoli:light_level",
+      "light_type": "sky",
+      "comparison": "==",
+      "compare_to": 0
+     }
+    },
+    {
+     "type": "apoli:in_block",
+     "block_condition": {
+      "type": "apoli:height",
+      "comparison": "<",
+      "compare_to": 40
+     }
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": -1
+   }
+  }
+ },
+ "veiled_decay": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:overworld"
+    },
+    {
+     "type": "apoli:exposed_to_sky",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": -1
+   }
+  }
+ },
+ "veiled_recover": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:overworld"
+    },
+    {
+     "type": "apoli:exposed_to_sky",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": "<",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:any_of",
+     "conditions": [
+      {
+       "type": "apoli:in_block",
+       "block_condition": {
+        "type": "apoli:light_level",
+        "light_type": "sky",
+        "comparison": "==",
+        "compare_to": 0
+       },
+       "inverted": true
+      },
+      {
+       "type": "apoli:in_block",
+       "block_condition": {
+        "type": "apoli:height",
+        "comparison": "<",
+        "compare_to": 40
+       },
+       "inverted": true
+      }
+     ]
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:modify_resource",
+   "resource": "stlboy:grace_gauge",
+   "modifier": {
+    "operation": "add_base_early",
+    "value": 3
+   }
+  }
+ },
+ "fx_end_mid": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end"
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">=",
+     "compare_to": 20
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": "<",
+     "compare_to": 60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:haste",
+    "duration": 60,
+    "amplifier": 0,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_end_high": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end"
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">=",
+     "compare_to": 60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:haste",
+    "duration": 60,
+    "amplifier": 1,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_night_high": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    },
+    {
+     "type": "apoli:daytime",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">=",
+     "compare_to": 60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:haste",
+    "duration": 60,
+    "amplifier": 0,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_day_high": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    },
+    {
+     "type": "apoli:daytime"
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">=",
+     "compare_to": 60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:haste",
+    "duration": 60,
+    "amplifier": 0,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_low": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">=",
+     "compare_to": 20
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": "<",
+     "compare_to": 60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:haste",
+    "duration": 60,
+    "amplifier": 0,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_fatigue_mid": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:all_of",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": "<=",
+     "compare_to": -20
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:grace_gauge",
+     "comparison": ">",
+     "compare_to": -60
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:apply_effect",
+   "effect": {
+    "effect": "minecraft:mining_fatigue",
+    "duration": 60,
+    "amplifier": 0,
+    "is_ambient": true,
+    "show_particles": false,
+    "show_icon": true
+   }
+  }
+ },
+ "fx_fatigue_high": {
+  "type": "apoli:action_over_time",
+  "hidden": true,
+  "interval": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:grace_gauge",
+   "comparison": "<=",
+   "compare_to": -60
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:mining_fatigue",
+      "duration": 60,
+      "amplifier": 1,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": true
+     }
+    },
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:darkness",
+      "duration": 60,
+      "amplifier": 0,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": true
+     }
+    }
+   ]
+  }
+ },
+ "dark_ward": {
+  "type": "apoli:effect_immunity",
+  "effect": "minecraft:darkness",
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if entity @s[tag=stlboy_t_constellation]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ }
+}

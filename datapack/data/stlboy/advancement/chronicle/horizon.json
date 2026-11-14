@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:ender_eye"
+    },
+    "title": {
+      "text": "Trial: Event Horizon",
+      "color": "dark_purple",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "This is how she ended — pulled inward. You slipped the same fate. §8(Trial · Rank 6 · +2 points · gift: echo shards)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.horizon.fx",
+        "fallback": "+2 hearts, fall damage -50%",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_6"
+}

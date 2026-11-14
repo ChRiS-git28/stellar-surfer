@@ -1,0 +1,52 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_sun_heat",
+  "icon": {
+   "item": "minecraft:fire_charge"
+  },
+  "cost": 2,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 3
+  },
+  "order": 4
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_sun_comb.0",
+    "fallback": "sk_sun_comb"
+   }
+  }
+ ],
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_comb"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.4 0.7 0.4 0.08 30"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_comb"
+  }
+ }
+}

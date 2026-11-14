@@ -1,0 +1,52 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:cls_neptune",
+  "icon": {
+   "item": "minecraft:clock"
+  },
+  "cost": 2,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 5
+  },
+  "order": 2
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s add stlboy_sk_stun"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_stun"
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_nova_stun.0",
+    "fallback": "§7Foes caught in your §bWhite Hole§7 are §estunned§7: frozen in place and weakened. §8Bosses resist. (Rank 5+)"
+   }
+  }
+ ]
+}

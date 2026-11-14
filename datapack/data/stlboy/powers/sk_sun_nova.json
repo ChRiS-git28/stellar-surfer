@@ -1,0 +1,92 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_ult_flare",
+  "icon": {
+   "item": "minecraft:tnt"
+  },
+  "cost": 6,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 9
+  },
+  "order": 9
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_sun_nova.0",
+    "fallback": "sk_sun_nova"
+   }
+  }
+ ],
+ "cd": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1200,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "cool": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:sk_sun_nova_cd",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:sk_sun_nova_cd",
+   "change": -1,
+   "operation": "add"
+  }
+ },
+ "trigger": {
+  "type": "apoli:action_over_time",
+  "interval": 2,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:relative_health",
+     "comparison": "<",
+     "compare_to": 0.3
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:sk_sun_nova_cd",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.sid"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:cls/sun_nova"
+    },
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:sk_sun_nova_cd",
+     "change": 1200,
+     "operation": "set"
+    }
+   ]
+  }
+ }
+}

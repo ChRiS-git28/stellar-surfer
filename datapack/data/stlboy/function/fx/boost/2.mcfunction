@@ -1,0 +1,21 @@
+# Onde de choc du mini-boost, image 5/6 : anneau perpendiculaire au regard
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^1.97 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^1.82 ^1.75 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^1.39 ^2.39 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^0.75 ^2.82 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^0.00 ^2.97 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-0.75 ^2.82 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-1.39 ^2.39 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-1.82 ^1.75 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-1.97 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-1.82 ^0.25 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-1.39 ^-0.39 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-0.75 ^-0.82 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^-0.00 ^-0.97 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^0.75 ^-0.82 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^1.39 ^-0.39 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.69,0.54,1.0],scale:0.78} ^1.82 ^0.25 ^-0.4 0 0 0 0 1
+particle minecraft:end_rod ^1.97 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:end_rod ^0.00 ^2.97 ^-0.4 0 0 0 0 1
+particle minecraft:end_rod ^-1.97 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:end_rod ^-0.00 ^-0.97 ^-0.4 0 0 0 0 1

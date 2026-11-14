@@ -1,0 +1,3423 @@
+{
+ "type": "apoli:multiple",
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.starlight.0",
+    "fallback": "§7You can't eat normal food: your hunger bar is your §bcosmic energy§7."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.starlight.1",
+    "fallback": "§7Starlight refills you under open sky: slow by day, faster at night, fastest in the §5End§7."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.starlight.2",
+    "fallback": "§7Cosmic kills feed you: the stronger the prey, the more you absorb."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.starlight.3",
+    "fallback": "§eRight-click§7 a cosmic material to absorb it. The rarer, the more it restores."
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/food.png",
+   "text": {
+    "translate": "badge.stlboy.starlight.4",
+    "fallback": "§6§l✦ Cosmic Diet ✦§r\n§7◇ §f+1  §7Glowstone§8 (night vision)§7 · Redstone§8 (haste)§7 · Lapis · Quartz · Prismarine Crystals§8 (water breathing)§7 · Gunpowder · Firework Star\n§b◆ §f+2  §bAmethyst§8 (resistance)§b · Ender Pearl§8 (blink)§b · Blaze Powder§8 (fire res.)§b · Magma Cream§8 (fire res.)§b · Breeze Rod§8 (speed)§b · Wind Charge§8 (jump)§b · Emerald§8 (hero)§b · Prismarine Shard\n§d❖ §f+4  §dEye of Ender§8 (reveal)§d · Echo Shard§8 (clear darkness)§d · Shulker Shell§8 (resistance II)§d · Bottle o' Enchanting§8 (XP)§d · Ghast Tear§8 (regen)§d · Diamond§8 (absorption)§d · Blaze Rod · Ominous Bottle · Trial Key\n§6★ §f+8  §6Nether Star§8 (regen, res., absorption)§6 · End Crystal§8 (regen, haste)§6 · Heart of the Sea§8 (conduit)§6 · Dragon's Breath§8 (strength, speed)§6 · Totem§8 (absorption IV)§6 · Netherite Scrap§8 (resistance III)§6 · Ominous Trial Key"
+   }
+  }
+ ],
+ "no_food": {
+  "type": "apoli:prevent_item_use",
+  "item_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food"
+    },
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food"
+     },
+     "inverted": true
+    }
+   ]
+  }
+ },
+ "no_vanilla_use": {
+  "type": "apoli:prevent_item_use",
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:star_food"
+   }
+  }
+ },
+ "absorb": {
+  "type": "apoli:action_on_key_press",
+  "cooldown": 8,
+  "key": {
+   "key": "key.use"
+  },
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food_level",
+     "comparison": "<",
+     "compare_to": 20
+    },
+    {
+     "type": "apoli:equipped_item",
+     "equipment_slot": "mainhand",
+     "item_condition": {
+      "type": "apoli:ingredient",
+      "ingredient": {
+       "tag": "stlboy:star_food"
+      }
+     }
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:if_else_list",
+   "actions": [
+    {
+     "condition": {
+      "type": "apoli:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+       "type": "apoli:ingredient",
+       "ingredient": {
+        "tag": "stlboy:star_food_huge"
+       }
+      }
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:glowstone_dust"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:prismarine_crystals"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:water_breathing",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:redstone"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_pearl"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "execute anchored eyes positioned ^ ^ ^4 if block ~ ~ ~ #stlboy:orb_passable run tp @s ^ ^ ^4"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:blaze_powder"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:magma_cream"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:breeze_rod"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:wind_charge"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:jump_boost",
+              "duration": 300,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:emerald"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:hero_of_the_village",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:amethyst_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_eye"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect give @e[distance=..24,type=!player] minecraft:glowing 10 0 true"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:echo_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:darkness"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:blindness"
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:shulker_shell"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:experience_bottle"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "xp add @s 15 points"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ghast_tear"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 160,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:diamond"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:heart_of_the_sea"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:conduit_power",
+              "duration": 2400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:dolphins_grace",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:totem_of_undying"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:nether_star"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 300,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:dragon_breath"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:strength",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:end_crystal"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:netherite_scrap"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       {
+        "type": "apoli:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+         "type": "apoli:consume",
+         "amount": 1
+        }
+       },
+       {
+        "type": "apoli:apply_effect",
+        "effect": {
+         "effect": "minecraft:saturation",
+         "duration": 1,
+         "amplifier": 7,
+         "is_ambient": true,
+         "show_particles": false,
+         "show_icon": false
+        }
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.8 1.0"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:entity.generic.drink player @s ~ ~ ~ 0.4 1.6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.4 0.6 0.4 0.2 60"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:0.8} ~ ~1.2 ~ 0.3 0.4 0.3 0 30"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+       "type": "apoli:ingredient",
+       "ingredient": {
+        "tag": "stlboy:star_food_large"
+       }
+      }
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:glowstone_dust"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:prismarine_crystals"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:water_breathing",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:redstone"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_pearl"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "execute anchored eyes positioned ^ ^ ^4 if block ~ ~ ~ #stlboy:orb_passable run tp @s ^ ^ ^4"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:blaze_powder"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:magma_cream"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:breeze_rod"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:wind_charge"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:jump_boost",
+              "duration": 300,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:emerald"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:hero_of_the_village",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:amethyst_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_eye"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect give @e[distance=..24,type=!player] minecraft:glowing 10 0 true"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:echo_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:darkness"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:blindness"
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:shulker_shell"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:experience_bottle"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "xp add @s 15 points"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ghast_tear"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 160,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:diamond"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:heart_of_the_sea"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:conduit_power",
+              "duration": 2400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:dolphins_grace",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:totem_of_undying"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:nether_star"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 300,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:dragon_breath"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:strength",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:end_crystal"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:netherite_scrap"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       {
+        "type": "apoli:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+         "type": "apoli:consume",
+         "amount": 1
+        }
+       },
+       {
+        "type": "apoli:apply_effect",
+        "effect": {
+         "effect": "minecraft:saturation",
+         "duration": 1,
+         "amplifier": 3,
+         "is_ambient": true,
+         "show_particles": false,
+         "show_icon": false
+        }
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.select player @a ~ ~ ~ 0.8 1.6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:entity.generic.drink player @s ~ ~ ~ 0.4 1.6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.4 0.6 0.4 0.2 28"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:0.8} ~ ~1.2 ~ 0.3 0.4 0.3 0 14"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+       "type": "apoli:ingredient",
+       "ingredient": {
+        "tag": "stlboy:star_food_medium"
+       }
+      }
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:glowstone_dust"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:prismarine_crystals"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:water_breathing",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:redstone"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_pearl"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "execute anchored eyes positioned ^ ^ ^4 if block ~ ~ ~ #stlboy:orb_passable run tp @s ^ ^ ^4"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:blaze_powder"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:magma_cream"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:breeze_rod"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:wind_charge"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:jump_boost",
+              "duration": 300,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:emerald"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:hero_of_the_village",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:amethyst_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_eye"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect give @e[distance=..24,type=!player] minecraft:glowing 10 0 true"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:echo_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:darkness"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:blindness"
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:shulker_shell"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:experience_bottle"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "xp add @s 15 points"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ghast_tear"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 160,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:diamond"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:heart_of_the_sea"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:conduit_power",
+              "duration": 2400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:dolphins_grace",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:totem_of_undying"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:nether_star"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 300,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:dragon_breath"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:strength",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:end_crystal"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:netherite_scrap"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       {
+        "type": "apoli:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+         "type": "apoli:consume",
+         "amount": 1
+        }
+       },
+       {
+        "type": "apoli:apply_effect",
+        "effect": {
+         "effect": "minecraft:saturation",
+         "duration": 1,
+         "amplifier": 1,
+         "is_ambient": true,
+         "show_particles": false,
+         "show_icon": false
+        }
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.resonate player @a ~ ~ ~ 0.8 1.4"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:entity.generic.drink player @s ~ ~ ~ 0.4 1.6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.4 0.6 0.4 0.2 16"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:0.8} ~ ~1.2 ~ 0.3 0.4 0.3 0 8"
+       }
+      ]
+     }
+    },
+    {
+     "condition": {
+      "type": "apoli:equipped_item",
+      "equipment_slot": "mainhand",
+      "item_condition": {
+       "type": "apoli:ingredient",
+       "ingredient": {
+        "tag": "stlboy:star_food_small"
+       }
+      }
+     },
+     "action": {
+      "type": "apoli:and",
+      "actions": [
+       {
+        "type": "apoli:if_else_list",
+        "actions": [
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:glowstone_dust"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:prismarine_crystals"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:water_breathing",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:redstone"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_pearl"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "execute anchored eyes positioned ^ ^ ^4 if block ~ ~ ~ #stlboy:orb_passable run tp @s ^ ^ ^4"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:blaze_powder"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:magma_cream"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:fire_resistance",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:breeze_rod"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:wind_charge"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:jump_boost",
+              "duration": 300,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:emerald"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:hero_of_the_village",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:amethyst_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ender_eye"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect give @e[distance=..24,type=!player] minecraft:glowing 10 0 true"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:echo_shard"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:darkness"
+            },
+            {
+             "type": "apoli:execute_command",
+             "command": "effect clear @s minecraft:blindness"
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:night_vision",
+              "duration": 600,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:shulker_shell"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 400,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:experience_bottle"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:execute_command",
+             "command": "xp add @s 15 points"
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:ghast_tear"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 160,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:diamond"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 1200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:heart_of_the_sea"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:conduit_power",
+              "duration": 2400,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:dolphins_grace",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:totem_of_undying"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 3,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:nether_star"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 300,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:absorption",
+              "duration": 2400,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:dragon_breath"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:strength",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:speed",
+              "duration": 600,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:end_crystal"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:regeneration",
+              "duration": 200,
+              "amplifier": 1,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            },
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:haste",
+              "duration": 1200,
+              "amplifier": 0,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         },
+         {
+          "condition": {
+           "type": "apoli:equipped_item",
+           "equipment_slot": "mainhand",
+           "item_condition": {
+            "type": "apoli:ingredient",
+            "ingredient": {
+             "item": "minecraft:netherite_scrap"
+            }
+           }
+          },
+          "action": {
+           "type": "apoli:and",
+           "actions": [
+            {
+             "type": "apoli:apply_effect",
+             "effect": {
+              "effect": "minecraft:resistance",
+              "duration": 600,
+              "amplifier": 2,
+              "is_ambient": false,
+              "show_particles": false,
+              "show_icon": true
+             }
+            }
+           ]
+          }
+         }
+        ]
+       },
+       {
+        "type": "apoli:equipped_item_action",
+        "equipment_slot": "mainhand",
+        "action": {
+         "type": "apoli:consume",
+         "amount": 1
+        }
+       },
+       {
+        "type": "apoli:apply_effect",
+        "effect": {
+         "effect": "minecraft:saturation",
+         "duration": 1,
+         "amplifier": 0,
+         "is_ambient": true,
+         "show_particles": false,
+         "show_icon": false
+        }
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound stlboy:cosmic.chime player @a ~ ~ ~ 0.8 1.8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "playsound minecraft:entity.generic.drink player @s ~ ~ ~ 0.4 1.6"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.4 0.6 0.4 0.2 8"
+       },
+       {
+        "type": "apoli:execute_command",
+        "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:0.8} ~ ~1.2 ~ 0.3 0.4 0.3 0 4"
+       }
+      ]
+     }
+    }
+   ]
+  }
+ },
+ "starlight_day": {
+  "type": "apoli:action_over_time",
+  "interval": 600,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food_level",
+     "comparison": "<",
+     "compare_to": 6
+    },
+    {
+     "type": "apoli:exposed_to_sky"
+    },
+    {
+     "type": "apoli:daytime"
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 0,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1.8 ~ 0.3 0.2 0.3 0.01 2"
+    }
+   ]
+  }
+ },
+ "starlight_night": {
+  "type": "apoli:action_over_time",
+  "interval": 300,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food_level",
+     "comparison": "<",
+     "compare_to": 8
+    },
+    {
+     "type": "apoli:exposed_to_sky"
+    },
+    {
+     "type": "apoli:daytime",
+     "inverted": true
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 0,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1.8 ~ 0.3 0.2 0.3 0.01 2"
+    }
+   ]
+  }
+ },
+ "starlight_end": {
+  "type": "apoli:action_over_time",
+  "interval": 160,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food_level",
+     "comparison": "<",
+     "compare_to": 12
+    },
+    {
+     "type": "apoli:dimension",
+     "dimension": "minecraft:the_end"
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 0,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1.8 ~ 0.3 0.2 0.3 0.01 2"
+    }
+   ]
+  }
+ },
+ "siphon_small": {
+  "type": "apoli:self_action_on_kill",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:cosmic_types"
+  },
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<=",
+     "compare_to": 20
+    },
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 0,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.3 0.5 0.3 0.3 20"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.charge player @s ~ ~ ~ 0.5 1.8"
+    }
+   ]
+  }
+ },
+ "siphon_big": {
+  "type": "apoli:self_action_on_kill",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:cosmic_types"
+  },
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">",
+     "compare_to": 20
+    },
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": "<=",
+     "compare_to": 60
+    },
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 1,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.3 0.5 0.3 0.3 20"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.charge player @s ~ ~ ~ 0.5 1.8"
+    }
+   ]
+  }
+ },
+ "siphon_huge": {
+  "type": "apoli:self_action_on_kill",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:cosmic_types"
+  },
+  "target_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:attribute",
+     "attribute": "minecraft:generic.max_health",
+     "comparison": ">",
+     "compare_to": 60
+    },
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:player",
+     "inverted": true
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 3,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.3 0.5 0.3 0.3 20"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.charge player @s ~ ~ ~ 0.5 1.8"
+    }
+   ]
+  }
+ },
+ "siphon_player": {
+  "type": "apoli:self_action_on_kill",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:cosmic_types"
+  },
+  "target_condition": {
+   "type": "apoli:entity_type",
+   "entity_type": "minecraft:player"
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:apply_effect",
+     "effect": {
+      "effect": "minecraft:saturation",
+      "duration": 1,
+      "amplifier": 3,
+      "is_ambient": true,
+      "show_particles": false,
+      "show_icon": false
+     }
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:reverse_portal ~ ~1 ~ 0.3 0.5 0.3 0.3 20"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound stlboy:cosmic.charge player @s ~ ~ ~ 0.5 1.8"
+    }
+   ]
+  }
+ },
+ "edible_small": {
+  "type": "apoli:tooltip",
+  "hidden": true,
+  "position": "below_name",
+  "order": 0,
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:star_food_small"
+   }
+  },
+  "text": {
+   "translate": "stlboy.edible",
+   "fallback": "◇ Edible · +1",
+   "color": "#B9C4D6",
+   "italic": false,
+   "with": [
+    "◇",
+    "1"
+   ]
+  }
+ },
+ "edible_medium": {
+  "type": "apoli:tooltip",
+  "hidden": true,
+  "position": "below_name",
+  "order": 0,
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:star_food_medium"
+   }
+  },
+  "text": {
+   "translate": "stlboy.edible",
+   "fallback": "◆ Edible · +2",
+   "color": "#7FD8FF",
+   "italic": false,
+   "with": [
+    "◆",
+    "2"
+   ]
+  }
+ },
+ "edible_large": {
+  "type": "apoli:tooltip",
+  "hidden": true,
+  "position": "below_name",
+  "order": 0,
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:star_food_large"
+   }
+  },
+  "text": {
+   "translate": "stlboy.edible",
+   "fallback": "❖ Edible · +4",
+   "color": "#E59BFF",
+   "italic": false,
+   "with": [
+    "❖",
+    "4"
+   ]
+  }
+ },
+ "edible_huge": {
+  "type": "apoli:tooltip",
+  "hidden": true,
+  "position": "below_name",
+  "order": 0,
+  "item_condition": {
+   "type": "apoli:ingredient",
+   "ingredient": {
+    "tag": "stlboy:star_food_huge"
+   }
+  },
+  "text": {
+   "translate": "stlboy.edible",
+   "fallback": "★ Edible · +8",
+   "color": "#FFC85A",
+   "italic": false,
+   "with": [
+    "★",
+    "8"
+   ]
+  }
+ }
+}

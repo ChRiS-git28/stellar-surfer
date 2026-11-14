@@ -1,0 +1,50 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_self_vit2",
+  "icon": {
+   "item": "minecraft:cactus"
+  },
+  "cost": 4,
+  "frame": "goal",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 6
+  },
+  "order": 8
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_bet_thorns.0",
+    "fallback": "sk_bet_thorns"
+   }
+  }
+ ],
+ "thorns": {
+  "type": "apoli:action_when_hit",
+  "bientity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:actor_action",
+     "action": {
+      "type": "apoli:execute_command",
+      "command": "execute if entity @s[tag=stlboy_surfer] on attacker run damage @s 2 minecraft:thorns"
+     }
+    },
+    {
+     "type": "apoli:target_action",
+     "action": {
+      "type": "apoli:execute_command",
+      "command": "execute if entity @s[tag=stlboy_surfer] on attacker run damage @s 2 minecraft:thorns"
+     }
+    }
+   ]
+  }
+ }
+}

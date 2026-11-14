@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:arrows",
+    "#minecraft:impact_projectiles",
+    "minecraft:snowball",
+    "minecraft:egg",
+    "minecraft:potion",
+    "minecraft:llama_spit",
+    "minecraft:shulker_bullet",
+    {
+      "id": "minecraft:wind_charge",
+      "required": false
+    },
+    {
+      "id": "minecraft:breeze_wind_charge",
+      "required": false
+    }
+  ]
+}

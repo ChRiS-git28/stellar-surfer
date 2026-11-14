@@ -1,0 +1,73 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_self_guard",
+  "icon": {
+   "item": "minecraft:netherite_chestplate"
+  },
+  "cost": 3,
+  "frame": "goal",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 4
+  },
+  "order": 6
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.8 1.1"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:and",
+   "actions": []
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_self_ward.0",
+    "fallback": "§7Projectile damage §f-10%§7 more and magic damage §f-20%§7 (Iron's spells included). §8(Rank 5+)"
+   }
+  }
+ ],
+ "proj": {
+  "type": "apoli:modify_damage_taken",
+  "damage_condition": {
+   "type": "apoli:projectile"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.065
+  }
+ },
+ "magic": {
+  "type": "apoli:modify_damage_taken",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "stlboy:magic"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.13
+  }
+ }
+}

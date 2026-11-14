@@ -1,0 +1,38 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:cls_betelgeuse",
+  "icon": {
+   "item": "minecraft:golden_apple"
+  },
+  "cost": 1,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "order": 1
+ },
+ "attrs": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   }
+  ]
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_self.0",
+    "fallback": "§7+§c2 hearts§7. §8(Rank 1+)"
+   }
+  }
+ ]
+}

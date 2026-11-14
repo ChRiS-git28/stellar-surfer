@@ -1,0 +1,37 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_cluster"
+    },
+    "title": {
+      "text": "Trial: The Hunger",
+      "color": "light_purple",
+      "bold": true
+    },
+    "description": [
+      {
+        "text": "Everything she lost still drifts out there. Pull it home. §8(Trial · Rank 3 · needs Gravity Well · +2 points)",
+        "color": "gray"
+      },
+      {
+        "text": "\n✦ Memory: ",
+        "color": "gold"
+      },
+      {
+        "translate": "stlboy.memory.motes.fx",
+        "fallback": "+25% mining speed, +1 Stardust per kill",
+        "color": "green"
+      }
+    ],
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_3"
+}

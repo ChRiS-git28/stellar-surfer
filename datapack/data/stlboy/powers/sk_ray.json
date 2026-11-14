@@ -1,0 +1,39 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:cls_nebula",
+  "icon": {
+   "item": "minecraft:spyglass"
+  },
+  "cost": 1,
+  "frame": "task",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 1
+  },
+  "order": 1
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:execute_command",
+   "command": "tag @s add stlboy_sk_ray"
+  },
+  "entity_action_lost": {
+   "type": "apoli:execute_command",
+   "command": "tag @s remove stlboy_sk_ray"
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_ray.0",
+    "fallback": "§7Your Breath pierces §f+1§7 foe. §8(Rank 1+)"
+   }
+  }
+ ]
+}

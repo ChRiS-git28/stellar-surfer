@@ -1,0 +1,25 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:nautilus_shell"
+    },
+    "title": {
+      "text": "Offering: Astral Crystal",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Craft it (4 amethyst shards, 2 glowstone dust, ender pearl, diamond), hold it and right-click at Rank 2. §8Needs the Memories of the Ring & Meteor. Fill the bar to reach Rank 3 — Comet.",
+      "color": "gray"
+    },
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "parent": "stlboy:stardust/rank_2"
+}

@@ -1,0 +1,78 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_mag_reach",
+  "icon": {
+   "item": "minecraft:golden_hoe"
+  },
+  "cost": 5,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 8
+  },
+  "order": 17,
+  "excludes": [
+   "stlboy:sk_aur_ring"
+  ]
+ },
+ "mark": {
+  "type": "apoli:action_on_callback",
+  "entity_action_gained": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle minecraft:end_rod ~ ~1 ~ 0.35 0.6 0.35 0.06 14"
+    }
+   ]
+  },
+  "entity_action_lost": {
+   "type": "apoli:and",
+   "actions": []
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_ult_harvest.0",
+    "fallback": "§6Ultimate§7 · Items within §f12§7 and XP within §f20 blocks§7 come to you, §fLuck +2§7. §cOnly one Ultimate per Surfer.§8 (Rank 9)"
+   }
+  }
+ ],
+ "pull": {
+  "type": "apoli:action_over_time",
+  "interval": 4,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tp @e[type=minecraft:experience_orb,distance=..20] @s"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tp @e[type=minecraft:item,distance=..12,nbt=!{PickupDelay:32767s}] @s"
+    }
+   ]
+  }
+ },
+ "attrs": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.luck",
+    "operation": "addition",
+    "value": 1.0
+   }
+  ]
+ }
+}

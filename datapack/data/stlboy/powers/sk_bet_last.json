@@ -1,0 +1,77 @@
+{
+ "type": "apoli:multiple",
+ "skill": {
+  "parent": "stlboy:sk_bet_thorns",
+  "icon": {
+   "item": "minecraft:totem_of_undying"
+  },
+  "cost": 5,
+  "frame": "challenge",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 8
+  },
+  "order": 9
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_bet_last.0",
+    "fallback": "sk_bet_last"
+   }
+  }
+ ],
+ "cd": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 9600,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "cool": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:sk_bet_last_cd",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:sk_bet_last_cd",
+   "change": -1,
+   "operation": "add"
+  }
+ },
+ "save": {
+  "type": "apoli:prevent_death",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:sk_bet_last_cd",
+   "comparison": "==",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:cls/bet_last"
+    },
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:sk_bet_last_cd",
+     "change": 9600,
+     "operation": "set"
+    }
+   ]
+  }
+ }
+}

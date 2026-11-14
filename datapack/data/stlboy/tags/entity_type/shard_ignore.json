@@ -1,0 +1,18 @@
+{
+  "values": [
+    "minecraft:player",
+    "minecraft:armor_stand",
+    "minecraft:villager",
+    "minecraft:wandering_trader",
+    "minecraft:iron_golem",
+    "minecraft:snow_golem",
+    "minecraft:allay",
+    "minecraft:item_display",
+    "minecraft:block_display",
+    "minecraft:text_display",
+    "minecraft:marker",
+    "minecraft:interaction",
+    "minecraft:item",
+    "minecraft:experience_orb"
+  ]
+}

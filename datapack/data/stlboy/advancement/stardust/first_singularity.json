@@ -1,0 +1,27 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:ender_pearl"
+  },
+  "title": {
+   "text": "Black Hole",
+   "color": "light_purple"
+  },
+  "description": {
+   "text": "Hold the secondary key on nothing to summon a Black Hole. Scroll to move it."
+  },
+  "frame": "task",
+  "show_toast": true,
+  "announce_to_chat": false,
+  "hidden": false
+ },
+ "criteria": {
+  "c": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "parent": "stlboy:stardust/rank_3",
+ "rewards": {
+  "function": "stlboy:skills/point"
+ }
+}

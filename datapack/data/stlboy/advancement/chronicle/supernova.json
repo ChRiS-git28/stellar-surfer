@@ -1,0 +1,37 @@
+{
+ "display": {
+  "icon": {
+   "id": "minecraft:firework_star"
+  },
+  "title": {
+   "text": "The Birth of Light",
+   "color": "light_purple",
+   "bold": true
+  },
+  "description": [
+   {
+    "text": "Two orbs collided and the sky remembered how to scream in colour. §8(Cast your first Wormhole)",
+    "color": "gray"
+   },
+   {
+    "text": "\n✦ Memory: ",
+    "color": "gold"
+   },
+   {
+    "translate": "stlboy.memory.supernova.fx",
+    "fallback": "-8% magic damage, +5% speed, Fire Resistance",
+    "color": "green"
+   }
+  ],
+  "frame": "challenge",
+  "show_toast": true,
+  "announce_to_chat": true,
+  "hidden": false
+ },
+ "criteria": {
+  "c": {
+   "trigger": "minecraft:impossible"
+  }
+ },
+ "parent": "stlboy:stardust/rank_7"
+}

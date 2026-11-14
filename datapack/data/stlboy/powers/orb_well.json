@@ -1,0 +1,1026 @@
+{
+ "type": "apoli:multiple",
+ "hidden": true,
+ "name": "Black Hole",
+ "description": "Pulls everything into its heart.",
+ "drift": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/free_tick"
+    }
+   ]
+  }
+ },
+ "look": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#C9A6FFFF\",end_color:\"#3FD8FF00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 1 force"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#C9A6FFFF\",end_color:\"#3FD8FF00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 1.2 1.2 1.2 0.05 3 force"
+    },
+    {
+     "type": "apoli:and",
+     "actions": [
+      {
+       "type": "apoli:execute_command",
+       "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+      },
+      {
+       "type": "apoli:execute_command",
+       "command": "function stlboy:fx/well"
+      }
+     ]
+    }
+   ]
+  }
+ },
+ "pulse_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "scoreboard players operation #own stlboy.tmp = @s stlboy.own"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "function stlboy:orb/well_tick_pulse"
+    }
+   ]
+  }
+ },
+ "age": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "age_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:orb_well_age",
+   "comparison": "<",
+   "compare_to": 20
+  },
+  "entity_action": {
+   "type": "apoli:change_resource",
+   "resource": "stlboy:orb_well_age",
+   "change": 1,
+   "operation": "add"
+  }
+ },
+ "dying": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 20,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "dying_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:orb_well_dying",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:orb_well_dying",
+     "change": 1,
+     "operation": "add"
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:orb_well_dying",
+      "comparison": ">=",
+      "compare_to": 12
+     },
+     "if_action": {
+      "type": "apoli:execute_command",
+      "command": "kill @s"
+     }
+    }
+   ]
+  }
+ },
+ "pull_0": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 5.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.09
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 0..6",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_1": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 6.5,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.112
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 7..13",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_2": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 8.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.135
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 14..20",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_0_force": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 5.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.054,
+        "set": false
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 0..6 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_force,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_0_wide": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 7.5,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:target_condition",
+      "condition": {
+       "type": "apoli:command",
+       "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+       "comparison": ">=",
+       "compare_to": 1
+      }
+     },
+     {
+      "type": "apoli:distance",
+      "comparison": ">",
+      "compare_to": 5.0
+     }
+    ]
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.09
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 0..6 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_owide,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_1_force": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 6.5,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.0672,
+        "set": false
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 7..13 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_force,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_1_wide": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 9.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:target_condition",
+      "condition": {
+       "type": "apoli:command",
+       "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+       "comparison": ">=",
+       "compare_to": 1
+      }
+     },
+     {
+      "type": "apoli:distance",
+      "comparison": ">",
+      "compare_to": 6.5
+     }
+    ]
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.112
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 7..13 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_owide,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_2_force": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 8.0,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:target_condition",
+    "condition": {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+     "comparison": ">=",
+     "compare_to": 1
+    }
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.081,
+        "set": false
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 14..20 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_force,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ },
+ "pull_2_wide": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "entity_action": {
+   "type": "apoli:area_of_effect",
+   "radius": 10.5,
+   "shape": "sphere",
+   "include_actor": false,
+   "bientity_condition": {
+    "type": "apoli:and",
+    "conditions": [
+     {
+      "type": "apoli:target_condition",
+      "condition": {
+       "type": "apoli:command",
+       "command": "execute if entity @s[tag=!stlboy_orb,tag=!stlboy_surfer,type=!marker]",
+       "comparison": ">=",
+       "compare_to": 1
+      }
+     },
+     {
+      "type": "apoli:distance",
+      "comparison": ">",
+      "compare_to": 8.0
+     }
+    ]
+   },
+   "bientity_action": {
+    "type": "apoli:if_else_list",
+    "actions": [
+     {
+      "condition": {
+       "type": "apoli:target_condition",
+       "condition": {
+        "type": "apoli:in_tag",
+        "tag": "stlboy:well_loot"
+       }
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.3,
+        "set": true
+       }
+      }
+     },
+     {
+      "condition": {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:actor_condition",
+         "condition": {
+          "type": "apoli:command",
+          "command": "execute if entity @s[tag=!stlboy_orb_weak]",
+          "comparison": ">=",
+          "compare_to": 1
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:living"
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "c:bosses",
+          "inverted": true
+         }
+        }
+       ]
+      },
+      "action": {
+       "type": "apoli:if_else",
+       "condition": {
+        "type": "apoli:target_condition",
+        "condition": {
+         "type": "apoli:command",
+         "command": "execute if entity @s[predicate=stlboy:pull_ok,tag=!stlboy_mg]",
+         "comparison": ">=",
+         "compare_to": 1
+        }
+       },
+       "if_action": {
+        "type": "apoli:add_velocity",
+        "reference": "position",
+        "z": -0.135
+       }
+      }
+     }
+    ]
+   }
+  },
+  "condition": {
+   "type": "apoli:command",
+   "command": "execute if score @s stlboy.lvl matches 14..20 if entity @a[tag=stlboy_surfer,tag=stlboy_sk_owide,limit=1]",
+   "comparison": ">=",
+   "compare_to": 1
+  }
+ }
+}

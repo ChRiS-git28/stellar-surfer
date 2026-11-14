@@ -1,0 +1,35 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:amethyst_cluster"
+    },
+    "title": {
+      "text": "How the stars feed you",
+      "color": "light_purple"
+    },
+    "description": {
+      "text": "Stardust: ores (+2), amethyst (+3), ancient debris (+25), capped kills, Breath executions, Trials (40–180) and bosses (Guardian 150, Warden 250, Wither 300, Dragon 400). Each Rank and each Trial grants Skill Points: open the Skill Tree screen to spend them. Each branch offers two paths, only one can be taken."
+    },
+    "frame": "task",
+    "show_toast": false,
+    "announce_to_chat": false,
+    "hidden": false
+  },
+  "criteria": {
+    "c": {
+      "trigger": "minecraft:tick",
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "nbt": "{Tags:[\"stlboy_surfer\"]}"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "parent": "stlboy:chronicle/root"
+}

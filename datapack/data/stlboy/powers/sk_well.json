@@ -1,0 +1,34 @@
+{
+ "type": "apoli:multiple",
+ "mark": {
+  "type": "apoli:action_over_time",
+  "interval": 20,
+  "entity_action": {
+   "type": "apoli:if_else",
+   "condition": {
+    "type": "apoli:resource",
+    "resource": "stlboy:stardust_rank",
+    "comparison": ">=",
+    "compare_to": 3
+   },
+   "if_action": {
+    "type": "apoli:execute_command",
+    "command": "tag @s add stlboy_sk_well"
+   },
+   "else_action": {
+    "type": "apoli:execute_command",
+    "command": "tag @s remove stlboy_sk_well"
+   }
+  }
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.sk_well.0",
+    "fallback": "§eHold Secondary§7 → summon & steer a §5Black Hole§7. §fScroll§7 pushes / pulls it. §8(Rank 3+)"
+   }
+  }
+ ]
+}

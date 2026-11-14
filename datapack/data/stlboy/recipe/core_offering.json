@@ -1,0 +1,47 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:nether_star"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:netherite_scrap"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    },
+    {
+      "item": "minecraft:blaze_rod"
+    },
+    {
+      "item": "minecraft:magma_cream"
+    },
+    {
+      "item": "minecraft:ghast_tear"
+    }
+  ],
+  "result": {
+    "id": "minecraft:phantom_membrane",
+    "count": 1,
+    "components": {
+      "minecraft:custom_data": {
+        "stlboy_offer": "core"
+      },
+      "minecraft:custom_model_data": 7112,
+      "minecraft:item_name": "{\"text\":\"§6Dead Star Core\"}",
+      "minecraft:rarity": "epic",
+      "minecraft:enchantment_glint_override": true,
+      "minecraft:lore": [
+        "{\"text\":\"§r§7Right-click at Rank 4 to offer it and open the way to Rank 5.\",\"italic\":false}"
+      ]
+    }
+  },
+  "group": "stlboy_offering"
+}
