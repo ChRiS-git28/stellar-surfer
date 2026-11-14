@@ -32,9 +32,9 @@ execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] st
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.life matches ..0 run function stlboy:orb/sn_end
 # --- Pont d'Einstein-Rosen : entrer dans une bouche = ressortir par l'autre (en tant que le Surfer) ---
 execute if score @s stlboy.wj matches 1.. run scoreboard players remove @s stlboy.wj 1
-# plonger dans le coeur EN SURF : effondrement (le temps restant du champ devient une implosion), tu ressors par l'autre bouche
-execute store result score #wa stlboy.tmp run resource get @s stlboy:flight_armed
-execute unless score @s stlboy.wj matches 1.. if score #wa stlboy.tmp matches 1 if entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..2.2] run return run function stlboy:orb/wh_collapse
+# Rang 10 : entrer dans le coeur ramene a ton point de reapparition (meme dans une autre dimension), si tu en as un
+execute store result score #wr stlboy.tmp run resource get @s stlboy:stardust_rank
+execute unless score @s stlboy.wj matches 1.. if score #wr stlboy.tmp matches 10.. if data entity @s SpawnX if entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..1.8] run return run function stlboy:orb/wh_home
 execute unless score @s stlboy.wj matches 1.. if entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..1.8] run return run function stlboy:orb/wh_cross {from:"stlboy_sn",to:"stlboy_sn_exit"}
 execute unless score @s stlboy.wj matches 1.. if entity @e[type=minecraft:marker,tag=stlboy_sn_exit,predicate=stlboy:owned,distance=..1.8] run return run function stlboy:orb/wh_cross {from:"stlboy_sn_exit",to:"stlboy_sn"}
 execute at @e[type=minecraft:marker,tag=stlboy_sn_exit,predicate=stlboy:owned,limit=1] run function stlboy:orb/wh_mouth

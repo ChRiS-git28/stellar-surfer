@@ -51,10 +51,20 @@
      "type": "apoli:food"
     },
     {
-     "type": "apoli:ingredient",
-     "ingredient": {
-      "tag": "stlboy:star_food"
-     },
+     "type": "apoli:and",
+     "conditions": [
+      {
+       "type": "apoli:ingredient",
+       "ingredient": {
+        "tag": "stlboy:star_food"
+       }
+      },
+      {
+       "type": "apoli:nbt",
+       "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+       "inverted": true
+      }
+     ],
      "inverted": true
     }
    ]
@@ -63,10 +73,20 @@
  "no_vanilla_use": {
   "type": "apoli:prevent_item_use",
   "item_condition": {
-   "type": "apoli:ingredient",
-   "ingredient": {
-    "tag": "stlboy:star_food"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food"
+     }
+    },
+    {
+     "type": "apoli:nbt",
+     "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+     "inverted": true
+    }
+   ]
   }
  },
  "absorb": {
@@ -87,10 +107,20 @@
      "type": "apoli:equipped_item",
      "equipment_slot": "mainhand",
      "item_condition": {
-      "type": "apoli:ingredient",
-      "ingredient": {
-       "tag": "stlboy:star_food"
-      }
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:ingredient",
+        "ingredient": {
+         "tag": "stlboy:star_food"
+        }
+       },
+       {
+        "type": "apoli:nbt",
+        "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+        "inverted": true
+       }
+      ]
      }
     }
    ]
@@ -103,10 +133,20 @@
       "type": "apoli:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-       "type": "apoli:ingredient",
-       "ingredient": {
-        "tag": "stlboy:star_food_huge"
-       }
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:ingredient",
+         "ingredient": {
+          "tag": "stlboy:star_food_huge"
+         }
+        },
+        {
+         "type": "apoli:nbt",
+         "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+         "inverted": true
+        }
+       ]
       }
      },
      "action": {
@@ -833,10 +873,20 @@
       "type": "apoli:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-       "type": "apoli:ingredient",
-       "ingredient": {
-        "tag": "stlboy:star_food_large"
-       }
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:ingredient",
+         "ingredient": {
+          "tag": "stlboy:star_food_large"
+         }
+        },
+        {
+         "type": "apoli:nbt",
+         "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+         "inverted": true
+        }
+       ]
       }
      },
      "action": {
@@ -1563,10 +1613,20 @@
       "type": "apoli:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-       "type": "apoli:ingredient",
-       "ingredient": {
-        "tag": "stlboy:star_food_medium"
-       }
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:ingredient",
+         "ingredient": {
+          "tag": "stlboy:star_food_medium"
+         }
+        },
+        {
+         "type": "apoli:nbt",
+         "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+         "inverted": true
+        }
+       ]
       }
      },
      "action": {
@@ -2293,10 +2353,20 @@
       "type": "apoli:equipped_item",
       "equipment_slot": "mainhand",
       "item_condition": {
-       "type": "apoli:ingredient",
-       "ingredient": {
-        "tag": "stlboy:star_food_small"
-       }
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:ingredient",
+         "ingredient": {
+          "tag": "stlboy:star_food_small"
+         }
+        },
+        {
+         "type": "apoli:nbt",
+         "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+         "inverted": true
+        }
+       ]
       }
      },
      "action": {
@@ -3338,10 +3408,20 @@
   "position": "below_name",
   "order": 0,
   "item_condition": {
-   "type": "apoli:ingredient",
-   "ingredient": {
-    "tag": "stlboy:star_food_small"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food_small"
+     }
+    },
+    {
+     "type": "apoli:nbt",
+     "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+     "inverted": true
+    }
+   ]
   },
   "text": {
    "translate": "stlboy.edible",
@@ -3360,10 +3440,20 @@
   "position": "below_name",
   "order": 0,
   "item_condition": {
-   "type": "apoli:ingredient",
-   "ingredient": {
-    "tag": "stlboy:star_food_medium"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food_medium"
+     }
+    },
+    {
+     "type": "apoli:nbt",
+     "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+     "inverted": true
+    }
+   ]
   },
   "text": {
    "translate": "stlboy.edible",
@@ -3382,10 +3472,20 @@
   "position": "below_name",
   "order": 0,
   "item_condition": {
-   "type": "apoli:ingredient",
-   "ingredient": {
-    "tag": "stlboy:star_food_large"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food_large"
+     }
+    },
+    {
+     "type": "apoli:nbt",
+     "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+     "inverted": true
+    }
+   ]
   },
   "text": {
    "translate": "stlboy.edible",
@@ -3404,10 +3504,20 @@
   "position": "below_name",
   "order": 0,
   "item_condition": {
-   "type": "apoli:ingredient",
-   "ingredient": {
-    "tag": "stlboy:star_food_huge"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:ingredient",
+     "ingredient": {
+      "tag": "stlboy:star_food_huge"
+     }
+    },
+    {
+     "type": "apoli:nbt",
+     "nbt": "{components:{\"minecraft:custom_data\":{}}}",
+     "inverted": true
+    }
+   ]
   },
   "text": {
    "translate": "stlboy.edible",

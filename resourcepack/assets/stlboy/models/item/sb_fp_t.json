@@ -1,0 +1,180 @@
+{
+ "credit": "Stellar Surfer - Stellar Breath (rayon premiere personne)",
+ "render_type": "minecraft:translucent",
+ "textures": {
+  "core": "stlboy:item/beam/body_core",
+  "mid": "stlboy:item/beam/body_mid",
+  "haze": "stlboy:item/beam/body_haze",
+  "particle": "stlboy:item/beam/body_core"
+ },
+ "elements": [
+  {
+   "from": [
+    3.2,
+    3.2,
+    0
+   ],
+   "to": [
+    12.8,
+    12.8,
+    16
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#haze",
+     "tintindex": 0,
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#haze",
+     "tintindex": 0,
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#haze",
+     "tintindex": 0
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#haze",
+     "tintindex": 0
+    }
+   }
+  },
+  {
+   "from": [
+    5.6,
+    5.6,
+    0
+   ],
+   "to": [
+    10.4,
+    10.4,
+    16
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#mid",
+     "tintindex": 0,
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#mid",
+     "tintindex": 0,
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#mid",
+     "tintindex": 0
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#mid",
+     "tintindex": 0
+    }
+   }
+  },
+  {
+   "from": [
+    7.0,
+    7.0,
+    0
+   ],
+   "to": [
+    9.0,
+    9.0,
+    16
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core",
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core",
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
+    }
+   }
+  }
+ ],
+ "display": {}
+}

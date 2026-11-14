@@ -7,9 +7,12 @@ tag @e[tag=stlboy_grow1] remove stlboy_grow1
 tag @e[tag=stlboy_grow0] add stlboy_grow1
 tag @e[tag=stlboy_grow0] remove stlboy_grow0
 execute as @e[tag=stlboy_cst,tag=!stlboy_cdone,predicate=stlboy:owned] run function stlboy:breath/owner_check
+# pause de 0,25 s entre deux constellations (la 4e etoile reste allumee au HUD), puis la jauge repart de zero
+execute as @e[tag=stlboy_bt,scores={stlboy.cwait=1..},predicate=stlboy:cowned] run function stlboy:breath/cwait
+execute if score @s stlboy.stars matches 4.. unless entity @e[tag=stlboy_bt,scores={stlboy.cwait=1..},predicate=stlboy:cowned] run scoreboard players set @s stlboy.stars 0
+# la figure achevee s'eteint en 0,25 s
 scoreboard players remove @e[tag=stlboy_cdone] stlboy.life 1
-execute as @e[type=minecraft:item_display,tag=stlboy_cstar,tag=stlboy_cdone,scores={stlboy.life=15}] run data merge entity @s {start_interpolation:0,interpolation_duration:3,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.95f,0.95f,0.95f]}}
-execute as @e[type=minecraft:item_display,tag=stlboy_cdone,scores={stlboy.life=9}] run data merge entity @s {start_interpolation:0,interpolation_duration:9,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0f,0f,0f]}}
+execute as @e[type=minecraft:item_display,tag=stlboy_cdone,scores={stlboy.life=4}] run data merge entity @s {start_interpolation:0,interpolation_duration:4,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0f,0f,0f]}}
 kill @e[tag=stlboy_cdone,scores={stlboy.life=..0}]
 function stlboy:vis/tick
 # lueur des etoiles vivantes (une image sur deux)

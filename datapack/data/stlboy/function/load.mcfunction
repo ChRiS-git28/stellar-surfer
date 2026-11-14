@@ -19,6 +19,7 @@ scoreboard players set #9 stlboy.const 9
 scoreboard players set #10 stlboy.const 10
 scoreboard players set #20 stlboy.const 20
 scoreboard players set #4 stlboy.const 4
+scoreboard players set #cm1 stlboy.const -1
 scoreboard players set #5 stlboy.const 5
 scoreboard players set #100 stlboy.const 100
 scoreboard objectives add stlboy.sntot dummy
@@ -75,6 +76,9 @@ kill @e[type=minecraft:item_display,tag=stlboy_ofx]
 # --- Multi-Surfer (jusqu'a 5) ---
 scoreboard objectives add stlboy.sid dummy
 scoreboard objectives add stlboy.pal dummy
+scoreboard objectives add stlboy.cwait dummy
+scoreboard objectives add stlboy.bage dummy
+scoreboard objectives add stlboy.clast dummy
 scoreboard objectives add stlboy.palx dummy
 scoreboard objectives add stlboy.own dummy
 scoreboard objectives add stlboy.oid dummy

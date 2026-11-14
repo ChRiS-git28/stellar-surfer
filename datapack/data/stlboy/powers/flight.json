@@ -1334,7 +1334,7 @@
        "if_action": {
         "type": "apoli:add_velocity",
         "space": "world",
-        "y": 0.01875
+        "y": 0.024
        }
       },
       {
@@ -1348,7 +1348,7 @@
        "if_action": {
         "type": "apoli:add_velocity",
         "space": "world",
-        "y": -0.01875
+        "y": -0.024
        }
       }
      ]
@@ -2349,15 +2349,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "particle minecraft:small_gust ~ ~0.6 ~ 0 0 0 0 1"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:electric_spark ~ ~0.8 ~ 0.4 0.4 0.4 0.3 14"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.4 0.4 0.4 0 12"
+               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.3 0.3 0.3 0 4"
               },
               {
                "type": "apoli:change_resource",
@@ -2403,15 +2395,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "particle minecraft:small_gust ~ ~0.6 ~ 0 0 0 0 1"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:electric_spark ~ ~0.8 ~ 0.4 0.4 0.4 0.3 14"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.4 0.4 0.4 0 12"
+               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.3 0.3 0.3 0 4"
               },
               {
                "type": "apoli:change_resource",
@@ -2457,15 +2441,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "particle minecraft:small_gust ~ ~0.6 ~ 0 0 0 0 1"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:electric_spark ~ ~0.8 ~ 0.4 0.4 0.4 0.3 14"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.4 0.4 0.4 0 12"
+               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.3 0.3 0.3 0 4"
               },
               {
                "type": "apoli:change_resource",
@@ -2511,15 +2487,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "particle minecraft:small_gust ~ ~0.6 ~ 0 0 0 0 1"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:electric_spark ~ ~0.8 ~ 0.4 0.4 0.4 0.3 14"
-              },
-              {
-               "type": "apoli:execute_command",
-               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.4 0.4 0.4 0 12"
+               "command": "particle minecraft:dust{color:[0.62,0.38,1.0],scale:1.1} ~ ~0.8 ~ 0.3 0.3 0.3 0 4"
               },
               {
                "type": "apoli:change_resource",

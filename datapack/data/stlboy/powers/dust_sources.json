@@ -132,6 +132,19 @@
      "command": "function stlboy:dust/kill_gain {n:1}"
     }
    ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
+    }
+   ]
   }
  },
  "kill_2": {
@@ -168,6 +181,19 @@
     {
      "type": "apoli:execute_command",
      "command": "function stlboy:dust/kill_gain {n:2}"
+    }
+   ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
     }
    ]
   }
@@ -208,6 +234,19 @@
      "command": "function stlboy:dust/kill_gain {n:3}"
     }
    ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
+    }
+   ]
   }
  },
  "kill_4": {
@@ -244,6 +283,19 @@
     {
      "type": "apoli:execute_command",
      "command": "function stlboy:dust/kill_gain {n:4}"
+    }
+   ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
     }
    ]
   }
@@ -284,6 +336,19 @@
      "command": "function stlboy:dust/kill_gain {n:5}"
     }
    ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
+    }
+   ]
   }
  },
  "kill_6": {
@@ -320,6 +385,19 @@
     {
      "type": "apoli:execute_command",
      "command": "function stlboy:dust/kill_gain {n:6}"
+    }
+   ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
     }
    ]
   }
@@ -360,6 +438,19 @@
      "command": "function stlboy:dust/kill_gain {n:7}"
     }
    ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
+    }
+   ]
   }
  },
  "kill_8": {
@@ -390,6 +481,19 @@
     {
      "type": "apoli:execute_command",
      "command": "function stlboy:dust/kill_gain {n:8}"
+    }
+   ]
+  },
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "stlboy:cosmic"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
     }
    ]
   }

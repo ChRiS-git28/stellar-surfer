@@ -18,6 +18,18 @@
     },
     {
       "predicate": {
+        "custom_model_data": 7122
+      },
+      "model": "stlboy:item/sb_fp_t"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7123
+      },
+      "model": "stlboy:item/sb_hit_t"
+    },
+    {
+      "predicate": {
         "custom_model_data": 7130
       },
       "model": "stlboy:item/ofx_well_core"

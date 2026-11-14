@@ -4,7 +4,7 @@ $execute if entity @e[type=minecraft:item_display,tag=stlboy_cdone,scores={stlbo
 $execute unless entity @s[tag=stlboy_cskip] unless entity @e[type=minecraft:item_display,tag=stlboy_s4,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] run function stlboy:breath/vis/s4 with storage stlboy:breath cur
 $execute unless entity @s[tag=stlboy_cskip] unless entity @e[type=minecraft:item_display,tag=stlboy_l3,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] run function stlboy:breath/vis/l3 with storage stlboy:breath cur
 execute unless entity @s[tag=stlboy_cskip] run function stlboy:breath/vis/l4 with storage stlboy:breath cur
-$scoreboard players set @e[tag=stlboy_cst,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] stlboy.life 18
+$scoreboard players set @e[tag=stlboy_cst,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] stlboy.life 5
 $tag @e[tag=stlboy_cst,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] add stlboy_cdone
 particle minecraft:flash ~ ~1 ~ 0 0 0 0 1
 playsound stlboy:cosmic.chime player @a ~ ~ ~ 1 2.0

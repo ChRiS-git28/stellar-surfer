@@ -1,6 +1,8 @@
 # Constellation ! (en tant que la cible)
 execute if entity @s[tag=stlboy_tr_cecho] run function stlboy:trial/c_hit
-scoreboard players set @s stlboy.stars 0
+# la 4e etoile reste allumee (HUD) pendant 0,25 s, puis la figure s'efface et la suivante peut naitre (voir breath/cwait)
+scoreboard players set @s stlboy.stars 4
+scoreboard players set @s stlboy.cwait 5
 function stlboy:breath/const_fx with storage stlboy:breath cur
 resource change @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] stlboy:stellar_breath_siphon 1
 # Degats cosmiques de la Constellation : base FIXE (4) + competences + Memoires, en UN seul coup
@@ -17,6 +19,7 @@ execute if score #fly stlboy.tmp matches 1 run scoreboard players operation #cdm
 execute if score #fly stlboy.tmp matches 1 run scoreboard players operation #cdmg stlboy.tmp /= #c2 stlboy.tmp
 execute if entity @s[type=#c:bosses] if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_fracture,limit=1] run function stlboy:cosmic/boss_pct
 execute store result storage stlboy:tmp cd double 0.1 run scoreboard players get #cdmg stlboy.tmp
+scoreboard players set #cfree stlboy.tmp 1
 function stlboy:cosmic/hit with storage stlboy:tmp
 execute if score @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] stlboy.chain matches ..2 run scoreboard players add @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] stlboy.chain 1
 execute if entity @s[type=!#c:bosses] run function stlboy:breath/exec_check

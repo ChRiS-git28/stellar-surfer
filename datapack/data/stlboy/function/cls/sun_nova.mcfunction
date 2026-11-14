@@ -1,5 +1,5 @@
 # Supernova intime : sous 30 % de vie, le Surfer explose (12 degats a 6 blocs, 1 fois par minute)
-execute as @e[distance=..6,type=!#stlboy:no_beam,tag=!stlboy_orb,predicate=!stlboy:owner,predicate=!stlboy:ally] unless entity @s[type=minecraft:player,gamemode=spectator] run damage @s 8 stlboy:cosmic by @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1]
+execute as @e[distance=..6,type=!#stlboy:no_beam,tag=!stlboy_orb,predicate=!stlboy:owner,predicate=!stlboy:ally] unless entity @s[type=minecraft:player,gamemode=spectator] run function stlboy:cosmic/hit {cd:8}
 effect give @s minecraft:resistance 3 1 true
 particle minecraft:flash ~ ~1 ~ 0 0 0 0 1
 particle minecraft:explosion_emitter ~ ~1 ~ 0 0 0 0 1

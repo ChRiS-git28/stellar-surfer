@@ -1,0 +1,3 @@
+# (macro) applique la forme du rayon et de l'eclat d'impact de premiere personne
+$data merge entity @e[type=minecraft:item_display,tag=stlboy_bfp,tag=!stlboy_fpd1,limit=1,predicate=stlboy:owned] {start_interpolation:0,interpolation_duration:1,transformation:{translation:[0.125f,-0.525f,$(ftz)f],left_rotation:[0f,$(fqy)f,$(fqk)f,$(fqk)f],scale:[$(wf)f,$(wf)f,$(fsz)f],right_rotation:[0f,0f,0f,1f]}}
+$data merge entity @e[type=minecraft:item_display,tag=stlboy_bfpi,tag=!stlboy_fpd1,limit=1,predicate=stlboy:owned] {start_interpolation:0,interpolation_duration:1,transformation:{translation:[0f,-0.65f,$(fhz)f],left_rotation:[0f,$(qz)f,0f,$(qw)f],right_rotation:[0.3826834f,0f,0f,0.9238795f],scale:[$(h)f,$(h)f,$(h)f]}}

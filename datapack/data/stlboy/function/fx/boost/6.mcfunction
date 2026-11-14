@@ -1,22 +1,11 @@
-# Onde de choc du mini-boost, image 1/6 : anneau perpendiculaire au regard
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.45 ^1.00 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.42 ^1.17 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.32 ^1.32 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.17 ^1.42 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.00 ^1.45 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.17 ^1.42 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.32 ^1.32 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.42 ^1.17 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.45 ^1.00 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.42 ^0.83 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.32 ^0.68 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.17 ^0.58 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^-0.00 ^0.55 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.17 ^0.58 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.32 ^0.68 ^-0.4 0 0 0 0 1
-particle minecraft:dust{color:[0.45,0.90,1.0],scale:1.10} ^0.42 ^0.83 ^-0.4 0 0 0 0 1
-particle minecraft:flash ^ ^1 ^-0.4 0 0 0 0 1
-particle minecraft:end_rod ^0.45 ^1.00 ^-0.4 0 0 0 0 1
-particle minecraft:end_rod ^0.00 ^1.45 ^-0.4 0 0 0 0 1
-particle minecraft:end_rod ^-0.45 ^1.00 ^-0.4 0 0 0 0 1
-particle minecraft:end_rod ^-0.00 ^0.55 ^-0.4 0 0 0 0 1
+# Ondulation du mini-boost, image 1/6 : anneau fin perpendiculaire au regard (pas de flash)
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^0.35 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^0.28 ^1.21 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^0.11 ^1.33 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^-0.11 ^1.33 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^-0.28 ^1.21 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^-0.35 ^1.00 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^-0.28 ^0.79 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^-0.11 ^0.67 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^0.11 ^0.67 ^-0.4 0 0 0 0 1
+particle minecraft:dust{color:[0.62,0.91,1.0],scale:0.55} ^0.28 ^0.79 ^-0.4 0 0 0 0 1

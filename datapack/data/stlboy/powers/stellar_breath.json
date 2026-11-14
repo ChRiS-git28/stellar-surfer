@@ -70,6 +70,15 @@
    "should_render": false
   }
  },
+ "cd": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 40,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
  "stars": {
   "type": "apoli:resource",
   "min": 0,
@@ -113,6 +122,12 @@
         "type": "apoli:food_level",
         "comparison": ">",
         "compare_to": 6
+       },
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:stellar_breath_cd",
+        "comparison": "==",
+        "compare_to": 0
        }
       ]
      },
@@ -238,16 +253,49 @@
              {
               "type": "apoli:execute_command",
               "command": "function stlboy:breath/beam_spawn"
+             },
+             {
+              "type": "apoli:area_of_effect",
+              "radius": 4,
+              "bientity_condition": {
+               "type": "apoli:target_condition",
+               "condition": {
+                "type": "apoli:command",
+                "command": "execute if entity @s[tag=stlboy_bray_new]",
+                "comparison": ">=",
+                "compare_to": 1
+               }
+              },
+              "bientity_action": {
+               "type": "apoli:invert",
+               "action": {
+                "type": "apoli:mount",
+                "y": -0.18,
+                "force": true
+               }
+              }
+             },
+             {
+              "type": "apoli:execute_command",
+              "command": "tag @e[type=minecraft:item_display,tag=stlboy_bray_new] remove stlboy_bray_new"
              }
             ]
            },
            {
             "type": "apoli:execute_command",
-            "command": "playsound stlboy:cosmic.on player @a ~ ~ ~ 0.9 1.6"
+            "command": "playsound stlboy:cosmic.beam_burst player @a ~ ~ ~ 1.2 1.25"
            },
            {
             "type": "apoli:execute_command",
-            "command": "playsound minecraft:entity.breeze.shoot player @a ~ ~ ~ 0.9 0.7"
+            "command": "playsound minecraft:entity.warden.sonic_boom player @a ~ ~ ~ 0.55 1.6"
+           },
+           {
+            "type": "apoli:execute_command",
+            "command": "playsound minecraft:item.trident.thunder player @a ~ ~ ~ 0.3 1.9"
+           },
+           {
+            "type": "apoli:execute_command",
+            "command": "playsound minecraft:entity.generic.explode player @a ~ ~ ~ 0.25 1.8"
            },
            {
             "type": "apoli:execute_command",
@@ -673,6 +721,21 @@
         "resource": "stlboy:stellar_breath_charge",
         "change": 0,
         "operation": "set"
+       },
+       {
+        "type": "apoli:if_else",
+        "condition": {
+         "type": "apoli:resource",
+         "resource": "stlboy:stellar_breath_firing",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        "if_action": {
+         "type": "apoli:change_resource",
+         "resource": "stlboy:stellar_breath_cd",
+         "change": 40,
+         "operation": "set"
+        }
        },
        {
         "type": "apoli:change_resource",
@@ -1112,7 +1175,7 @@
     "type": "apoli:target_condition",
     "condition": {
      "type": "apoli:command",
-     "command": "execute if entity @s[tag=stlboy_bfree]",
+     "command": "execute if entity @s[tag=stlboy_bfree] if score @s stlboy.own = @p[tag=stlboy_surfer] stlboy.sid",
      "comparison": ">=",
      "compare_to": 1
     }
@@ -1121,7 +1184,8 @@
     "type": "apoli:invert",
     "action": {
      "type": "apoli:mount",
-     "force": true
+     "force": true,
+     "y": -0.18
     }
    }
   }
@@ -1455,6 +1519,83 @@
     "y": 0,
     "z": 0
    }
+  }
+ },
+ "fp_hide": {
+  "type": "apoli:prevent_entity_render",
+  "entity_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:entity_type",
+     "entity_type": "minecraft:item_display"
+    },
+    {
+     "type": "apoli:or",
+     "conditions": [
+      {
+       "type": "apoli:nbt",
+       "nbt": "{item:{components:{\"minecraft:custom_model_data\":7120}}}"
+      },
+      {
+       "type": "apoli:nbt",
+       "nbt": "{item:{components:{\"minecraft:custom_model_data\":7121}}}"
+      }
+     ]
+    }
+   ]
+  },
+  "bientity_condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:actor_condition",
+     "condition": {
+      "type": "apoli:perspective",
+      "perspective": "first_person"
+     }
+    },
+    {
+     "type": "apoli:invert",
+     "condition": {
+      "type": "apoli:riding_root"
+     }
+    }
+   ]
+  }
+ },
+ "cd_tick": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stellar_breath_cd",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:change_resource",
+     "resource": "stlboy:stellar_breath_cd",
+     "change": -1,
+     "operation": "add"
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:resource",
+      "resource": "stlboy:stellar_breath_cd",
+      "comparison": "==",
+      "compare_to": 0
+     },
+     "if_action": {
+      "type": "apoli:execute_command",
+      "command": "playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 0.4 1.8"
+     }
+    }
+   ]
   }
  }
 }

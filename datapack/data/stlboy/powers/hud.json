@@ -93,6 +93,15 @@
    "should_render": false
   }
  },
+ "min": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1,
+  "start_value": 0,
+  "hud_render": {
+   "should_render": false
+  }
+ },
  "wake": {
   "type": "apoli:action_over_time",
   "interval": 1,
@@ -212,16 +221,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -247,75 +267,86 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
-      },
-      {
-       "type": "apoli:or",
+       "type": "apoli:and",
        "conditions": [
         {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_well"
-          },
-          {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 3
-          }
-         ]
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
         },
         {
-         "type": "apoli:and",
+         "type": "apoli:or",
          "conditions": [
           {
-           "type": "apoli:power",
-           "power": "stlboy:sk_nova"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_well"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 3
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 5
-          }
-         ]
-        },
-        {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_sn"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_nova"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 5
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 7
-          }
-         ]
-        },
-        {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_mag"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_sn"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 7
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 1
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_mag"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           ]
           }
          ]
         }
        ]
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:hud_min",
+       "comparison": "==",
+       "compare_to": 0
       }
      ]
     },
@@ -341,16 +372,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -376,14 +418,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -411,16 +464,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -446,14 +510,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -1143,14 +1218,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:stellar_breath_firing",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:stellar_breath_firing",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -1179,16 +1265,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 0
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 0
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:stellar_breath_firing",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:stellar_breath_firing",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -2661,16 +2758,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -2696,75 +2804,86 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
-      },
-      {
-       "type": "apoli:or",
+       "type": "apoli:and",
        "conditions": [
         {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_well"
-          },
-          {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 3
-          }
-         ]
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
         },
         {
-         "type": "apoli:and",
+         "type": "apoli:or",
          "conditions": [
           {
-           "type": "apoli:power",
-           "power": "stlboy:sk_nova"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_well"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 3
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 5
-          }
-         ]
-        },
-        {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_sn"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_nova"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 5
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 7
-          }
-         ]
-        },
-        {
-         "type": "apoli:and",
-         "conditions": [
-          {
-           "type": "apoli:power",
-           "power": "stlboy:sk_mag"
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_sn"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 7
+            }
+           ]
           },
           {
-           "type": "apoli:resource",
-           "resource": "stlboy:stardust_rank",
-           "comparison": ">=",
-           "compare_to": 1
+           "type": "apoli:and",
+           "conditions": [
+            {
+             "type": "apoli:power",
+             "power": "stlboy:sk_mag"
+            },
+            {
+             "type": "apoli:resource",
+             "resource": "stlboy:stardust_rank",
+             "comparison": ">=",
+             "compare_to": 1
+            }
+           ]
           }
          ]
         }
        ]
+      },
+      {
+       "type": "apoli:resource",
+       "resource": "stlboy:hud_min",
+       "comparison": "==",
+       "compare_to": 0
       }
      ]
     },
@@ -2790,16 +2909,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -2825,14 +2955,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -2860,16 +3001,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },
@@ -2895,14 +3047,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_anim",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:hud_anim",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -3592,14 +3755,25 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:stellar_breath_firing",
+         "comparison": "==",
+         "compare_to": 0
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:stellar_breath_firing",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
        "compare_to": 0
       }
@@ -3628,16 +3802,27 @@
      "type": "apoli:and",
      "conditions": [
       {
-       "type": "apoli:resource",
-       "resource": "stlboy:hud_side",
-       "comparison": "==",
-       "compare_to": 1
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:hud_side",
+         "comparison": "==",
+         "compare_to": 1
+        },
+        {
+         "type": "apoli:resource",
+         "resource": "stlboy:stellar_breath_firing",
+         "comparison": "==",
+         "compare_to": 1
+        }
+       ]
       },
       {
        "type": "apoli:resource",
-       "resource": "stlboy:stellar_breath_firing",
+       "resource": "stlboy:hud_min",
        "comparison": "==",
-       "compare_to": 1
+       "compare_to": 0
       }
      ]
     },

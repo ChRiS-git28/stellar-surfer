@@ -28,6 +28,15 @@ execute if score @s stlboy.hud matches 40 run resource set @s stlboy:hud_fxq 0
 execute if score @s stlboy.hud matches 41 run resource set @s stlboy:hud_fxq 1
 execute if score @s stlboy.hud matches 42 run resource set @s stlboy:hud_fxq 2
 execute if score @s stlboy.hud matches 50 run function stlboy:hud/reset
-execute if score @s stlboy.hud matches 10..50 run playsound minecraft:block.amethyst_block.chime master @s ~ ~ ~ 0.6 1.6
+# positions toutes faites (le cote gauche/droite est garde) : haut, milieu, bas
+execute if score @s stlboy.hud matches 61 run resource set @s stlboy:hud_ly -72
+execute if score @s stlboy.hud matches 62 run resource set @s stlboy:hud_ly 0
+execute if score @s stlboy.hud matches 63 run resource set @s stlboy:hud_ly 64
+execute if score @s stlboy.hud matches 61..63 run resource set @s stlboy:hud_lx 0
+# mode minimaliste : seulement l'essentiel (rang, recharges, jauges)
+execute store result score #mn stlboy.tmp run resource get @s stlboy:hud_min
+execute if score @s stlboy.hud matches 60 if score #mn stlboy.tmp matches 1 run resource set @s stlboy:hud_min 0
+execute if score @s stlboy.hud matches 60 if score #mn stlboy.tmp matches 0 run resource set @s stlboy:hud_min 1
+execute if score @s stlboy.hud matches 10..63 run playsound minecraft:block.amethyst_block.chime master @s ~ ~ ~ 0.6 1.6
 function stlboy:hud/menu
 scoreboard players set @s stlboy.hud 0

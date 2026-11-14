@@ -1,0 +1,167 @@
+{
+ "type": "apoli:multiple",
+ "name": {
+  "translate": "power.stlboy.astral_body.name",
+  "fallback": "Astral Body"
+ },
+ "description": {
+  "translate": "power.stlboy.astral_body.description",
+  "fallback": "Each Rank makes your body of light a little stronger."
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.astral_body.0",
+    "fallback": "§7Every 2 Ranks: §fspeed +2%§7. Ranks 4, 8, 10: §fmax health +2§7. Ranks 2, 6: §fsafe fall +1§7. Ranks 6, 10: §fluck +1§7. Rank 8: §freach +0.25§7."
+   }
+  }
+ ],
+ "rank_2": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 2
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_base",
+    "value": 0.02
+   },
+   {
+    "attribute": "minecraft:generic.safe_fall_distance",
+    "operation": "addition",
+    "value": 1.0
+   }
+  ]
+ },
+ "rank_4": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 4
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   },
+   {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_base",
+    "value": 0.02
+   }
+  ]
+ },
+ "rank_6": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 6
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_base",
+    "value": 0.02
+   },
+   {
+    "attribute": "minecraft:generic.safe_fall_distance",
+    "operation": "addition",
+    "value": 1.0
+   },
+   {
+    "attribute": "minecraft:generic.luck",
+    "operation": "addition",
+    "value": 1.0
+   }
+  ]
+ },
+ "rank_8": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 8
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   },
+   {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_base",
+    "value": 0.02
+   },
+   {
+    "attribute": "minecraft:player.entity_interaction_range",
+    "operation": "addition",
+    "value": 0.25
+   }
+  ]
+ },
+ "rank_10": {
+  "type": "apoli:conditioned_attribute",
+  "tick_rate": 20,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 10
+  },
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 2.0
+   },
+   {
+    "attribute": "minecraft:generic.movement_speed",
+    "operation": "multiply_base",
+    "value": 0.02
+   },
+   {
+    "attribute": "minecraft:generic.luck",
+    "operation": "addition",
+    "value": 1.0
+   }
+  ]
+ },
+ "surface_pain": {
+  "type": "apoli:action_when_damage_taken",
+  "cooldown": 10,
+  "damage_condition": {
+   "type": "apoli:or",
+   "conditions": [
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fall"
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:fly_into_wall"
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "function stlboy:skills/surface_hurt"
+  }
+ }
+}
