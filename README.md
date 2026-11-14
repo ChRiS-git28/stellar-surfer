@@ -1,4 +1,4 @@
-![Stellar Surfer](assets/curseforge_banner.gif)
+![Stellar Surfer](assets/banner.gif)
 
 # ✦ Stellar Surfer
 
