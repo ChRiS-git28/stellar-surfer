@@ -81,6 +81,18 @@
         "custom_model_data": 7138
       },
       "model": "stlboy:item/ofx_sn_halo"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7140
+      },
+      "model": "stlboy:item/star_t"
+    },
+    {
+      "predicate": {
+        "custom_model_data": 7141
+      },
+      "model": "stlboy:item/star_line_t"
     }
   ]
 }

@@ -30,5 +30,6 @@
     "fallback": "§eHold Secondary§7 → summon & steer a §5Black Hole§7. §fScroll§7 pushes / pulls it. §8(Rank 3+)"
    }
   }
- ]
+ ],
+ "hidden": true
 }

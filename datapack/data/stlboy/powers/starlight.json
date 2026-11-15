@@ -3529,5 +3529,55 @@
     "8"
    ]
   }
+ },
+ "hungry_notice": {
+  "type": "apoli:action_over_time",
+  "interval": 10,
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:food_level",
+     "comparison": "<=",
+     "compare_to": 6
+    },
+    {
+     "type": "apoli:or",
+     "conditions": [
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.apoli.secondary_active"
+       }
+      },
+      {
+       "type": "apoli:key_pressed",
+       "key": {
+        "key": "key.stlboy.nova"
+       }
+      },
+      {
+       "type": "apoli:and",
+       "conditions": [
+        {
+         "type": "apoli:key_pressed",
+         "key": {
+          "key": "key.sprint"
+         }
+        },
+        {
+         "type": "apoli:on_block",
+         "inverted": true
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "title @s actionbar {\"translate\":\"stlboy.hungry\",\"fallback\":\"✦ Too hungry: your powers fade (Star Shards still answer) ✦\",\"color\":\"gray\"}"
+  }
  }
 }

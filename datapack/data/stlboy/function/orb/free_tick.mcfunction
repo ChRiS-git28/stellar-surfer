@@ -7,9 +7,8 @@ execute if entity @s[tag=!stlboy_free] run return 0
 scoreboard players operation @s stlboy.ox += @s stlboy.dx
 scoreboard players operation @s stlboy.oy += @s stlboy.dy
 scoreboard players operation @s stlboy.oz += @s stlboy.dz
-execute unless score @s stlboy.dx matches 0 run function stlboy:orb/move
-execute if score @s stlboy.dx matches 0 unless score @s stlboy.dy matches 0 run function stlboy:orb/move
-execute if score @s stlboy.dx matches 0 if score @s stlboy.dy matches 0 unless score @s stlboy.dz matches 0 run function stlboy:orb/move
+# toujours replacee a sa position memorisee : ni le dragon ni les explosions ne la poussent
+function stlboy:orb/move
 execute at @s unless block ~ ~ ~ #stlboy:orb_passable run function stlboy:orb/stop
 scoreboard players operation @s stlboy.dx *= #9 stlboy.const
 scoreboard players operation @s stlboy.dx /= #10 stlboy.const

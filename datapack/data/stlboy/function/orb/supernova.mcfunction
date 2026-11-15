@@ -28,5 +28,7 @@ summon minecraft:marker ~ ~0.9 ~ {Tags:["stlboy_sn_exit","stlboy_sn_exnew"]}
 scoreboard players operation @e[type=minecraft:marker,tag=stlboy_sn_exnew] stlboy.own = #own stlboy.tmp
 tag @e[type=minecraft:marker,tag=stlboy_sn_exnew] remove stlboy_sn_exnew
 scoreboard players set @s stlboy.wj 20
+# la bouche s'ouvre a tes pieds : tu ne la traverses qu'apres en etre sorti une premiere fois
+tag @s add stlboy_whlock
 title @s actionbar {"translate":"stlboy.wormhole.open","fallback":"✦ W O R M H O L E ✦  a second mouth opened at your feet","color":"light_purple"}
 function stlboy:trial/give {id:"supernova"}

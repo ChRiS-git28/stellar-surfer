@@ -17,6 +17,10 @@ An origin for **Origins** (Minecraft **1.21.1**, **NeoForge**), made of two pack
 
 Ready-to-use zips are attached to each [release](../../releases). Players should use the CurseForge pages; this repository tracks the project's history.
 
+## Report a bug
+
+Found a bug or have an idea? Open an [issue](../../issues/new/choose) - a short form asks for the version, what happened and your logs.
+
 ## Versions
 
 The current version is in [`VERSION`](VERSION); every change is listed in [`CHANGELOG.md`](CHANGELOG.md).

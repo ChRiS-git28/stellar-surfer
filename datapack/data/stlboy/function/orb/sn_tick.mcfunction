@@ -32,6 +32,9 @@ execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] st
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.life matches ..0 run function stlboy:orb/sn_end
 # --- Pont d'Einstein-Rosen : entrer dans une bouche = ressortir par l'autre (en tant que le Surfer) ---
 execute if score @s stlboy.wj matches 1.. run scoreboard players remove @s stlboy.wj 1
+# verrou : apres le lancement ou une traversee, il faut d'abord sortir des deux bouches (2,5 blocs) avant de pouvoir en reprendre une
+execute if entity @s[tag=stlboy_whlock] unless entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..2.5] unless entity @e[type=minecraft:marker,tag=stlboy_sn_exit,predicate=stlboy:owned,distance=..2.5] run tag @s remove stlboy_whlock
+execute if entity @s[tag=stlboy_whlock] run scoreboard players set @s stlboy.wj 2
 # Rang 10 : entrer dans le coeur ramene a ton point de reapparition (meme dans une autre dimension), si tu en as un
 execute store result score #wr stlboy.tmp run resource get @s stlboy:stardust_rank
 execute unless score @s stlboy.wj matches 1.. if score #wr stlboy.tmp matches 10.. if data entity @s SpawnX if entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..1.8] run return run function stlboy:orb/wh_home

@@ -2,10 +2,6 @@
   "replace": true,
   "values": [
     {
-      "id": "minecraft:ender_eye",
-      "required": false
-    },
-    {
       "id": "minecraft:echo_shard",
       "required": false
     },

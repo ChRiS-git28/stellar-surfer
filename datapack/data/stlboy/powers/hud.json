@@ -1,8 +1,55 @@
 {
  "type": "apoli:multiple",
- "hidden": true,
- "name": "Sigil",
- "description": "Stellar HUD.",
+ "name": {
+  "translate": "power.stlboy.hud.name",
+  "fallback": "Celestial Sigil"
+ },
+ "description": {
+  "translate": "power.stlboy.hud.description",
+  "fallback": "Your own sky, drawn at the edge of your sight."
+ },
+ "badges": [
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.hud.0",
+    "fallback": "hud 0"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.hud.1",
+    "fallback": "hud 1"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.hud.2",
+    "fallback": "hud 2"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.hud.3",
+    "fallback": "hud 3"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.hud.4",
+    "fallback": "hud 4"
+   }
+  }
+ ],
  "lx": {
   "type": "apoli:resource",
   "min": -800,

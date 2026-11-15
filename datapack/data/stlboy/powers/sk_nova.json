@@ -30,5 +30,6 @@
     "fallback": "§eHold C§7 → summon & steer a §bWhite Hole§7: repels foes, reflects projectiles. §8(Rank 5+)"
    }
   }
- ]
+ ],
+ "hidden": true
 }

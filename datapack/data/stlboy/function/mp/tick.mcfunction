@@ -16,6 +16,10 @@ execute as @e[type=minecraft:marker,tag=stlboy_sn] unless score @s stlboy.own ma
 execute store result score #og stlboy.tmp run time query gametime
 scoreboard players operation #og stlboy.tmp %= #c20 stlboy.const
 execute if score #og stlboy.tmp matches 0 if entity @e[type=minecraft:item_display,tag=stlboy_beam,limit=1] run function stlboy:mp/orphans
+# passerelles de l'End (1 tick sur 4, seulement dans l'End)
+scoreboard players operation #g4e stlboy.tmp = #og stlboy.tmp
+scoreboard players operation #g4e stlboy.tmp %= #4 stlboy.const
+execute if score #g4e stlboy.tmp matches 0 as @a[tag=stlboy_surfer] at @s if dimension minecraft:the_end run function stlboy:end/gate_check
 # leurres du Pas fantome
 execute as @e[type=minecraft:armor_stand,tag=stlboy_ghost_decoy] run function stlboy:skills/decoy_tick
 # Trou blanc : premiers contacts et chocs contre les murs

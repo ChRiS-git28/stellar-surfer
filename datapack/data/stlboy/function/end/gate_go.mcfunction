@@ -1,0 +1,11 @@
+# Le Surfer touche une passerelle de l'End (en tant que le Surfer, positionne au coin du bloc de passerelle)
+# Une perle portee par la passerelle l'emmene de l'autre cote (la passerelle ne transporte que les projectiles et les petites entites).
+scoreboard players set @s stlboy.gate 60
+summon minecraft:ender_pearl ~0.5 ~0.5 ~0.5 {Motion:[0.0,-0.02,0.0],Tags:["stlboy_gpearl"]}
+data modify entity @e[type=minecraft:ender_pearl,tag=stlboy_gpearl,limit=1,sort=nearest] Owner set from entity @s UUID
+tag @e[type=minecraft:ender_pearl,tag=stlboy_gpearl] remove stlboy_gpearl
+effect give @s minecraft:resistance 3 4 true
+effect give @s minecraft:slow_falling 4 0 true
+particle minecraft:reverse_portal ~0.5 ~0.5 ~0.5 0.4 0.4 0.4 0.6 50
+playsound minecraft:block.end_gateway.spawn player @s ~ ~ ~ 0.6 1.6
+title @s actionbar {"translate":"stlboy.end.gate","fallback":"✦ The gateway carries you","color":"light_purple"}

@@ -79,6 +79,7 @@ scoreboard objectives add stlboy.pal dummy
 scoreboard objectives add stlboy.cwait dummy
 scoreboard objectives add stlboy.bage dummy
 scoreboard objectives add stlboy.clast dummy
+scoreboard objectives add stlboy.gate dummy
 scoreboard objectives add stlboy.palx dummy
 scoreboard objectives add stlboy.own dummy
 scoreboard objectives add stlboy.oid dummy

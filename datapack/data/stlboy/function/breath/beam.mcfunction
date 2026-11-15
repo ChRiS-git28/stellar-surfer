@@ -51,3 +51,4 @@ function stlboy:breath/sb/body_m with storage stlboy:beam
 function stlboy:breath/sb/fp
 function stlboy:fx/beam
 function stlboy:breath/sb/spark
+function stlboy:breath/sb/helix

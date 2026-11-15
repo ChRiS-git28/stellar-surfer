@@ -3,6 +3,9 @@
 execute store result score #hx stlboy.tmp run data get entity @s SpawnX
 execute store result score #hy stlboy.tmp run data get entity @s SpawnY
 execute store result score #hz stlboy.tmp run data get entity @s SpawnZ
+# bloc du point de reapparition (pour charger son chunk le temps du voyage)
+execute store result storage stlboy:tmp wh.bx int 1 run scoreboard players get #hx stlboy.tmp
+execute store result storage stlboy:tmp wh.bz int 1 run scoreboard players get #hz stlboy.tmp
 scoreboard players operation #hx stlboy.tmp *= #c2 stlboy.const
 scoreboard players add #hx stlboy.tmp 1
 scoreboard players operation #hz stlboy.tmp *= #c2 stlboy.const

@@ -913,7 +913,7 @@
      },
      "action": {
       "type": "apoli:execute_command",
-      "command": "title @s actionbar {\"text\":\"✦ Too hungry to breathe the stars (need > 3 food) ✦\",\"color\":\"gray\"}"
+      "command": "title @s actionbar {\"translate\":\"stlboy.hungry\",\"fallback\":\"✦ Too hungry: your powers fade (Star Shards still answer) ✦\",\"color\":\"gray\"}"
      }
     },
     {

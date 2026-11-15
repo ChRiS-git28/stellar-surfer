@@ -14,7 +14,7 @@
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
     "translate": "badge.stlboy.astral_body.0",
-    "fallback": "§7Every 2 Ranks: §fspeed +2%§7. Ranks 4, 8, 10: §fmax health +2§7. Ranks 2, 6: §fsafe fall +1§7. Ranks 6, 10: §fluck +1§7. Rank 8: §freach +0.25§7."
+    "fallback": "§7Every 2 Ranks: §fspeed +2%§7. Ranks 4, 8, 10: §fmax health +2§7. Ranks 2, 6: §fcollision damage -20%§7. Ranks 6, 10: §fluck +1§7. Rank 8: §freach +0.25§7."
    }
   }
  ],
@@ -32,11 +32,6 @@
     "attribute": "minecraft:generic.movement_speed",
     "operation": "multiply_base",
     "value": 0.02
-   },
-   {
-    "attribute": "minecraft:generic.safe_fall_distance",
-    "operation": "addition",
-    "value": 1.0
    }
   ]
  },
@@ -76,11 +71,6 @@
     "attribute": "minecraft:generic.movement_speed",
     "operation": "multiply_base",
     "value": 0.02
-   },
-   {
-    "attribute": "minecraft:generic.safe_fall_distance",
-    "operation": "addition",
-    "value": 1.0
    },
    {
     "attribute": "minecraft:generic.luck",
@@ -162,6 +152,40 @@
   "entity_action": {
    "type": "apoli:execute_command",
    "command": "function stlboy:skills/surface_hurt"
+  }
+ },
+ "collide_2": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 2
+  },
+  "damage_condition": {
+   "type": "apoli:type",
+   "damage_type": "minecraft:fly_into_wall"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.2
+  }
+ },
+ "collide_6": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 6
+  },
+  "damage_condition": {
+   "type": "apoli:type",
+   "damage_type": "minecraft:fly_into_wall"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.2
   }
  }
 }

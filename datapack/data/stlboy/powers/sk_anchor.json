@@ -30,5 +30,6 @@
     "fallback": "§eV§7 → place the held block in mid-air where you look. §8(Rank 2+)"
    }
   }
- ]
+ ],
+ "hidden": true
 }

@@ -7,6 +7,42 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.2] — 2026-11-15 · *Clear Sky*
+
+### Constellations
+- **DP/RP** Constellations now form a clear **frame around the target, facing you**, readable even from far away.
+- **RP** Links now stretch smoothly from one star to the next (they used to grow from the middle).
+- **DP/RP** Stars, links and their twinkle take the **colours of your class**.
+
+### Stellar Breath
+- **DP** A double helix of light now spirals along the beam: the beam has volume from every angle.
+- **DP** Fixed: the Breath now hurts the **Ender Dragon**.
+
+### Cosmic forces
+- **DP** Casting a Wormhole no longer throws you through its mouth: you must step out of a mouth before you can use it.
+- **DP** Rank 10 Wormhole travel loads the arrival area just long enough to arrive (5 s), in any dimension.
+- **DP** The Ender Dragon can no longer push your orbs around.
+- **DP** Orbs keep their nature in every class colour: the Black Hole's heart stays dark, the White Hole's heart stays white.
+- **DP** Air Anchor, Black Hole, White Hole and Wormhole are now presented together in **Graviton**.
+
+### Movement
+- **DP** Upward dodge is half as strong.
+- **DP** No more star particles in your face when dodging backward.
+
+### Progression & balance
+- **DP** Astral Body: safe fall bonus replaced by **-20% collision damage** at Ranks 2 and 6.
+- **DP** Eyes of Ender are no longer cosmic food (you need them to find the End).
+- **DP** End gateways now carry a Surfer through, even though you cannot throw pearls.
+- **DP** Magnetised items now fly in a wider curve.
+
+### Interface
+- **DP/RP** One clear message when you are too hungry for your powers — Star Shards still work.
+- **RP** The origin screen now explains the custom HUD.
+- **RP** Skill descriptions show their numbers again in the skill tree (badges keep them too).
+- **RP** Drifting is no longer mentioned in Celestial Surf.
+
+---
+
 ## [1.0.1] — 2026-11-14 · *Steady Light*
 
 ### Stellar Breath

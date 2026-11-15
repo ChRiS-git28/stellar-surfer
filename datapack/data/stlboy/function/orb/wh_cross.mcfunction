@@ -6,3 +6,4 @@ execute at @s run particle minecraft:portal ~ ~1 ~ 0.4 0.7 0.4 1 50
 playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 0.6
 playsound minecraft:block.portal.trigger player @s ~ ~ ~ 0.25 1.8
 scoreboard players set @s stlboy.wj 20
+tag @s add stlboy_whlock

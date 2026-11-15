@@ -40,6 +40,38 @@
     "translate": "badge.stlboy.graviton.4",
     "fallback": "§7Passive: +3 block reach and no mining penalty in mid-air. §8Unlearned orbs show a §5locked§8 message."
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g1",
+    "fallback": "graviton 1"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g2",
+    "fallback": "graviton 2"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g3",
+    "fallback": "graviton 3"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g4",
+    "fallback": "graviton 4"
+   }
   }
  ],
  "held": {

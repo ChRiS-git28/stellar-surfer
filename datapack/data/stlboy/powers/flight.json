@@ -40,14 +40,6 @@
     "translate": "badge.stlboy.flight.4",
     "fallback": "§7Your board carries §bmomentum§7: dive to gain speed, climb to spend it. Speed above cruise fades slowly."
    }
-  },
-  {
-   "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/star.png",
-   "text": {
-    "translate": "badge.stlboy.flight.5",
-    "fallback": "§eHold Left Alt§7 while carving → §bDrift§7. Sparks turn §9blue§7, §6orange§7, then §5violet§7 (faster in tight turns). Release → boost."
-   }
   }
  ],
  "armed": {
@@ -1124,7 +1116,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "title @s actionbar {\"text\":\"Too hungry to fly\",\"color\":\"gray\"}"
+     "command": "title @s actionbar {\"translate\":\"stlboy.hungry\",\"fallback\":\"✦ Too hungry: your powers fade (Star Shards still answer) ✦\",\"color\":\"gray\"}"
     }
    ]
   }
