@@ -16,7 +16,7 @@ execute if score @s stlboy.fv matches 360000.. run scoreboard players set #cd st
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_crash2,limit=1] run function stlboy:orb/crash_amp
 execute store result storage stlboy:tmp crash.d int 1 run scoreboard players get #cd stlboy.tmp
 function stlboy:orb/crash_hit with storage stlboy:tmp crash
-particle minecraft:explosion ~ ~0.6 ~ 0.2 0.2 0.2 0 1
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:8,lifetime_variation:2,size:1.6f,size_variation:0.48f,end_size:0.0f,color:"#F0E8FFEE",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 0)"} ~ ~0.6 ~ 0.2 0.2 0.2 0 1
 particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:12,lifetime_variation:4,size:0.4f,size_variation:0.1f,end_size:0.0f,color:"#FFF4E8FF",end_color:"#FF5A3C00",friction:0.85f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~0.8 ~ 0.3 0.4 0.3 0.15 10 force
 playsound minecraft:entity.generic.big_fall hostile @a ~ ~ ~ 1 0.7
 playsound minecraft:block.anvil.land hostile @a ~ ~ ~ 0.5 1.4

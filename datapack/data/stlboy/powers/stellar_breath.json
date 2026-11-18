@@ -299,7 +299,7 @@
            },
            {
             "type": "apoli:execute_command",
-            "command": "execute anchored eyes run particle minecraft:flash ^ ^ ^1 0 0 0 0 1"
+            "command": "execute anchored eyes run particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:4,lifetime_variation:1,size:1.4f,size_variation:0.42f,end_size:0.0f,color:\"#FFFFFFFF\",end_color:\"#C9A6FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 0)\"} ^ ^ ^1 0 0 0 0 1"
            },
            {
             "type": "apoli:execute_command",
@@ -867,7 +867,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "execute anchored eyes run particle minecraft:smoke ^ ^ ^0.8 0.2 0.2 0.2 0.05 20"
+     "command": "execute anchored eyes run particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#4A3A70AA\",end_color:\"#1A102A00\",friction:0.92f,gravity:-0.003f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ^ ^ ^0.8 0.2 0.2 0.2 0.05 20"
     },
     {
      "type": "apoli:execute_command",

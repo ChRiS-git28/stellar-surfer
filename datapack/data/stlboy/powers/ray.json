@@ -93,10 +93,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -148,10 +144,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -203,10 +195,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -258,10 +246,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -313,10 +297,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -368,10 +348,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -423,10 +399,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -478,10 +450,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -533,10 +501,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -588,10 +552,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -643,10 +603,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -698,10 +654,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -753,10 +705,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -808,10 +756,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -863,10 +807,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -918,10 +858,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -973,10 +909,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1041,10 +973,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1096,10 +1024,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1151,10 +1075,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1206,10 +1126,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1261,10 +1177,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1316,10 +1228,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1371,10 +1279,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1426,10 +1330,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1481,10 +1381,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1536,10 +1432,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1591,10 +1483,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1646,10 +1534,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1701,10 +1585,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1756,10 +1636,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1811,10 +1687,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1866,10 +1738,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1921,10 +1789,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -1989,10 +1853,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2044,10 +1904,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2099,10 +1955,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2154,10 +2006,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2209,10 +2057,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2264,10 +2108,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2319,10 +2159,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2374,10 +2210,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2429,10 +2261,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2484,10 +2312,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2539,10 +2363,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2594,10 +2414,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2649,10 +2465,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2704,10 +2516,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2759,10 +2567,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2814,10 +2618,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",
@@ -2869,10 +2669,6 @@
              "command": "tag @s add stlboy_rc"
             }
            },
-           "particle": {
-            "type": "minecraft:electric_spark"
-           },
-           "spacing": 3.5,
            "hit_action": {
             "type": "apoli:modify_resource",
             "resource": "stlboy:ray_len",

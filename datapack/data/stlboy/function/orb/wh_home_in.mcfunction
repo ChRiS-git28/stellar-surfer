@@ -1,9 +1,9 @@
 # Arrivee au point de reapparition (en tant que le Surfer) : un anneau d'etoiles s'ouvre au sol, la lumiere jaillit
-particle minecraft:flash ~ ~1 ~ 0 0 0 0 1
-particle minecraft:end_rod ~ ~0.2 ~ 1.4 0.05 1.4 0.02 40 force
-particle minecraft:end_rod ~ ~1 ~ 0.1 1.2 0.1 0.05 25 force
-particle minecraft:reverse_portal ~ ~1 ~ 1 1 1 0.2 60 force
-particle minecraft:dust_color_transition{from_color:[0.69,0.49,1.0],scale:1.4,to_color:[0.62,0.91,1.0]} ~ ~0.3 ~ 1.2 0.1 1.2 0 40 force
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:4,lifetime_variation:1,size:1.4f,size_variation:0.42f,end_size:0.0f,color:"#FFFFFFFF",end_color:"#C9A6FF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 0)"} ~ ~1 ~ 0 0 0 0 1
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.2 ~ 1.4 0.05 1.4 0.02 40 force
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 0.1 1.2 0.1 0.05 25 force
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:"#B07CFFDD",end_color:"#3A1A7A00",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 1 1 1 0.2 60 force
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:18,lifetime_variation:4,size:0.2f,size_variation:0.06f,end_size:0.0f,color:"#B07DFFFF",end_color:"#9EE8FF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.3 ~ 1.2 0.1 1.2 0 40 force
 playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 1 1.4
 playsound stlboy:cosmic.awaken player @a ~ ~ ~ 1 1.2
 playsound minecraft:block.amethyst_block.resonate player @a ~ ~ ~ 1 0.8

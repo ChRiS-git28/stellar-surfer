@@ -72,7 +72,7 @@
        },
        {
         "type": "apoli:execute_command",
-        "command": "particle minecraft:trial_spawner_detection_ominous ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
        },
        {
         "type": "apoli:execute_command",
@@ -137,7 +137,7 @@
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle minecraft:trial_spawner_detection_ominous ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
          },
          {
           "type": "apoli:execute_command",
@@ -187,7 +187,7 @@
       },
       {
        "type": "apoli:execute_command",
-       "command": "particle minecraft:dust{color:[0.9,0.12,0.25],scale:1.2} ~ ~1 ~ 0.3 0.5 0.3 0 15"
+       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
       }
      ]
     },
@@ -235,7 +235,7 @@
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle minecraft:trial_spawner_detection_ominous ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:20,lifetime_variation:5,size:0.2f,size_variation:0.06f,end_size:0.0f,color:\"#3FE8D8DD\",end_color:\"#1A4A8A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 15"
          },
          {
           "type": "apoli:execute_command",
@@ -299,7 +299,7 @@
       },
       {
        "type": "apoli:execute_command",
-       "command": "particle minecraft:dust{color:[0.9,0.12,0.25],scale:1.2} ~ ~1 ~ 0.3 0.5 0.3 0 15"
+       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1 ~ 0.3 0.5 0.3 0 15"
       }
      ]
     },
@@ -496,7 +496,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle minecraft:dust{color:[0.9,0.12,0.25],scale:1.2} ~ ~1.0 ~ 0.4 0.6 0.4 0 6"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#E61F40FF\",end_color:\"#E61F4000\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0 6"
     }
    ]
   }
@@ -523,7 +523,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle minecraft:end_rod ~ ~1.0 ~ 0.3 0.5 0.3 0.05 10"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:\"#F4F8FFFF\",end_color:\"#B07CFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.05 10"
     }
    ]
   }
@@ -562,7 +562,7 @@
       "type": "apoli:target_action",
       "action": {
        "type": "apoli:execute_command",
-       "command": "particle minecraft:electric_spark ~ ~ ~ 0.05 0.05 0.05 0 1"
+       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:8,lifetime_variation:2,size:0.1f,size_variation:0.03f,end_size:0.0f,color:\"#9FE8FFFF\",end_color:\"#FFFFFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~ ~ 0.05 0.05 0.05 0 1"
       }
      }
     ]

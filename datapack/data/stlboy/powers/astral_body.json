@@ -32,6 +32,14 @@
     "translate": "badge.stlboy.astral_body.2",
     "fallback": ""
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.astral_body.3",
+    "fallback": ""
+   }
   }
  ],
  "rank_2": {

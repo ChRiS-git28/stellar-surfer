@@ -1,5 +1,5 @@
 scoreboard players remove @s stlboy.trt 1
-particle minecraft:dust{color:[1.0,0.45,0.15],scale:2.0} ~ ~ ~ 1.4 1.4 1.4 0 6 force
-particle minecraft:flame ~ ~ ~ 0.7 0.7 0.7 0.01 4 force
-particle minecraft:lava ~ ~6 ~ 0.3 2 0.3 0 2 force
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:16,lifetime_variation:4,size:0.26f,size_variation:0.078f,end_size:0.0f,color:"#FF7326FF",end_color:"#FF732600",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 1.4 1.4 1.4 0 6 force
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:16,lifetime_variation:4,size:0.16f,size_variation:0.048f,end_size:0.0f,color:"#FFB050FF",end_color:"#FF3A1000",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.7 0.7 0.7 0.01 4 force
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:16,lifetime_variation:4,size:0.16f,size_variation:0.048f,end_size:0.0f,color:"#FFB050FF",end_color:"#FF3A1000",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~6 ~ 0.3 2 0.3 0 2 force
 execute if score @s stlboy.trt matches ..0 run function stlboy:trial/meteor_hit

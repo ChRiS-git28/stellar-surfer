@@ -8,7 +8,7 @@ execute unless entity @e[tag=stlboy_shard_t,limit=1] positioned ^ ^ ^4 as @e[typ
 execute if entity @e[tag=stlboy_shard_t,limit=1] facing entity @e[tag=stlboy_shard_t,limit=1] eyes run tp @s ^ ^ ^1.1 ~ ~
 execute unless entity @e[tag=stlboy_shard_t,limit=1] run tp @s ^ ^ ^1.1
 tag @e[tag=stlboy_shard_t] remove stlboy_shard_t
-execute at @s run particle minecraft:end_rod ~ ~ ~ 0 0 0 0 1
+execute at @s run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0 0 0 0 1
 scoreboard players set #sh stlboy.tmp 0
 execute at @s positioned ~-0.5 ~-0.5 ~-0.5 as @e[dx=0,dy=0,dz=0,type=!#stlboy:shard_ignore,predicate=!stlboy:owner,predicate=!stlboy:ally,type=!#stlboy:friendly,predicate=!stlboy:owned] if data entity @s Health if score #sh stlboy.tmp matches 0 run function stlboy:shard/hit
 execute at @s positioned ^ ^ ^-0.55 positioned ~-0.5 ~-0.5 ~-0.5 as @e[dx=0,dy=0,dz=0,type=!#stlboy:shard_ignore,predicate=!stlboy:owner,predicate=!stlboy:ally,type=!#stlboy:friendly,predicate=!stlboy:owned] if data entity @s Health if score #sh stlboy.tmp matches 0 run function stlboy:shard/hit

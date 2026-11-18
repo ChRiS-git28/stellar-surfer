@@ -1,5 +1,5 @@
 {
- "render_type": "minecraft:cutout",
+ "render_type": "minecraft:translucent",
  "textures": {
   "d": "stlboy:item/orb/well_disk",
   "particle": "stlboy:item/orb/well_disk"

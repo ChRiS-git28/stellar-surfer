@@ -7,6 +7,29 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.5] — 2026-11-18 · *Drifting Light*
+
+### Fixes
+- **DP** Black Hole and White Hole follow your aim smoothly again (they were updated every other tick since 1.0.3).
+- **RP** Orbs are translucent again and their cores animate again (the 1.0.4 cutout test had flattened them).
+
+### Constellations
+- **DP** The constellation frame now lies **flat (horizontal)** around the target, at mid-height.
+
+### Stellar Magnetism
+- **DP** No more orbit: items **glide slowly and smoothly** to you with a trail of custom sparkles.
+- **DP** Several Surfers: the **highest Rank** wins the item; at equal Rank, the **closest** one.
+
+### Compatibility
+- **DP** Immune to temperature from **Legendary Survival Overhaul**, **Tough As Nails** and **Cold Sweat** (when installed).
+
+### Visuals
+- **DP** Every vanilla particle of the origin is replaced by **custom particles** (sparkles and wisps).
+- **RP** Softer Rank stars on the astrolabe.
+- **RP** New **Celestial Sigil diagram** built from the real HUD, with the legend placed below it.
+
+---
+
 ## [1.0.4] — 2026-11-18 · *Little Star*
 
 ### Body & survival

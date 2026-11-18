@@ -6,7 +6,7 @@ $execute unless entity @s[tag=stlboy_cskip] unless entity @e[type=minecraft:item
 execute unless entity @s[tag=stlboy_cskip] run function stlboy:breath/vis/l4 with storage stlboy:breath cur
 $scoreboard players set @e[tag=stlboy_cst,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] stlboy.life 5
 $tag @e[tag=stlboy_cst,tag=!stlboy_cdone,scores={stlboy.cid=$(cid)},predicate=stlboy:owned] add stlboy_cdone
-particle minecraft:flash ~ ~1 ~ 0 0 0 0 1
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:4,lifetime_variation:1,size:1.4f,size_variation:0.42f,end_size:0.0f,color:"#FFFFFFFF",end_color:"#C9A6FF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 0)"} ~ ~1 ~ 0 0 0 0 1
 playsound stlboy:cosmic.chime player @a ~ ~ ~ 1 2.0
 playsound stlboy:cosmic.chime player @a ~ ~ ~ 0.8 2.0
 playsound stlboy:cosmic.resonate player @a ~ ~ ~ 1 1.5

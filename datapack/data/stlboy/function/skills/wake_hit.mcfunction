@@ -1,4 +1,4 @@
 # Sillage cometaire : degats cosmiques autour du joueur en vol (en tant que le joueur)
-particle minecraft:dust_color_transition{from_color:[1.0,0.55,0.2],scale:1.2,to_color:[0.7,0.4,1.0]} ~ ~0.8 ~ 0.5 0.5 0.5 0 10
-particle minecraft:flame ~ ~0.8 ~ 0.4 0.4 0.4 0.02 3
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:18,lifetime_variation:4,size:0.18f,size_variation:0.054f,end_size:0.0f,color:"#FF8C33FF",end_color:"#B266FF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.8 ~ 0.5 0.5 0.5 0 10
+particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:16,lifetime_variation:4,size:0.16f,size_variation:0.048f,end_size:0.0f,color:"#FFB050FF",end_color:"#FF3A1000",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.8 ~ 0.4 0.4 0.4 0.02 3
 execute as @e[distance=..3,type=!minecraft:player,type=!#stlboy:no_wake,tag=!stlboy_orb,predicate=!stlboy:owner] run function stlboy:cosmic/hit {cd:2}

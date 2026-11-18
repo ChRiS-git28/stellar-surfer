@@ -4,7 +4,7 @@
  "power.stlboy.float.name": "Astral Drift",
  "power.stlboy.float.description": "§7§oThe sky does not hold you — it §b§ocradles§7§o you. Freed from the weight of worlds, you drift wherever your will points, light as §d§ostardust§7§o hung between two constellations.",
  "power.stlboy.graviton.name": "Graviton",
- "power.stlboy.graviton.description": "§7§oGravity is no law to you — it is a §d§olanguage§7§o. Loot spirals home, projectiles turn on their senders, and when the stars teach you their secrets you speak in singularities and novas.",
+ "power.stlboy.graviton.description": "§7§oGravity is no law to you — it is a §d§olanguage§7§o. Loot drifts home, projectiles turn on their senders, and when the stars teach you their secrets you speak in singularities and novas.",
  "power.stlboy.sk_absorb.name": "Matter Feast",
  "power.stlboy.sk_absorb.description": "§7§oThe well does not merely pull — it devours, and what it devours falls into your hands.\n§6⚙ §r§7Loot within §f1.3§7 blocks of a Black Hole's core is teleported to you.\n§fCommon §8· Neptune · Cost 1 pt · Rank 3+",
  "power.stlboy.sk_anchor.name": "Air Anchor",
@@ -513,7 +513,7 @@
  "badge.stlboy.graviton.g3": "§5Wormhole§7 (Rank 7) · Throw your White Hole into your Black Hole: a field that freezes and blinds. §dRank 10§7: step into its heart to return to your respawn point with your allies (once per Minecraft day).",
  "badge.stlboy.graviton.g4": "§bAir Anchor§7 (Rank 2) · §fV§7: place the block you hold in mid-air, where you look.",
  "stlboy.end.gate": "✦ The gateway carries you",
- "badge.stlboy.graviton.g5": "§eStellar Magnetism§7 (Rank 1) · §fTab§7: items around you spiral into your hands. Range and speed grow with your Rank.",
+ "badge.stlboy.graviton.g5": "§eStellar Magnetism§7 (Rank 1) · §fTab§7: items around you glide gently into your hands, trailing stardust. With several Surfers, the highest Rank wins; at equal Rank, the closest. Range and speed grow with your Rank.",
  "badge.stlboy.graviton.g6": "§6Gravity Sense§7 (Rank 2) · You feel the weight of the sky: it opens the path of the orbs.",
  "power.stlboy.sk_ray_ward.name": "Light Curtain",
  "power.stlboy.sk_ray_ward.description": "§7§oNothing crosses a falling star.\n§6⚙ §r§7Projectiles crossing your Breath are §fburnt away§7. Thrown weapons (tridents…) simply §fdrop§7, and other Surfers' shots pass.\n§9Rare §8· Nebula · Cost 3 pts · Rank 4+",
@@ -524,5 +524,6 @@
  "stlboy.wormhole.rest": "✦ The way home is still closed (%s min)",
  "badge.stlboy.astral_body.1": "§7A body of light §f25 % smaller§7 than a human: smaller hitbox, slips through 1.5-block gaps.",
  "badge.stlboy.astral_body.2": "§7Starlight Veil: projectile damage §f-40 %§7 before Rank 3, §f-25 %§7 until Rank 7, then §f-15 %§7. §fDodging§7 burns the projectiles around you (tridents and enchanted weapons just drop).",
- "badge.stlboy.grace.2": "§cLow Grace§7 → Mining Fatigue. Far from the stars, a §fsoft starglow§7 follows you and lights your way."
+ "badge.stlboy.grace.2": "§cLow Grace§7 → Mining Fatigue. Far from the stars, a §fsoft starglow§7 follows you and lights your way.",
+ "badge.stlboy.astral_body.3": "§7A body of light feels neither heat nor cold: §fimmune to temperature§7 from Legendary Survival Overhaul, Tough As Nails and Cold Sweat."
 }

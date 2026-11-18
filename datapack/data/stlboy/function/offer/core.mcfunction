@@ -11,6 +11,6 @@ resource set @s stlboy:stardust_lock_5 1
 advancement grant @s only stlboy:stardust/offer_core
 playsound stlboy:cosmic.select player @a ~ ~ ~ 1 1.2
 playsound stlboy:cosmic.lock player @a ~ ~ ~ 0.8 1.0
-particle minecraft:end_rod ~ ~1 ~ 0.4 0.8 0.4 0.15 50
-particle minecraft:totem_of_undying ~ ~1 ~ 0.3 0.6 0.3 0.4 30
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 0.4 0.8 0.4 0.15 50
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:30,lifetime_variation:7,size:0.16f,size_variation:0.048f,end_size:0.0f,color:"#FFE08AFF",end_color:"#7DFFB000",friction:0.95f,gravity:0.01f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 0.3 0.6 0.3 0.4 30
 title @s actionbar {"text":"✦ Dead Star Core offered — fill the bar to reach Rank 5 ✦","color":"gold"}
