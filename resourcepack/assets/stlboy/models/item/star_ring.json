@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "stlboy:item/star_ring"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stlboy:item/star_ring"
+ },
+ "render_type": "minecraft:cutout"
 }

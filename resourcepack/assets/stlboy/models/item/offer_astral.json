@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "stlboy:item/offer/astral"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stlboy:item/offer/astral"
+ },
+ "render_type": "minecraft:cutout"
 }

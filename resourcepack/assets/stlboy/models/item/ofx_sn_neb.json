@@ -1,5 +1,5 @@
 {
- "render_type": "minecraft:translucent",
+ "render_type": "minecraft:cutout",
  "textures": {
   "n": "stlboy:item/orb/sn_neb",
   "particle": "stlboy:item/orb/sn_neb"

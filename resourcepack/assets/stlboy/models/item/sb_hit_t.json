@@ -1,6 +1,6 @@
 {
  "credit": "Stellar Surfer - impact cubique",
- "render_type": "minecraft:translucent",
+ "render_type": "minecraft:cutout",
  "textures": {
   "core": "stlboy:item/beam/cube_core",
   "mid": "stlboy:item/beam/cube_mid",

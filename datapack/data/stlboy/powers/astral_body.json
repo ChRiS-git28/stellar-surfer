@@ -16,6 +16,22 @@
     "translate": "badge.stlboy.astral_body.0",
     "fallback": "§7Every 2 Ranks: §fspeed +2%§7. Ranks 4, 8, 10: §fmax health +2§7. Ranks 2, 6: §fcollision damage -20%§7. Ranks 6, 10: §fluck +1§7. Rank 8: §freach +0.25§7."
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.astral_body.1",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.astral_body.2",
+    "fallback": ""
+   }
   }
  ],
  "rank_2": {
@@ -186,6 +202,92 @@
   "modifier": {
    "operation": "multiply_total_multiplicative",
    "value": -0.2
+  }
+ },
+ "size": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.scale",
+    "operation": "multiply_base",
+    "value": -0.25
+   }
+  ]
+ },
+ "veil_low": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": "<",
+   "compare_to": 3
+  },
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_projectile"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.4
+  }
+ },
+ "veil_mid": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stardust_rank",
+     "comparison": ">=",
+     "compare_to": 3
+    },
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:stardust_rank",
+     "comparison": "<",
+     "compare_to": 7
+    }
+   ]
+  },
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_projectile"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.25
+  }
+ },
+ "veil_high": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:stardust_rank",
+   "comparison": ">=",
+   "compare_to": 7
+  },
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_projectile"
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.15
+  }
+ },
+ "parry": {
+  "type": "apoli:action_over_time",
+  "interval": 1,
+  "condition": {
+   "type": "apoli:resource",
+   "resource": "stlboy:float_roll_fx",
+   "comparison": ">",
+   "compare_to": 0
+  },
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "function stlboy:skills/parry"
   }
  }
 }

@@ -1,6 +1,6 @@
 # Champ de Supernova : fixe, ralentit, aveugle et bloque les teleportations (en tant que le joueur)
 scoreboard players remove @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned] stlboy.life 1
-execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] as @e[distance=..10,tag=!stlboy_sn_in,tag=!stlboy_orb,predicate=!stlboy:owner,predicate=!stlboy:ally,type=!marker,type=!#stlboy:well_loot,type=!#stlboy:homing_projectiles] run function stlboy:orb/sn_enter
+execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] as @e[distance=..10,tag=!stlboy_sn_in,tag=!stlboy_orb,predicate=!stlboy:owner,predicate=!stlboy:ally,type=!#stlboy:friendly,type=!marker,type=!#stlboy:well_loot,type=!#stlboy:homing_projectiles] run function stlboy:orb/sn_enter
 execute as @e[tag=stlboy_sn_in] run function stlboy:orb/sn_guard
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run kill @e[type=ender_pearl,distance=..11]
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] as @e[tag=stlboy_sn_in,distance=10.5..] run function stlboy:orb/sn_leave

@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "stlboy:item/skill/sn"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stlboy:item/skill/sn"
+ },
+ "render_type": "minecraft:cutout"
 }

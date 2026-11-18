@@ -5,6 +5,9 @@
 scoreboard players operation #cf stlboy.tmp = #cfree stlboy.tmp
 scoreboard players set #cfree stlboy.tmp 0
 execute if entity @s[predicate=stlboy:ally] run return 0
+# PNJ, golems, animaux et familiers apprivoises : jamais touches par le cosmos
+execute if entity @s[type=#stlboy:friendly] run return 0
+execute unless entity @s[type=minecraft:player] unless entity @s[type=#stlboy:shard_prey] if data entity @s Owner run return 0
 $data modify storage stlboy:tmp ch.cd set value $(cd)
 execute store result score #cnow stlboy.tmp run time query gametime
 scoreboard players operation #cdt stlboy.tmp = #cnow stlboy.tmp

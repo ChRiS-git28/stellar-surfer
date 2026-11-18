@@ -1,0 +1,16 @@
+{
+  "game_version": "1.21.1",
+  "curseforge": {
+    "datapack_id": 1804623,
+    "resourcepack_id": 1805012,
+    "game_version_ids": [11779]
+  },
+  "modrinth": {
+    "datapack_id": "6HYbzgVR",
+    "resourcepack_id": ""
+  },
+  "names": {
+    "datapack": "Stellar Surfer",
+    "resourcepack": "Stellar Surfer - Cosmic Visuals"
+  }
+}

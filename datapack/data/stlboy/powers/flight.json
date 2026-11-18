@@ -1185,7 +1185,7 @@
          {
           "type": "apoli:change_resource",
           "resource": "stlboy:flight_vy",
-          "change": "-sin(rad(pitch)) * (0.0075 * resource(stlboy:flight_level) * (1 + 0.05 * resource(stlboy:flight_vmul))) * 0.45 * 1000",
+          "change": "-sin(rad(pitch)) * (0.0075 * resource(stlboy:flight_level) * (1 + 0.05 * resource(stlboy:flight_vmul))) * 0.75 * 1000",
           "operation": "set"
          },
          {
@@ -1265,7 +1265,7 @@
       {
        "type": "apoli:change_resource",
        "resource": "stlboy:flight_vy",
-       "change": "resource(stlboy:flight_vy) + (-sin(rad(pitch)) * (0.0075 * resource(stlboy:flight_level) * (1 + 0.05 * resource(stlboy:flight_vmul))) * 0.45 * 1000 - resource(stlboy:flight_vy)) * (0.35 - 0.12 * resource(stlboy:flight_drift))",
+       "change": "resource(stlboy:flight_vy) + (-sin(rad(pitch)) * (0.0075 * resource(stlboy:flight_level) * (1 + 0.05 * resource(stlboy:flight_vmul))) * 0.75 * 1000 - resource(stlboy:flight_vy)) * (0.35 - 0.12 * resource(stlboy:flight_drift))",
        "operation": "set"
       },
       {
@@ -1326,7 +1326,7 @@
        "if_action": {
         "type": "apoli:add_velocity",
         "space": "world",
-        "y": 0.024
+        "y": 0.1
        }
       },
       {
@@ -1340,7 +1340,7 @@
        "if_action": {
         "type": "apoli:add_velocity",
         "space": "world",
-        "y": -0.024
+        "y": -0.1
        }
       }
      ]

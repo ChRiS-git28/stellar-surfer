@@ -134,3 +134,5 @@ execute unless entity @a[tag=stlboy_surfer] run function stlboy:load
 execute unless entity @a[tag=stlboy_surfer] run kill @e[tag=stlboy_orb]
 execute unless entity @a[tag=stlboy_surfer] run kill @e[tag=stlboy_shrine]
 execute unless entity @a[tag=stlboy_surfer] run kill @e[tag=stlboy_beam]
+scoreboard players operation #own stlboy.tmp = @s stlboy.sid
+function stlboy:grace/glow_off

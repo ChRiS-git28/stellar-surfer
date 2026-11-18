@@ -521,5 +521,8 @@
  "power.stlboy.sk_nep_void.name": "Event Horizon",
  "power.stlboy.sk_nep_void.description": "§7§oWhat enters does not come back.\n§6⚙ §r§7Projectiles entering your §5Wormhole§7 are §fswallowed§7. Thrown weapons (tridents…) §fdrop§7 to the ground, and other Surfers' shots pass.\n§9Rare §8· Neptune · Cost 3 pts · Rank 7+",
  "badge.stlboy.sk_nep_void.0": "§6⚙ §r§7Projectiles entering your §5Wormhole§7 are §fswallowed§7. Thrown weapons §fdrop§7; other Surfers' shots pass.\n§9Rare §8· Neptune · Cost 3 pts · Rank 7+",
- "stlboy.wormhole.rest": "✦ The way home is still closed (%s min)"
+ "stlboy.wormhole.rest": "✦ The way home is still closed (%s min)",
+ "badge.stlboy.astral_body.1": "§7A body of light §f25 % smaller§7 than a human: smaller hitbox, slips through 1.5-block gaps.",
+ "badge.stlboy.astral_body.2": "§7Starlight Veil: projectile damage §f-40 %§7 before Rank 3, §f-25 %§7 until Rank 7, then §f-15 %§7. §fDodging§7 burns the projectiles around you (tridents and enchanted weapons just drop).",
+ "badge.stlboy.grace.2": "§cLow Grace§7 → Mining Fatigue. Far from the stars, a §fsoft starglow§7 follows you and lights your way."
 }

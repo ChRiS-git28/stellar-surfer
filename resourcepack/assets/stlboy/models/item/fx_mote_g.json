@@ -1,43 +1,43 @@
 {
-  "render_type": "minecraft:translucent",
-  "textures": {
-    "t": "stlboy:item/beam/mote_g",
-    "particle": "stlboy:item/beam/mote_g"
-  },
-  "elements": [
-    {
-      "from": [
-        0,
-        0,
-        8
-      ],
-      "to": [
-        16,
-        16,
-        8
-      ],
-      "shade": false,
-      "faces": {
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#t"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#t"
-        }
-      }
+ "render_type": "minecraft:cutout",
+ "textures": {
+  "t": "stlboy:item/beam/mote_g",
+  "particle": "stlboy:item/beam/mote_g"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    8
+   ],
+   "to": [
+    16,
+    16,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#t"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#t"
     }
-  ],
-  "display": {}
+   }
+  }
+ ],
+ "display": {}
 }

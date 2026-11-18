@@ -1,81 +1,82 @@
 {
-  "credit": "Stellar Surfer \u2014 constellation line",
-  "textures": {
-    "l": "stlboy:item/beam/line",
-    "particle": "stlboy:item/beam/line"
-  },
-  "elements": [
-    {
-      "name": "line",
-      "from": [
-        7.65,
-        7.65,
-        -8
-      ],
-      "to": [
-        8.35,
-        8.35,
-        8
-      ],
-      "shade": false,
-      "faces": {
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l",
-          "rotation": 90
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l",
-          "rotation": 90
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l"
-        },
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#l"
-        }
-      }
+ "credit": "Stellar Surfer — constellation line",
+ "textures": {
+  "l": "stlboy:item/beam/line",
+  "particle": "stlboy:item/beam/line"
+ },
+ "elements": [
+  {
+   "name": "line",
+   "from": [
+    7.65,
+    7.65,
+    -8
+   ],
+   "to": [
+    8.35,
+    8.35,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l",
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l",
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l"
+    },
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#l"
     }
-  ]
+   }
+  }
+ ],
+ "render_type": "minecraft:cutout"
 }

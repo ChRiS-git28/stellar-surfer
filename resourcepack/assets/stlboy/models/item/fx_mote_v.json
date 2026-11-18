@@ -1,5 +1,5 @@
 {
- "render_type": "minecraft:translucent",
+ "render_type": "minecraft:cutout",
  "textures": {
   "m": "stlboy:item/orb/mote_v",
   "particle": "stlboy:item/orb/mote_v"

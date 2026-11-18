@@ -1,5 +1,5 @@
 {
- "render_type": "minecraft:translucent",
+ "render_type": "minecraft:cutout",
  "textures": {
   "h": "stlboy:item/orb/well_halo",
   "particle": "stlboy:item/orb/well_halo"

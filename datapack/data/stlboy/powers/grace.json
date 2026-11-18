@@ -16,7 +16,10 @@
   {
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/weak.png",
-   "text": "§cLow Grace§7 → Mining Fatigue, then §8Darkness§7."
+   "text": {
+    "translate": "badge.stlboy.grace.2",
+    "fallback": "§cLow Grace§7 → Mining Fatigue. Far from the stars, a §fsoft starglow§7 lights your way."
+   }
   }
  ],
  "gauge": {
@@ -518,17 +521,6 @@
       "show_particles": false,
       "show_icon": true
      }
-    },
-    {
-     "type": "apoli:apply_effect",
-     "effect": {
-      "effect": "minecraft:darkness",
-      "duration": 60,
-      "amplifier": 0,
-      "is_ambient": true,
-      "show_particles": false,
-      "show_icon": true
-     }
     }
    ]
   }
@@ -541,6 +533,14 @@
    "command": "execute if entity @s[tag=stlboy_t_constellation]",
    "comparison": ">=",
    "compare_to": 1
+  }
+ },
+ "starglow": {
+  "type": "apoli:action_over_time",
+  "interval": 10,
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "function stlboy:grace/glow"
   }
  }
 }

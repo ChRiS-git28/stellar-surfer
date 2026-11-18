@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "stlboy:item/offer/heart"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stlboy:item/offer/heart"
+ },
+ "render_type": "minecraft:cutout"
 }

@@ -1406,6 +1406,31 @@
     "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
+    "texture": "stlboy:textures/gui/sigil/sc_ranks.png",
+    "anchor": "left",
+    "x": "(12) + resource(stlboy:hud_lx)",
+    "y": "(0) + resource(stlboy:hud_ly)",
+    "strength": "(0.3 + 0.7 * resource(stlboy:hud_glow) / 20)",
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+    "texture_width": 96,
+    "texture_height": 1056,
+    "width": 96,
+    "height": 96,
+    "v": "resource(stlboy:stardust_rank) * 96",
+    "condition": {
+     "type": "apoli:resource",
+     "resource": "stlboy:hud_side",
+     "comparison": "==",
+     "compare_to": 0
+    },
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
+   },
+   {
     "texture": "stlboy:textures/gui/sigil/offer.png",
     "anchor": "left",
     "x": "(55.5) + resource(stlboy:hud_lx)",
@@ -3919,6 +3944,31 @@
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_core.png",
+    "anchor": "right",
+    "x": "(-12) - resource(stlboy:hud_lx)",
+    "y": "(0) + resource(stlboy:hud_ly)",
+    "strength": "(0.3 + 0.7 * resource(stlboy:hud_glow) / 20)",
+    "draw_mode": "texture",
+    "draw_phase": "below_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+    "texture_width": 96,
+    "texture_height": 1056,
+    "width": 96,
+    "height": 96,
+    "v": "resource(stlboy:stardust_rank) * 96",
+    "condition": {
+     "type": "apoli:resource",
+     "resource": "stlboy:hud_side",
+     "comparison": "==",
+     "compare_to": 1
+    },
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
+   },
+   {
+    "texture": "stlboy:textures/gui/sigil/sc_ranks.png",
     "anchor": "right",
     "x": "(-12) - resource(stlboy:hud_lx)",
     "y": "(0) + resource(stlboy:hud_ly)",

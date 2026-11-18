@@ -1,232 +1,233 @@
 {
-  "credit": "Stellar Surfer — Stellar Breath beam",
-  "texture_size": [
-    16,
-    16
-  ],
-  "textures": {
-    "core": "stlboy:item/beam/core",
-    "inner": "stlboy:item/beam/inner",
-    "outer": "stlboy:item/beam/outer",
-    "particle": "stlboy:item/beam/core"
-  },
-  "elements": [
-    {
-      "name": "core",
-      "from": [
-        7.4,
-        7.4,
-        -8
-      ],
-      "to": [
-        8.6,
-        8.6,
-        8
-      ],
-      "shade": false,
-      "faces": {
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core",
-          "rotation": 90
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core",
-          "rotation": 90
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core"
-        },
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#core"
-        }
-      }
+ "credit": "Stellar Surfer — Stellar Breath beam",
+ "texture_size": [
+  16,
+  16
+ ],
+ "textures": {
+  "core": "stlboy:item/beam/core",
+  "inner": "stlboy:item/beam/inner",
+  "outer": "stlboy:item/beam/outer",
+  "particle": "stlboy:item/beam/core"
+ },
+ "elements": [
+  {
+   "name": "core",
+   "from": [
+    7.4,
+    7.4,
+    -8
+   ],
+   "to": [
+    8.6,
+    8.6,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core",
+     "rotation": 90
     },
-    {
-      "name": "inner",
-      "from": [
-        6.4,
-        6.4,
-        -8
-      ],
-      "to": [
-        9.6,
-        9.6,
-        8
-      ],
-      "shade": false,
-      "faces": {
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner",
-          "rotation": 90
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner",
-          "rotation": 90
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner"
-        },
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#inner"
-        }
-      }
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core",
+     "rotation": 90
     },
-    {
-      "name": "outer",
-      "from": [
-        5.0,
-        5.0,
-        -8.2
-      ],
-      "to": [
-        11.0,
-        11.0,
-        8.2
-      ],
-      "shade": false,
-      "faces": {
-        "east": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer",
-          "rotation": 90
-        },
-        "west": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer",
-          "rotation": 90
-        },
-        "up": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer"
-        },
-        "down": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer"
-        },
-        "north": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer"
-        },
-        "south": {
-          "uv": [
-            0,
-            0,
-            16,
-            16
-          ],
-          "texture": "#outer"
-        }
-      }
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
+    },
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#core"
     }
-  ],
-  "display": {}
+   }
+  },
+  {
+   "name": "inner",
+   "from": [
+    6.4,
+    6.4,
+    -8
+   ],
+   "to": [
+    9.6,
+    9.6,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner",
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner",
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner"
+    },
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#inner"
+    }
+   }
+  },
+  {
+   "name": "outer",
+   "from": [
+    5.0,
+    5.0,
+    -8.2
+   ],
+   "to": [
+    11.0,
+    11.0,
+    8.2
+   ],
+   "shade": false,
+   "faces": {
+    "east": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer",
+     "rotation": 90
+    },
+    "west": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer",
+     "rotation": 90
+    },
+    "up": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer"
+    },
+    "down": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer"
+    },
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#outer"
+    }
+   }
+  }
+ ],
+ "display": {},
+ "render_type": "minecraft:cutout"
 }

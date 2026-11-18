@@ -7,6 +7,33 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.4] — 2026-11-18 · *Little Star*
+
+### Body & survival
+- **DP** The Surfer is now **25% smaller** (hitbox, eyes and collisions follow).
+- **DP** **Starlight Veil**: projectile damage -40% before Rank 3, -25% until Rank 7, then -15%.
+- **DP** **Dodging burns nearby projectiles** (tridents and enchanted weapons just drop).
+- **DP** Low Grace no longer gives **Darkness**: a soft **starglow** follows you underground and in the Nether.
+- **DP** No friendly fire: villagers, wandering traders, golems, allays, animals and tamed pets are never hurt or caught by your powers (also MineColonies, MCA Reborn and Guard Villagers when installed).
+
+### Movement
+- **DP** Climb and dive much faster while surfing (look up/down, or Jump/Sneak).
+
+### Stellar Magnetism
+- **DP** Items now **spiral around you ~3 times** before reaching you, leaving a trail of sparkles.
+
+### Interface
+- **RP** Astrolabe: the 10 Rank stars are now big, clear crosses when lit, small dim points when not.
+
+### Visuals
+- **RP** Test: cosmic effects now use **cutout** rendering, so water and glass stay visible behind them. Edges are sharper; orb shells and the beam haze stay soft.
+
+### Debug & distribution
+- **DP** `/function stlboy:debug/rank_up`: +1 Rank instantly, no offering needed.
+- New **NeoForge mod jar** (datapack + resource pack in one file).
+
+---
+
 ## [1.0.3] — 2026-11-18 · *Old Ruins*
 
 ### Constellations

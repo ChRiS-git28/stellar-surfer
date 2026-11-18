@@ -1,6 +1,7 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "stlboy:item/offer/echo"
-  }
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "stlboy:item/offer/echo"
+ },
+ "render_type": "minecraft:cutout"
 }
