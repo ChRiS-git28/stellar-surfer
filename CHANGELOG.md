@@ -7,6 +7,14 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.11] — 2026-11-19 · *Living Flame*
+
+### Visuals
+- **RP** Solar Flare flames redrawn with a full life cycle: a spark that grows into a white-hot flame, tears into rising tongues and fades into embers.
+- **DP** Solar flame particles last exactly one cycle (Solar Flare and Sun aura).
+
+---
+
 ## [1.0.10] — 2026-11-18 · *Galaxy Boards*
 
 ### Visuals
