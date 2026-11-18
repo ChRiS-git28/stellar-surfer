@@ -7,6 +7,22 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.6] — 2026-11-18 · *Starburst*
+
+### Constellations
+- **DP** Much **bigger stars**, thicker links, and each star appears with a **flash and a burst of sparkles**.
+
+### Stellar Breath
+- **DP** Charging now shows sparkles **converging into one point** at your hand, in your class colours.
+
+### Interface
+- **RP** Fixed: the Celestial Sigil diagram showed an empty box (the image was wider than Minecraft allows for a font glyph).
+
+### Publishing
+- Versions are now published as **beta** on CurseForge and Modrinth.
+
+---
+
 ## [1.0.5] — 2026-11-18 · *Drifting Light*
 
 ### Fixes

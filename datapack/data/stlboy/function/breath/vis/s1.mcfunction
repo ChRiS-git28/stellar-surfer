@@ -4,3 +4,4 @@ execute as @e[tag=stlboy_cst] unless score @s stlboy.own matches 1.. run scorebo
 $scoreboard players set @e[type=minecraft:item_display,tag=stlboy_nc] stlboy.cid $(cid)
 execute as @e[type=minecraft:item_display,tag=stlboy_nc] run function stlboy:breath/vis/tint
 tag @e[type=minecraft:item_display,tag=stlboy_nc] remove stlboy_nc
+$execute at @s rotated $(ang) 0 positioned ^$(x1) ^$(y1) ^$(z1) run function stlboy:breath/vis/burst

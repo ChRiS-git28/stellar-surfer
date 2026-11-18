@@ -3,3 +3,4 @@ $execute at @s rotated $(ang) 0 run summon minecraft:item_display ^$(x2) ^$(y2) 
 $scoreboard players set @e[type=minecraft:item_display,tag=stlboy_nc] stlboy.cid $(cid)
 execute as @e[type=minecraft:item_display,tag=stlboy_nc] run function stlboy:breath/vis/tint
 tag @e[type=minecraft:item_display,tag=stlboy_nc] remove stlboy_nc
+$execute at @s rotated $(ang) 0 positioned ^$(x2) ^$(y2) ^$(z2) run function stlboy:breath/vis/burst
