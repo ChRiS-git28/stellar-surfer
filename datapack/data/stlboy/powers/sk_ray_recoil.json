@@ -37,7 +37,7 @@
    "sprite": "stlboy:textures/gui/badge/charge.png",
    "text": {
     "translate": "badge.stlboy.sk_ray_recoil.0",
-    "fallback": "§7Out of surf, the §dStellar Breath§7 no longer roots you while it §ffires§7: its recoil pushes you §bbackwards§7 (≈3 blocks/s). §8(Rank 2+)"
+    "fallback": "§7Out of surf, firing no longer roots you: you move freely while the beam fires."
    }
   }
  ]

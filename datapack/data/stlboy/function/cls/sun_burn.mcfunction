@@ -1,2 +1,2 @@
 function stlboy:cosmic/hit {cd:1}
-data merge entity @s {Fire:60s}
+function stlboy:cls/flare {t:3}

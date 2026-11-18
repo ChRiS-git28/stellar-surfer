@@ -53,6 +53,22 @@
     "translate": "badge.stlboy.cls_sun.0",
     "fallback": "cls_sun"
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/info.png",
+   "text": {
+    "translate": "badge.stlboy.cls_sun.1",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.cls_sun.shard",
+    "fallback": ""
+   }
   }
  ]
 }

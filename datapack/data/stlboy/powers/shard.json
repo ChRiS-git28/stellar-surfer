@@ -8,6 +8,14 @@
     "translate": "badge.stlboy.shard.0",
     "fallback": "§eX§7 → loose a §dStar Shard§7: instant, homes on the nearest foe ahead, §f2 hearts§7 of cosmic damage. §f3§7 charges (§f5§7 at Rank 10), one back every §f2 s§7. Never interrupted."
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.shard.cls",
+    "fallback": ""
+   }
   }
  ],
  "charges": {

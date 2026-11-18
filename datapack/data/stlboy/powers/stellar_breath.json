@@ -1506,10 +1506,8 @@
     ]
    },
    "if_action": {
-    "type": "apoli:add_velocity",
-    "space": "local",
-    "set": true,
-    "z": -0.16
+    "type": "apoli:and",
+    "actions": []
    },
    "else_action": {
     "type": "apoli:add_velocity",

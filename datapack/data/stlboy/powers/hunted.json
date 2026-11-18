@@ -104,11 +104,21 @@
  "when_hit_player": {
   "type": "apoli:self_action_when_hit",
   "damage_condition": {
-   "type": "apoli:attacker",
-   "entity_condition": {
-    "type": "apoli:entity_type",
-    "entity_type": "minecraft:player"
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:attacker",
+     "entity_condition": {
+      "type": "apoli:entity_type",
+      "entity_type": "minecraft:player"
+     }
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:thorns",
+     "inverted": true
+    }
+   ]
   },
   "entity_action": {
    "type": "apoli:and",
@@ -201,12 +211,22 @@
  "when_hit_mob": {
   "type": "apoli:self_action_when_hit",
   "damage_condition": {
-   "type": "apoli:attacker",
-   "entity_condition": {
-    "type": "apoli:entity_type",
-    "entity_type": "minecraft:player",
-    "inverted": true
-   }
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:attacker",
+     "entity_condition": {
+      "type": "apoli:entity_type",
+      "entity_type": "minecraft:player",
+      "inverted": true
+     }
+    },
+    {
+     "type": "apoli:type",
+     "damage_type": "minecraft:thorns",
+     "inverted": true
+    }
+   ]
   },
   "entity_action": {
    "type": "apoli:and",

@@ -18,3 +18,4 @@ scoreboard players operation @s stlboy.dz *= #9 stlboy.const
 scoreboard players operation @s stlboy.dz /= #10 stlboy.const
 scoreboard players remove @s stlboy.life 1
 execute if score @s stlboy.life matches ..0 run function stlboy:orb/expire
+execute if entity @s[tag=stlboy_ofx_has] at @s run function stlboy:ofx/follow

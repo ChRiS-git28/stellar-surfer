@@ -4,6 +4,7 @@ execute if entity @s[tag=stlboy_tr_cecho] run function stlboy:trial/c_hit
 scoreboard players set @s stlboy.stars 4
 scoreboard players set @s stlboy.cwait 5
 function stlboy:breath/const_fx with storage stlboy:breath cur
+function stlboy:breath/vis/finale
 resource change @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] stlboy:stellar_breath_siphon 1
 # Degats cosmiques de la Constellation : base FIXE (4) + competences + Memoires, en UN seul coup
 scoreboard players set #cdmg stlboy.tmp 40

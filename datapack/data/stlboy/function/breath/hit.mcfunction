@@ -7,5 +7,5 @@ function stlboy:breath/stars_pre
 function stlboy:breath/pdmg_calc
 function stlboy:breath/pdmg
 function stlboy:breath/stars_post
-execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_heat,limit=1] run data merge entity @s {Fire:40s}
-execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_heat2,limit=1] run data merge entity @s {Fire:80s}
+execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_heat,limit=1] run function stlboy:cls/flare {t:2}
+execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_heat2,limit=1] run function stlboy:cls/flare {t:4}

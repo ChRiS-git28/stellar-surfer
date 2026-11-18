@@ -53,6 +53,14 @@
     "translate": "badge.stlboy.cls_aurora.0",
     "fallback": "cls_aurora"
    }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.cls_aurora.shard",
+    "fallback": ""
+   }
   }
  ]
 }

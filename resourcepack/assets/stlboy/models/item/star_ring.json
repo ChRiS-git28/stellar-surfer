@@ -3,5 +3,5 @@
  "textures": {
   "layer0": "stlboy:item/star_ring"
  },
- "render_type": "minecraft:cutout"
+ "render_type": "minecraft:translucent"
 }

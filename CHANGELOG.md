@@ -7,6 +7,25 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.7] — 2026-11-18 · *Solar Flare*
+
+### Classes
+- **DP** Star Shards change nature with your class: **Nebula** slows and reveals, **Sun** ignites, **Neptune** weighs down, **Aurora** heals you, **Betelgeuse** bursts in a small cosmic blast.
+- **DP/RP** Sun fire is now a **Solar Flare**: burns like fire (1 damage per second, water and Fire Resistance put it out) but ignores invulnerability frames, with its own solar flames.
+- **DP** *Cometary Recoil* becomes **Comet Stride**: out of surf, firing no longer roots you and you move freely (no more backward push).
+
+### Orbs & constellations
+- **DP** Black Hole and White Hole visuals now follow the orb in the same tick: smooth movement when you steer them.
+- **DP** A **flash finale** when a constellation completes.
+- **DP/RP** Thinner links; stars and links translucent again for a softer look without shaders.
+
+### Survival & compatibility
+- **DP** Thorns-like damage no longer triggers Hunted (it no longer drags you down).
+- **DP** Enhanced AI: cosmic damage no longer makes zombies bite back.
+- **DP** Legendary Survival Overhaul: always hydrated (thirst effects removed); only Temperature Immunity is kept. Tough As Nails thirst removed too.
+
+---
+
 ## [1.0.6] — 2026-11-18 · *Starburst*
 
 ### Constellations

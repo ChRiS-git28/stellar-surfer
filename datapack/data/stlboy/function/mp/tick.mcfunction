@@ -26,3 +26,4 @@ execute as @e[type=minecraft:armor_stand,tag=stlboy_ghost_decoy] run function st
 function stlboy:orb/crash_tick
 # marque stellaire des points de reapparition (seulement si quelqu'un est proche)
 execute as @e[type=minecraft:marker,tag=stlboy_home] at @s if entity @a[distance=..48] run function stlboy:anchor/home_fx
+execute as @e[tag=stlboy_flare] at @s run function stlboy:cls/flare_tick
