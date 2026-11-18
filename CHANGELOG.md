@@ -7,6 +7,14 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.12] — 2026-11-19 · *Spellbreaker*
+
+### Compatibility
+- **DP** Event Horizon (Wormhole), Light Curtain (Breath) and the dodge parry now also destroy **spell projectiles** from Iron's Spells 'n Spellbooks, Hazen n Stuff, Ars Nouveau and Ars Elemental.
+- **DP** Thrown weapons (tridents, enchanted weapons and the new `#stlboy:thrown_weapons` tag) are never destroyed: they stop and drop as if they had hit.
+
+---
+
 ## [1.0.11] — 2026-11-19 · *Living Flame*
 
 ### Visuals

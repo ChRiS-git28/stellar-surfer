@@ -35,4 +35,4 @@ execute if score @s stlboy.wj matches 1.. run scoreboard players remove @s stlbo
 execute store result score #wr stlboy.tmp run resource get @s stlboy:stardust_rank
 execute unless score @s stlboy.wj matches 1.. if score #wr stlboy.tmp matches 10.. if data entity @s SpawnX if entity @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,distance=..1.8] run return run function stlboy:orb/wh_try
 # Horizon des evenements (competence) : le champ avale les projectiles
-execute if entity @s[tag=stlboy_sk_wvoid] at @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,limit=1] as @e[type=#stlboy:homing_projectiles,distance=..10,type=!minecraft:ender_pearl] run function stlboy:orb/void_proj
+execute if entity @s[tag=stlboy_sk_wvoid] at @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,limit=1] as @e[type=#stlboy:void_projectiles,distance=..10,type=!minecraft:ender_pearl] run function stlboy:orb/void_proj
