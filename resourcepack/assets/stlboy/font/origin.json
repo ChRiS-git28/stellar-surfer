@@ -6,7 +6,7 @@
       "ascent": 8,
       "height": 36,
       "chars": [
-        "\ue000"
+        ""
       ]
     },
     {
@@ -15,7 +15,16 @@
       "ascent": 4,
       "height": 5,
       "chars": [
-        "\ue001"
+        ""
+      ]
+    },
+    {
+      "type": "bitmap",
+      "file": "stlboy:font/sigil_map.png",
+      "ascent": 8,
+      "height": 84,
+      "chars": [
+        ""
       ]
     }
   ]

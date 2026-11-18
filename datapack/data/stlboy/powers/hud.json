@@ -5,8 +5,21 @@
   "fallback": "Celestial Sigil"
  },
  "description": {
-  "translate": "power.stlboy.hud.description",
-  "fallback": "Your own sky, drawn at the edge of your sight."
+  "text": "",
+  "extra": [
+   {
+    "text": "",
+    "font": "stlboy:origin",
+    "color": "white"
+   },
+   {
+    "text": "\n"
+   },
+   {
+    "translate": "power.stlboy.hud.description",
+    "fallback": "Your own sky, drawn at the edge of your sight."
+   }
+  ]
  },
  "badges": [
   {
@@ -131,6 +144,33 @@
    "should_render": false
   }
  },
+ "cr": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1000,
+  "start_value": 1000,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "cg": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1000,
+  "start_value": 1000,
+  "hud_render": {
+   "should_render": false
+  }
+ },
+ "cb": {
+  "type": "apoli:resource",
+  "min": 0,
+  "max": 1000,
+  "start_value": 1000,
+  "hud_render": {
+   "should_render": false
+  }
+ },
  "alt": {
   "type": "apoli:resource",
   "min": -2048,
@@ -232,7 +272,7 @@
  },
  "settings": {
   "type": "apoli:action_over_time",
-  "interval": 1,
+  "interval": 4,
   "entity_action": {
    "type": "apoli:and",
    "actions": [
@@ -292,9 +332,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_orbit_0.png",
@@ -397,9 +437,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_o.png",
@@ -443,9 +483,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_o_still.png",
@@ -489,9 +529,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_i.png",
@@ -535,9 +575,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_i_still.png",
@@ -581,9 +621,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -628,9 +668,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -675,9 +715,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -722,9 +762,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -769,9 +809,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -816,9 +856,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -863,9 +903,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -910,9 +950,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -957,9 +997,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -1004,9 +1044,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -1051,9 +1091,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_full.png",
@@ -1206,9 +1246,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_speed.png",
@@ -1242,9 +1282,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_runes.png",
@@ -1289,9 +1329,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_runes.png",
@@ -1336,9 +1376,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_core.png",
@@ -1361,9 +1401,9 @@
      "comparison": "==",
      "compare_to": 0
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/offer.png",
@@ -1510,9 +1550,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/grace.png",
@@ -1557,9 +1597,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -1601,9 +1641,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_well.png",
@@ -1656,9 +1696,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_well.png",
@@ -1711,9 +1751,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -1773,9 +1813,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -1840,9 +1880,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -1896,9 +1936,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -1940,9 +1980,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_nova.png",
@@ -1995,9 +2035,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_nova.png",
@@ -2050,9 +2090,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -2112,9 +2152,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -2179,9 +2219,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -2235,9 +2275,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -2279,9 +2319,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_sn.png",
@@ -2334,9 +2374,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_sn.png",
@@ -2389,9 +2429,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -2451,9 +2491,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -2518,9 +2558,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -2574,9 +2614,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -2618,9 +2658,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_mag.png",
@@ -2673,9 +2713,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_mag.png",
@@ -2728,9 +2768,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/mag_off.png",
@@ -2783,9 +2823,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_neb.png",
@@ -2829,9 +2869,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_orbit_1.png",
@@ -2934,9 +2974,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_o.png",
@@ -2980,9 +3020,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_o_still.png",
@@ -3026,9 +3066,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_i.png",
@@ -3072,9 +3112,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_ring_i_still.png",
@@ -3118,9 +3158,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3165,9 +3205,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3212,9 +3252,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3259,9 +3299,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3306,9 +3346,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3353,9 +3393,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3400,9 +3440,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3447,9 +3487,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3494,9 +3534,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3541,9 +3581,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_arc.png",
@@ -3588,9 +3628,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_full.png",
@@ -3743,9 +3783,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_speed.png",
@@ -3779,9 +3819,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_runes.png",
@@ -3826,9 +3866,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_runes.png",
@@ -3873,9 +3913,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/sc_core.png",
@@ -3898,9 +3938,9 @@
      "comparison": "==",
      "compare_to": 1
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/offer.png",
@@ -4047,9 +4087,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/grace.png",
@@ -4094,9 +4134,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -4138,9 +4178,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_well.png",
@@ -4193,9 +4233,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_well.png",
@@ -4248,9 +4288,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -4310,9 +4350,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -4377,9 +4417,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -4433,9 +4473,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -4477,9 +4517,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_nova.png",
@@ -4532,9 +4572,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_nova.png",
@@ -4587,9 +4627,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -4649,9 +4689,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -4716,9 +4756,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -4772,9 +4812,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -4816,9 +4856,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_sn.png",
@@ -4871,9 +4911,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_sn.png",
@@ -4926,9 +4966,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_cd.png",
@@ -4988,9 +5028,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_ready.png",
@@ -5055,9 +5095,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal_life.png",
@@ -5111,9 +5151,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/seal.png",
@@ -5155,9 +5195,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_mag.png",
@@ -5210,9 +5250,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/ic_mag.png",
@@ -5265,9 +5305,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/mag_off.png",
@@ -5320,9 +5360,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/shard_pips.png",
@@ -5370,9 +5410,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/shard_pips.png",
@@ -5420,9 +5460,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/shard_pips.png",
@@ -5469,9 +5509,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/shard_pips.png",
@@ -5518,9 +5558,9 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/charge.png",
@@ -5554,9 +5594,34 @@
       }
      ]
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
+   },
+   {
+    "texture": "stlboy:textures/gui/sigil/breath_cd.png",
+    "anchor": "center",
+    "x": 0,
+    "y": 0,
+    "strength": 1.0,
+    "draw_mode": "texture",
+    "draw_phase": "above_hud",
+    "hide_with_hud": true,
+    "visible_in_third_person": true,
+    "texture_width": 16,
+    "texture_height": 144,
+    "width": 16,
+    "height": 16,
+    "v": "min(8, floor(resource(stlboy:stellar_breath_cd) * 9 / 41)) * 16",
+    "condition": {
+     "type": "apoli:resource",
+     "resource": "stlboy:stellar_breath_cd",
+     "comparison": ">",
+     "compare_to": 0
+    },
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/stars.png",
@@ -5579,9 +5644,9 @@
      "comparison": "==",
      "compare_to": 1
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/dodge_l.png",
@@ -5604,9 +5669,9 @@
      "comparison": ">",
      "compare_to": 0
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/dodge_r.png",
@@ -5629,9 +5694,9 @@
      "comparison": ">",
      "compare_to": 0
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/hunt.png",
@@ -5653,9 +5718,9 @@
      "comparison": ">",
      "compare_to": 0
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    },
    {
     "texture": "stlboy:textures/gui/sigil/hunt_arc.png",
@@ -5678,9 +5743,9 @@
      "comparison": ">",
      "compare_to": 0
     },
-    "red": "max(0, min(1, (-0.087582) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (1.135948) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-4.971242) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (8.275817) * max(1, resource(stlboy:mp_sid)) + (-3.352941)))",
-    "green": "max(0, min(1, (-0.072386) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (0.774837) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-2.770752) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (3.734967) * max(1, resource(stlboy:mp_sid)) + (-0.666667)))",
-    "blue": "max(0, min(1, (0.138072) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-1.787255) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (7.981536) * max(1, resource(stlboy:mp_sid)) * max(1, resource(stlboy:mp_sid)) + (-14.214706) * max(1, resource(stlboy:mp_sid)) + (8.882353)))"
+    "red": "resource(stlboy:hud_cr) * 0.001",
+    "green": "resource(stlboy:hud_cg) * 0.001",
+    "blue": "resource(stlboy:hud_cb) * 0.001"
    }
   ]
  }

@@ -22,7 +22,7 @@
  },
  "look": {
   "type": "apoli:action_over_time",
-  "interval": 1,
+  "interval": 2,
   "entity_action": {
    "type": "apoli:and",
    "actions": [

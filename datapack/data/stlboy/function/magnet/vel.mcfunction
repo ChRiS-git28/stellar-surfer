@@ -52,5 +52,6 @@ scoreboard players operation #dz stlboy.tmp > #vmin stlboy.tmp
 execute store result entity @s Motion[0] double 0.01 run scoreboard players get #dx stlboy.tmp
 execute store result entity @s Motion[1] double 0.01 run scoreboard players get #dy stlboy.tmp
 execute store result entity @s Motion[2] double 0.01 run scoreboard players get #dz stlboy.tmp
-execute if predicate stlboy:chance_quarter run particle minecraft:end_rod ~ ~0.25 ~ 0.03 0.03 0.03 0 1
-execute if predicate stlboy:chance_quarter run particle minecraft:dust_color_transition{from_color:[0.5,0.8,1.0],scale:0.7,to_color:[0.7,0.4,1.0]} ~ ~0.25 ~ 0.06 0.06 0.06 0 1
+# petites etincelles qui accompagnent l'objet dans sa courbe
+execute if predicate stlboy:chance_half run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:10,lifetime_variation:3,size:0.16f,size_variation:0.04f,end_size:0.0f,color:"#FFF2C2EE",end_color:"#B07CFF00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.25 ~ 0.05 0.05 0.05 0.01 1 force
+execute if predicate stlboy:chance_quarter run particle minecraft:end_rod ~ ~0.25 ~ 0.02 0.02 0.02 0 1

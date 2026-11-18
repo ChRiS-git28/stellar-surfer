@@ -8,5 +8,3 @@ kill @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned]
 # La recharge (2 x la duree du champ) demarre maintenant (en tant que le joueur)
 execute store result storage stlboy:tmp cd int 1 run scoreboard players get @s stlboy.sntot
 function stlboy:orb/sn_cd with storage stlboy:tmp
-kill @e[type=minecraft:marker,tag=stlboy_sn_exit,predicate=stlboy:owned]
-tag @s remove stlboy_whlock

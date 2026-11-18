@@ -4,6 +4,7 @@ execute if score @s stlboy.pal matches 1..5 run scoreboard players set #pa stlbo
 scoreboard players operation @s stlboy.pal = #p stlboy.tmp
 execute store result storage stlboy:tmp pal.p int 1 run scoreboard players get #p stlboy.tmp
 function stlboy:mp/pal_m with storage stlboy:tmp pal
+function stlboy:hud/col
 # la marque du point de reapparition suit la nouvelle couleur
 scoreboard players operation #own stlboy.tmp = @s stlboy.sid
 scoreboard players operation @e[type=minecraft:marker,tag=stlboy_home,predicate=stlboy:owned] stlboy.pal = #p stlboy.tmp

@@ -1,4 +1,6 @@
 # Rayon : version classique (pas a pas) ou version raycast Apoli (voir debug/ray_on et ray_off)
+scoreboard players set #rward stlboy.tmp 0
+execute if entity @s[tag=stlboy_sk_rward] run scoreboard players set #rward stlboy.tmp 1
 execute if score #rayv stlboy.const matches 1 run return run function stlboy:breath/draw_ray
 function stlboy:breath/params
 tag @e[tag=stlboy_aim] remove stlboy_aim

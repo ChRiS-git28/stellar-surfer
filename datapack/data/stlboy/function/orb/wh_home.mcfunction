@@ -15,7 +15,9 @@ execute store result storage stlboy:tmp wh.y int 1 run scoreboard players get #h
 execute store result storage stlboy:tmp wh.z double 0.5 run scoreboard players get #hz stlboy.tmp
 data modify storage stlboy:tmp wh.d set value "minecraft:overworld"
 data modify storage stlboy:tmp wh.d set from entity @s SpawnDimension
-# depart : le coeur t'avale
+# depart : le coeur t'avale ; les allies (anneau de benediction) a 10 blocs du coeur viennent avec toi
+execute store result score @s stlboy.whday run time query gametime
+execute at @e[type=minecraft:marker,tag=stlboy_sn,predicate=stlboy:owned,limit=1] as @a[predicate=stlboy:ally,distance=..10] at @s run function stlboy:orb/wh_ally
 function stlboy:orb/wh_home_out
 function stlboy:orb/wh_home_m with storage stlboy:tmp wh
 # arrivee : tu jaillis d'un tourbillon d'etoiles

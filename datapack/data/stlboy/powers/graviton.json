@@ -43,34 +43,50 @@
   },
   {
    "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "sprite": "stlboy:textures/gui/badge/bh.png",
    "text": {
     "translate": "badge.stlboy.graviton.g1",
-    "fallback": "graviton 1"
+    "fallback": "g1"
    }
   },
   {
    "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "sprite": "stlboy:textures/gui/badge/wh.png",
    "text": {
     "translate": "badge.stlboy.graviton.g2",
-    "fallback": "graviton 2"
+    "fallback": "g2"
    }
   },
   {
    "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "sprite": "stlboy:textures/gui/badge/worm.png",
    "text": {
     "translate": "badge.stlboy.graviton.g3",
-    "fallback": "graviton 3"
+    "fallback": "g3"
    }
   },
   {
    "type": "origins:tooltip",
-   "sprite": "stlboy:textures/gui/badge/skill.png",
+   "sprite": "stlboy:textures/gui/badge/anchor.png",
    "text": {
     "translate": "badge.stlboy.graviton.g4",
-    "fallback": "graviton 4"
+    "fallback": "g4"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/magnet.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g5",
+    "fallback": "g5"
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/sense.png",
+   "text": {
+    "translate": "badge.stlboy.graviton.g6",
+    "fallback": "g6"
    }
   }
  ],
@@ -11561,7 +11577,7 @@
  },
  "hud_sync": {
   "type": "apoli:action_over_time",
-  "interval": 1,
+  "interval": 2,
   "entity_action": {
    "type": "apoli:and",
    "actions": [

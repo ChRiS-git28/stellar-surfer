@@ -7,6 +7,33 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.3] — 2026-11-18 · *Old Ruins*
+
+### Constellations
+- **RP** Fixed: the constellation animation broke in 1.0.2 (links grew backward). Links stretch from one star to the next again.
+
+### Cosmic forces
+- **DP** Wormhole, Rank 10: the exit mouth is gone. Stepping into the heart of your Wormhole takes you **home with your allies** (Ring Blessing, within 10 blocks), **once per Minecraft day**. The remaining time is shown if you try too early.
+- **DP** New skill **Event Horizon** (Rank 7, after Nova Stun): your Wormhole swallows nearby projectiles. Projectiles of Stellar Surfers pass through; tridents and enchanted thrown weapons simply **drop to the ground** instead of being destroyed.
+- **DP** Magnetised items now leave small sparkles as they fly to you.
+
+### Stellar Breath
+- **DP** New skill **Light Curtain** (Rank 4, after the Breath's range skill): the beam destroys the projectiles it crosses (same exceptions as Event Horizon).
+- **DP/RP** The HUD now shows the Breath's cooldown.
+
+### Trials
+- **DP** Trial shrines are now **overgrown ruins**: collapsed deepslate arch, moss, cyan flowers and a column of light ringed with oxidised copper.
+
+### Interface
+- **DP/RP** Gravity Sense and Stellar Magnetism moved into **Graviton**; new custom icons for every Graviton badge.
+- **DP/RP** The origin screen shows an **annotated diagram of the Celestial Sigil**.
+- **DP** Lighter HUD: class colours are computed once instead of every tick, fewer per-tick checks.
+
+### Debug
+- **DP** `/function stlboy:debug/trials`: clickable menu to start any trial, build its shrine, validate it, abort it or forget every trial.
+
+---
+
 ## [1.0.2] — 2026-11-15 · *Clear Sky*
 
 ### Constellations

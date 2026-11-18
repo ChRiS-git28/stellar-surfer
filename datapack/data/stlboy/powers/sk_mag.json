@@ -30,5 +30,6 @@
     "fallback": "§7Unlocks the §bitem magnet§7 (§eTab§7 toggles it). §f+1§7 block reach. §8(Rank 1+)"
    }
   }
- ]
+ ],
+ "hidden": true
 }

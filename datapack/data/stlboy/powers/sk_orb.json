@@ -30,5 +30,6 @@
     "fallback": "§bOpens§7 the orb branch: Black Hole, White Hole & their augments. §8(Rank 2+)"
    }
   }
- ]
+ ],
+ "hidden": true
 }
