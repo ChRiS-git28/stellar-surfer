@@ -7,6 +7,13 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.9] — 2026-11-18 · *Star Boards*
+
+### Visuals
+- **RP** Five animated **surf boards**, one per class (custom model data 7150–7154 on leather horse armor): Nebula star swirling in dust, Sun star with blazing rays, Neptune star sending out ripples, Aurora star spinning with a ribbon, Betelgeuse five-pointed red giant that pulses. Used by the Stellar Surfer Figura avatar.
+
+---
+
 ## [1.0.8] — 2026-11-18 · *Five Skies*
 
 ### Classes

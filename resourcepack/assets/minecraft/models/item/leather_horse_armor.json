@@ -1,98 +1,128 @@
 {
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "minecraft:item/leather_horse_armor"
+ "parent": "minecraft:item/generated",
+ "textures": {
+  "layer0": "minecraft:item/leather_horse_armor"
+ },
+ "overrides": [
+  {
+   "predicate": {
+    "custom_model_data": 7120
+   },
+   "model": "stlboy:item/sb_body_t"
   },
-  "overrides": [
-    {
-      "predicate": {
-        "custom_model_data": 7120
-      },
-      "model": "stlboy:item/sb_body_t"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7121
-      },
-      "model": "stlboy:item/sb_hit_t"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7122
-      },
-      "model": "stlboy:item/sb_fp_t"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7123
-      },
-      "model": "stlboy:item/sb_hit_t"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7130
-      },
-      "model": "stlboy:item/ofx_well_core"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7131
-      },
-      "model": "stlboy:item/ofx_well_disk"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7132
-      },
-      "model": "stlboy:item/ofx_well_halo"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7133
-      },
-      "model": "stlboy:item/ofx_nova_core"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7134
-      },
-      "model": "stlboy:item/ofx_nova_flare"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7135
-      },
-      "model": "stlboy:item/ofx_nova_halo"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7136
-      },
-      "model": "stlboy:item/ofx_sn_neb"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7137
-      },
-      "model": "stlboy:item/ofx_sn_core"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7138
-      },
-      "model": "stlboy:item/ofx_sn_halo"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7140
-      },
-      "model": "stlboy:item/star_t"
-    },
-    {
-      "predicate": {
-        "custom_model_data": 7141
-      },
-      "model": "stlboy:item/star_line_t"
-    }
-  ]
+  {
+   "predicate": {
+    "custom_model_data": 7121
+   },
+   "model": "stlboy:item/sb_hit_t"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7122
+   },
+   "model": "stlboy:item/sb_fp_t"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7123
+   },
+   "model": "stlboy:item/sb_hit_t"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7130
+   },
+   "model": "stlboy:item/ofx_well_core"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7131
+   },
+   "model": "stlboy:item/ofx_well_disk"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7132
+   },
+   "model": "stlboy:item/ofx_well_halo"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7133
+   },
+   "model": "stlboy:item/ofx_nova_core"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7134
+   },
+   "model": "stlboy:item/ofx_nova_flare"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7135
+   },
+   "model": "stlboy:item/ofx_nova_halo"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7136
+   },
+   "model": "stlboy:item/ofx_sn_neb"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7137
+   },
+   "model": "stlboy:item/ofx_sn_core"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7138
+   },
+   "model": "stlboy:item/ofx_sn_halo"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7140
+   },
+   "model": "stlboy:item/star_t"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7141
+   },
+   "model": "stlboy:item/star_line_t"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7150
+   },
+   "model": "stlboy:item/board_nebula"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7151
+   },
+   "model": "stlboy:item/board_sun"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7152
+   },
+   "model": "stlboy:item/board_neptune"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7153
+   },
+   "model": "stlboy:item/board_aurora"
+  },
+  {
+   "predicate": {
+    "custom_model_data": 7154
+   },
+   "model": "stlboy:item/board_betelgeuse"
+  }
+ ]
 }
