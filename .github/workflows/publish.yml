@@ -10,6 +10,16 @@ on:
       tag:
         description: "Release tag to publish (e.g. v1.0.4)"
         required: true
+      targets:
+        description: "Where to publish"
+        type: choice
+        options: [all, modrinth, curseforge]
+        default: all
+      channel:
+        description: "Version type (empty = .github/publish.json)"
+        type: choice
+        options: ["", release, beta, alpha]
+        default: ""
 
 permissions:
   contents: read
@@ -22,12 +32,12 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.release.tag_name || inputs.tag }}
       - name: Download release files
         run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.zip" --dir dist
       - name: Upload
         env:
           CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}
           MR_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+          TARGETS: ${{ inputs.targets || 'all' }}
+          CHANNEL: ${{ inputs.channel }}
         run: bash .github/scripts/publish.sh

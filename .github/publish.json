@@ -1,9 +1,12 @@
 {
   "game_version": "1.21.1",
+  "release_type": "release",
   "curseforge": {
     "datapack_id": 1804623,
     "resourcepack_id": 1805012,
-    "game_version_ids": [11779]
+    "game_version_ids": [
+      11779
+    ]
   },
   "modrinth": {
     "datapack_id": "6HYbzgVR",
