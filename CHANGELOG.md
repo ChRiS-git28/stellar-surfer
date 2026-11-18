@@ -7,6 +7,13 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.10] — 2026-11-18 · *Galaxy Boards*
+
+### Visuals
+- **RP** The class surf boards now share the style of the cosmic skins: a star filled with the class galaxy (slowly drifting), a glowing rim and twinkling stars. Used by the Stellar Surfer Figura avatar.
+
+---
+
 ## [1.0.9] — 2026-11-18 · *Star Boards*
 
 ### Visuals
