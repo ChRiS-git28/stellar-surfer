@@ -7,6 +7,15 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.8] — 2026-11-18 · *Five Skies*
+
+### Classes
+- **DP/RP** Each class now has its **own aura** with its own 16×16 pixel-art particles: Nebula dust clouds circling with twinkling stars, Sun embers and solar flames, Neptune bubbles and falling drops, Aurora waving veil ribbons, Betelgeuse falling cinders with a red shockwave pulse.
+- **DP/RP** The surf trail and the Star Shard impacts use the particles of your class.
+- **RP** Solar Flare flames redrawn as crisp 16×16 pixel art.
+
+---
+
 ## [1.0.7] — 2026-11-18 · *Solar Flare*
 
 ### Classes
