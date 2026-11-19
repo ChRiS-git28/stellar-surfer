@@ -29,7 +29,7 @@ cf_upload() { # project_id file changelog display_name [game_version_ids_json]
     "https://minecraft.curseforge.com/api/projects/$1/upload-file"
   echo
 }
-if [ "$TARGETS" = "modrinth" ]; then
+if [ "$TARGETS" = "modrinth" ] || [ "$TARGETS" = "modrinth-mod" ]; then
   echo "CurseForge: not selected"
 elif [ -n "${CF_TOKEN:-}" ]; then
   if [ "$TARGETS" != "modrinth+cf-mod" ]; then   # modrinth+cf-mod = CurseForge packs already sent, only the jar is missing there
