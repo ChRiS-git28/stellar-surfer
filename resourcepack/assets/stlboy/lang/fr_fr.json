@@ -540,5 +540,6 @@
  "badge.stlboy.cls_neptune.passive": "§9✦ Passif · Marée intérieure§7 : §fnage et mine sous l'eau§7 aussi librement qu'à l'air libre.",
  "badge.stlboy.cls_aurora.passive": "§a✦ Passif · Aube boréale§7 : tu §frécupères 1 PV§7 toutes les 5 secondes.",
  "badge.stlboy.cls_betelgeuse.passive": "§c✦ Passif · Masse de géante§7 : §f+4 PV max§7 et §f+50 % de résistance au recul§7.",
+ "badge.stlboy.cls_betelgeuse.hunt": "§c✦ Fierté de géante§7 : la §cTraque§7 faiblit avec ton Rang. Elle s'éteint §f10 % plus vite par Rang§7 (§f−50 %§7 au Rang 10). §fRang 4§7 : plus d'attraction vers le bas. §fRang 7§7 : les projectiles ne sont plus aimantés vers toi. §fRang 10§7 : plus de ralentissement.",
  "subtitles.stlboy.cosmic": "Résonance cosmique"
 }

@@ -41,8 +41,25 @@
    ]
   },
   "entity_action_lost": {
-   "type": "apoli:execute_command",
-   "command": "tag @s remove stlboy_cls_betelgeuse"
+   "type": "apoli:and",
+   "actions": [
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_cls_betelgeuse"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_bh_nopull"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_bh_nomag"
+    },
+    {
+     "type": "apoli:execute_command",
+     "command": "tag @s remove stlboy_bh_free"
+    }
+   ]
   }
  },
  "badges": [
@@ -67,6 +84,14 @@
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
     "translate": "badge.stlboy.cls_betelgeuse.shard",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.cls_betelgeuse.hunt",
     "fallback": ""
    }
   }

@@ -157,33 +157,6 @@
     "actions": [
      {
       "condition": {
-       "type": "apoli:target_condition",
-       "condition": {
-        "type": "apoli:in_tag",
-        "tag": "stlboy:homing_projectiles"
-       }
-      },
-      "action": {
-       "type": "apoli:and",
-       "actions": [
-        {
-         "type": "apoli:add_velocity",
-         "reference": "position",
-         "z": 1.4,
-         "set": true
-        },
-        {
-         "type": "apoli:target_action",
-         "action": {
-          "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
-         }
-        }
-       ]
-      }
-     },
-     {
-      "condition": {
        "type": "apoli:and",
        "conditions": [
         {
@@ -1390,33 +1363,6 @@
     "actions": [
      {
       "condition": {
-       "type": "apoli:target_condition",
-       "condition": {
-        "type": "apoli:in_tag",
-        "tag": "stlboy:homing_projectiles"
-       }
-      },
-      "action": {
-       "type": "apoli:and",
-       "actions": [
-        {
-         "type": "apoli:add_velocity",
-         "reference": "position",
-         "z": 1.4,
-         "set": true
-        },
-        {
-         "type": "apoli:target_action",
-         "action": {
-          "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
-         }
-        }
-       ]
-      }
-     },
-     {
-      "condition": {
        "type": "apoli:and",
        "conditions": [
         {
@@ -2621,33 +2567,6 @@
    "bientity_action": {
     "type": "apoli:if_else_list",
     "actions": [
-     {
-      "condition": {
-       "type": "apoli:target_condition",
-       "condition": {
-        "type": "apoli:in_tag",
-        "tag": "stlboy:homing_projectiles"
-       }
-      },
-      "action": {
-       "type": "apoli:and",
-       "actions": [
-        {
-         "type": "apoli:add_velocity",
-         "reference": "position",
-         "z": 1.4,
-         "set": true
-        },
-        {
-         "type": "apoli:target_action",
-         "action": {
-          "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:\"#FFF2C2FF\",end_color:\"#FF7A3C00\",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 6)\"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force"
-         }
-        }
-       ]
-      }
-     },
      {
       "condition": {
        "type": "apoli:and",

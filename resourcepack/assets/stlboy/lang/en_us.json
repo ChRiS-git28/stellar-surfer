@@ -538,5 +538,6 @@
  "badge.stlboy.cls_neptune.passive": "§9✦ Passive · Inner Tide§7: §fswim and mine underwater§7 as freely as in open air.",
  "badge.stlboy.cls_aurora.passive": "§a✦ Passive · Boreal Dawn§7: you §frecover 1 health§7 every 5 seconds.",
  "badge.stlboy.cls_betelgeuse.passive": "§c✦ Passive · Giant's Mass§7: §f+4 max health§7 and §f+50% knockback resistance§7.",
+ "badge.stlboy.cls_betelgeuse.hunt": "§c✦ Giant's Pride§7: §cHunted§7 weakens as you rank up. It ends §f10% faster per Rank§7 (§f−50%§7 at Rank 10). §fRank 4§7: no more drag down. §fRank 7§7: projectiles are no longer pulled to you. §fRank 10§7: no more slowdown.",
  "subtitles.stlboy.cosmic": "Cosmic resonance"
 }

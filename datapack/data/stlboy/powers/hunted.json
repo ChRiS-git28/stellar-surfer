@@ -375,6 +375,30 @@
        }
       ]
      }
+    },
+    {
+     "type": "apoli:if_else",
+     "condition": {
+      "type": "apoli:and",
+      "conditions": [
+       {
+        "type": "apoli:resource",
+        "resource": "stlboy:hunted_timer",
+        "comparison": ">",
+        "compare_to": 0
+       },
+       {
+        "type": "apoli:command",
+        "command": "execute if entity @s[tag=stlboy_cls_betelgeuse]",
+        "comparison": ">=",
+        "compare_to": 1
+       }
+      ]
+     },
+     "if_action": {
+      "type": "apoli:execute_command",
+      "command": "function stlboy:cls/bet_hunt"
+     }
     }
    ]
   }
@@ -398,6 +422,12 @@
     {
      "type": "apoli:on_block",
      "inverted": true
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_bh_free]",
+     "comparison": "==",
+     "compare_to": 0
     }
    ]
   },
@@ -426,6 +456,12 @@
     {
      "type": "apoli:on_block",
      "inverted": true
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_bh_free]",
+     "comparison": "==",
+     "compare_to": 0
     }
    ]
   },
@@ -454,6 +490,12 @@
     {
      "type": "apoli:on_block",
      "inverted": true
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_bh_free]",
+     "comparison": "==",
+     "compare_to": 0
     }
    ]
   },
@@ -482,6 +524,12 @@
     {
      "type": "apoli:on_block",
      "inverted": true
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_bh_free]",
+     "comparison": "==",
+     "compare_to": 0
     }
    ]
   },
@@ -552,10 +600,21 @@
   "type": "apoli:action_over_time",
   "interval": 1,
   "condition": {
-   "type": "apoli:resource",
-   "resource": "stlboy:hunted_timer",
-   "comparison": ">",
-   "compare_to": 0
+   "type": "apoli:and",
+   "conditions": [
+    {
+     "type": "apoli:resource",
+     "resource": "stlboy:hunted_timer",
+     "comparison": ">",
+     "compare_to": 0
+    },
+    {
+     "type": "apoli:command",
+     "command": "execute if entity @s[tag=stlboy_bh_nomag]",
+     "comparison": "==",
+     "compare_to": 0
+    }
+   ]
   },
   "entity_action": {
    "type": "apoli:area_of_effect",

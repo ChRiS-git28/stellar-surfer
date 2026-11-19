@@ -7,6 +7,17 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.2] — 2026-11-19
+
+### White Hole
+- **DP** The White Hole deflects projectiles again: arrows, tridents, fireballs, potions and spells (Iron's Spells, Ars Nouveau, Hazen n Stuff...) that enter its field are sent back toward their shooter, held or released. Range grows with the orb's power (4 / 5.2 / 6.4 blocks).
+- **DP** The Deflection skill now sends them back 30% faster and makes them count as yours (same as before, but no longer the only way to deflect).
+
+### Betelgeuse
+- **DP + RP** New class perk, *Giant's Pride*: Hunted weakens as you rank up. It ends 10% faster per Rank (−50% at Rank 10); Rank 4: no more drag down after a hit; Rank 7: projectiles are no longer pulled toward you; Rank 10: no more slowdown.
+
+---
+
 ## [1.1.1] — 2026-11-19
 
 ### Stellar Breath

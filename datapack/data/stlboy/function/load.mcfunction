@@ -102,3 +102,4 @@ kill @e[type=minecraft:marker,tag=stlboy_sn_exit]
 scoreboard objectives add stlboy.mid dummy
 kill @e[type=minecraft:block_display,tag=stlboy_tr_rock]
 scoreboard objectives add stlboy.shc dummy
+scoreboard objectives add stlboy.bha dummy
