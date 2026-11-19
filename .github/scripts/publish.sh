@@ -73,6 +73,11 @@ if [ -z "$MR_MOD" ]; then
       | jq -r --arg a "$MR_DP" --arg b "$MR_RP" '[.[] | select(.id != $a and .id != $b and (.title | startswith("Stellar Surfer")))][0].id // empty' || true)
   fi
   echo "Modrinth mod project detected: ${MR_MOD:-none (set modrinth.mod_id in .github/publish.json)}"
+elif ! [[ "$MR_MOD" =~ ^[A-Za-z0-9]{8}$ ]]; then
+  # a slug (e.g. "stellarsurfer"): resolve it to the project id (works on drafts with the owner's token)
+  slug="$MR_MOD"
+  MR_MOD=$(curl -sS --fail -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/project/$slug" 2>/dev/null | jq -r '.id // empty' || true)
+  echo "Modrinth mod project '$slug' -> ${MR_MOD:-not found}"
 fi
 if [ -z "$MR_DP" ] || [ -z "$MR_RP" ]; then
   uid=$(curl -sS --fail-with-body -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user" | jq -r .id)
@@ -91,8 +96,10 @@ mr_upload() { # project_id file changelog name loaders_json deps_json
 }
 DEPS='[]'
 [ -n "$MR_RP" ] && DEPS=$(jq -n --arg p "$MR_RP" '[{project_id: $p, dependency_type: "required"}]')
-[ -n "$MR_DP" ] && mr_upload "$MR_DP" "$DP" "$CL/datapack.md" "$NAME_DP" '["datapack"]' "$DEPS"
-[ -n "$MR_RP" ] && mr_upload "$MR_RP" "$RP" "$CL/resourcepack.md" "$NAME_RP" '["minecraft"]' '[]'
+if [ "$TARGETS" != "modrinth-mod" ]; then   # modrinth-mod = only the jar on Modrinth
+  [ -n "$MR_DP" ] && mr_upload "$MR_DP" "$DP" "$CL/datapack.md" "$NAME_DP" '["datapack"]' "$DEPS"
+  [ -n "$MR_RP" ] && mr_upload "$MR_RP" "$RP" "$CL/resourcepack.md" "$NAME_RP" '["minecraft"]' '[]'
+fi
 if [ -n "$MR_MOD" ] && [ -f "$JAR" ]; then
   mr_upload "$MR_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" '["neoforge"]' '[]'
 else
