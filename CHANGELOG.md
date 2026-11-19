@@ -7,6 +7,16 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.1] — 2026-11-19
+
+### Stellar Breath
+- **DP** Calmer charge: the scattered particles are gone, only a soft light core remains in the hand (the Stellar Surfer Figura avatar draws ordered spirals converging into one or both hands, depending on the charge pose).
+
+### Figura avatar support
+- **DP** The hidden marker effect now also signals each real Star Shard cast, so the avatar plays a throw animation only when a shard actually leaves.
+
+---
+
 ## [1.1.0] — 2026-11-19 · *First Light Reborn* — first full release
 
 This release gathers every beta since 1.0.3. Highlights:
