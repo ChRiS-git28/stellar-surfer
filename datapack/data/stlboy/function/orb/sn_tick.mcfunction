@@ -5,7 +5,7 @@ execute as @e[tag=stlboy_sn_in] run function stlboy:orb/sn_guard
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run kill @e[type=ender_pearl,distance=..11]
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] as @e[tag=stlboy_sn_in,distance=10.5..] run function stlboy:orb/sn_leave
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run function stlboy:fx/sn
-execute as @e[tag=stlboy_sn_in] at @s run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFE7A8FF",end_color:"#FF6AD500",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.3 0.3 0.3 0.05 1 force
+execute as @e[tag=stlboy_sn_in] at @s run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFE7A8FF",end_color:"#FF6AD500",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.3 0.3 0.3 0.05 1 force
 # pulsations (perdues au patch p74, restaurees)
 scoreboard players add @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.pt 1
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.lvl matches 0 if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.pt matches 20.. run function stlboy:orb/sn_pulse

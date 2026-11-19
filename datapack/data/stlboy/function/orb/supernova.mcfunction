@@ -9,7 +9,7 @@ execute at @e[tag=stlboy_orb_well,limit=1,predicate=stlboy:owned] run summon mar
 execute as @e[tag=stlboy_sn] unless score @s stlboy.own matches 1.. run scoreboard players operation @s stlboy.own = #own stlboy.tmp
 scoreboard players operation @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned] stlboy.life = #d stlboy.tmp
 scoreboard players operation @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned] stlboy.lvl = @s stlboy.lvl
-execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFF2C2FF",end_color:"#FF7A3C00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.05 0.05 0.05 0.05 1 force
+execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFF2C2FF",end_color:"#FF7A3C00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.05 0.05 0.05 0.05 1 force
 # --- suite perdue au patch p74, restauree ---
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.wh_beam_burst player @a ~ ~ ~ 1.5 0.7
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.wh_awaken player @a ~ ~ ~ 1 1.4

@@ -20,8 +20,8 @@ tag @e[type=minecraft:item_display,tag=stlboy_bimp_new] remove stlboy_bimp_new
 data modify storage stlboy:beam rot set from entity @s Rotation
 execute as @e[type=minecraft:item_display,tag=stlboy_bpass,predicate=stlboy:owned] run data modify entity @s Rotation set from storage stlboy:beam rot
 # invocation : eclat au creux de la main
-execute anchored eyes positioned ^0.25 ^-0.4 ^0.6 run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.04 0.04 0.04 0.09 16
-execute anchored eyes positioned ^0.25 ^-0.4 ^0.6 run particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:"#B07CFFDD",end_color:"#3A1A7A00",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.1 0.1 0.1 0.4 24
+execute anchored eyes positioned ^0.25 ^-0.4 ^0.6 run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.04 0.04 0.04 0.09 16
+execute anchored eyes positioned ^0.25 ^-0.4 ^0.6 run particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:"#B07CFFDD",end_color:"#3A1A7A00",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.1 0.1 0.1 0.4 24
 
 # couleur du Surfer (palette de sa classe)
 scoreboard players set #pal stlboy.tmp 1

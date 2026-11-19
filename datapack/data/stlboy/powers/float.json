@@ -606,11 +606,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
      }
     ]
    },
@@ -965,11 +965,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
      }
     ]
    },
@@ -1462,15 +1462,15 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:4,lifetime_variation:1,size:1.4f,size_variation:0.42f,end_size:0.0f,color:\"#FFFFFFFF\",end_color:\"#C9A6FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 0)\"} ~ ~1.0 ~ 0 0 0 0 1"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:4,lifetime_variation:1,size:1.4f,size_variation:0.42f,end_size:0.0f,color:\"#FFFFFFFF\",end_color:\"#C9A6FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 0)\"} ~ ~1.0 ~ 0 0 0 0 1"
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:8,lifetime_variation:2,size:0.1f,size_variation:0.03f,end_size:0.0f,color:\"#9FE8FFFF\",end_color:\"#FFFFFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.5 0.7 0.5 0.4 25"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:8,lifetime_variation:2,size:0.1f,size_variation:0.03f,end_size:0.0f,color:\"#9FE8FFFF\",end_color:\"#FFFFFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.5 0.7 0.5 0.4 25"
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:\"#F4F8FFFF\",end_color:\"#B07CFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0.2 15"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:\"#F4F8FFFF\",end_color:\"#B07CFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.6 0.4 0.2 15"
     },
     {
      "type": "apoli:execute_command",
@@ -1540,11 +1540,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:26,lifetime_variation:6,size:0.1f,size_variation:0.03f,end_size:0.0f,color:\"#C9A6FFFF\",end_color:\"#6A4AFF00\",friction:0.92f,gravity:-0.006f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.8 0.8 0.8 1.0 40"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:26,lifetime_variation:6,size:0.1f,size_variation:0.03f,end_size:0.0f,color:\"#C9A6FFFF\",end_color:\"#6A4AFF00\",friction:0.92f,gravity:-0.006f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.8 0.8 0.8 1.0 40"
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.2 0.3 0.2 0.02 12"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.2 0.3 0.2 0.02 12"
      }
     ]
    },
@@ -2793,15 +2793,15 @@
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:10,lifetime_variation:2,size:0.6f,size_variation:0.18f,end_size:0.0f,color:\"#FFFFFFAA\",end_color:\"#9FE8FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 0)\"} ~ ~0.1 ~ 0.3 0 0.3 0 3"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:10,lifetime_variation:2,size:0.6f,size_variation:0.18f,end_size:0.0f,color:\"#FFFFFFAA\",end_color:\"#9FE8FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 0)\"} ~ ~0.1 ~ 0.3 0 0.3 0 3"
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.2 ~ 0.8 0.1 0.8 0.2 40"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.2 ~ 0.8 0.1 0.8 0.2 40"
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.17f,size_variation:0.051f,end_size:0.0f,color:\"#9E61FFFF\",end_color:\"#9E61FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.1 ~ 0.8 0.05 0.8 0 20"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.17f,size_variation:0.051f,end_size:0.0f,color:\"#9E61FFFF\",end_color:\"#9E61FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.1 ~ 0.8 0.05 0.8 0 20"
          }
         ]
        },
@@ -2814,7 +2814,7 @@
          },
          {
           "type": "apoli:execute_command",
-          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.1 ~ 0.3 0.05 0.3 0.02 8"
+          "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.1 ~ 0.3 0.05 0.3 0.02 8"
          }
         ]
        }
@@ -2895,7 +2895,7 @@
       },
       {
        "type": "apoli:execute_command",
-       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
+       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
       }
      ]
     }
@@ -2925,7 +2925,7 @@
       },
       {
        "type": "apoli:execute_command",
-       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
+       "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.8 0.4 0.1 30"
       }
      ]
     }
@@ -3033,7 +3033,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.4 ~ 0.2 0.1 0.2 0.01 4"
+     "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.4 ~ 0.2 0.1 0.2 0.01 4"
     }
    ]
   }
@@ -3223,7 +3223,7 @@
        },
        {
         "type": "apoli:execute_command",
-        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:\"#F4F8FFFF\",end_color:\"#B07CFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.5 ~ 0.3 0.6 0.3 0.05 15"
+        "command": "particle apoli:custom{texture:\"stlboy:textures/particle/twinkle.png\",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:\"#F4F8FFFF\",end_color:\"#B07CFF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~0.5 ~ 0.3 0.6 0.3 0.05 15"
        },
        {
         "type": "apoli:change_resource",
@@ -3589,11 +3589,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:\"#B07CFFDD\",end_color:\"#3A1A7A00\",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.3 0.5 0.3 0.15 25"
      },
      {
       "type": "apoli:execute_command",
-      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"additive\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
+      "command": "particle apoli:custom{texture:\"stlboy:textures/particle/wisp.png\",lifetime:16,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:\"#73D9FFFF\",end_color:\"#73D9FF00\",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:\"translucent\",easing:\"ease_out_quad\",roll:\"rUni(0, 360)\",roll_speed:\"rNor(0, 3)\"} ~ ~1.0 ~ 0.4 0.5 0.4 0 10"
      }
     ]
    },

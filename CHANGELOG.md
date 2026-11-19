@@ -7,6 +7,18 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.4] — 2026-11-19
+
+### Particles visible without shaders
+- **DP** Every custom particle (about 700 effects: orbs, Breath, auras, classes, trials...) now uses the *translucent* blend instead of *additive*. Additive light vanished on bright backgrounds unless a shader boosted the glow; translucent particles keep their colors in plain vanilla.
+- **RP** Wisp, twinkle and aurora veil textures are more opaque so they stay readable with the new blend.
+- **Figura** Charge spirals and other avatar particles use the same blend.
+
+### NeoForge jar
+- The all-in-one NeoForge jar (datapack + resource pack) is now also published on CurseForge and Modrinth as a mod.
+
+---
+
 ## [1.1.3] — 2026-11-19
 
 ### Aurora class aura

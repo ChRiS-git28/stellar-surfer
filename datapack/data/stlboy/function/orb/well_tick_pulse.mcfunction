@@ -1,7 +1,7 @@
 # Cadence de pulsation de l'orbe well : 1/s au Niveau 0, 4/s au Niveau 20 (en tant que l'orbe)
 function stlboy:orb/res_scan
 # Objets aspires jusqu'au coeur de la Singularite : teleportes au Surfer
-execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_absorb] as @e[type=#stlboy:well_loot,distance=..1.3] at @s run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#C9A6FFFF",end_color:"#3FD8FF00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force
+execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_absorb] as @e[type=#stlboy:well_loot,distance=..1.3] at @s run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#C9A6FFFF",end_color:"#3FD8FF00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.1 0.1 0.1 0.05 2 force
 # --- suite perdue au patch p74, restauree ---
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_absorb] as @e[type=#stlboy:well_loot,distance=..1.3] run data merge entity @s {PickupDelay:0s}
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_absorb] as @e[type=#stlboy:well_loot,distance=..1.3] run tp @s @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1]

@@ -1,4 +1,4 @@
-# Posts each new GitHub release to CurseForge and Modrinth (datapack + resource pack, with their changelogs).
+# Posts each new GitHub release to CurseForge and Modrinth (datapack + resource pack + NeoForge jar, with their changelogs).
 # Secrets: CURSEFORGE_TOKEN, MODRINTH_TOKEN. Config: .github/publish.json. Changelogs: changelogs/<version>/*.md
 name: Publish to CurseForge and Modrinth
 
@@ -33,7 +33,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Download release files
-        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.zip" --dir dist
+        run: gh release download "$TAG" --repo "$GITHUB_REPOSITORY" --pattern "*.zip" --pattern "*.jar" --dir dist
       - name: Upload
         env:
           CF_TOKEN: ${{ secrets.CURSEFORGE_TOKEN }}

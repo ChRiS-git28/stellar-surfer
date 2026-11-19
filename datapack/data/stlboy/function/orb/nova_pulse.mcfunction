@@ -1,7 +1,7 @@
 # Pulsation de la Nova (en tant que l'orbe)
 scoreboard players set @s stlboy.pt 0
 playsound stlboy:cosmic.pulse neutral @a ~ ~ ~ 0.4 1.6
-particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFF2C2FF",end_color:"#FF7A3C00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.05 0.05 0.05 0.05 1 force
+particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFF2C2FF",end_color:"#FF7A3C00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.05 0.05 0.05 0.05 1 force
 # --- suite perdue au patch p74, restauree ---
 # Fleau de l'Horizon : s'applique aussi au Trou blanc
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_bane,limit=1] as @e[type=#c:bosses,distance=..4.5] run function stlboy:orb/boss_hit
