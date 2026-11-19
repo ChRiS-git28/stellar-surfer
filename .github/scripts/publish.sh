@@ -66,10 +66,13 @@ MR_RP=$(jq -r .modrinth.resourcepack_id $CFG)
 MR_MOD=$(jq -r '.modrinth.mod_id // empty' $CFG)
 if [ -z "$MR_MOD" ]; then
   # mod project (may still be a draft): the "Stellar Surfer" project that is neither the datapack nor the resource pack
-  uid=$(curl -sS --fail-with-body -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user" | jq -r .id)
-  MR_MOD=$(curl -sS --fail-with-body -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user/$uid/projects" \
-    | jq -r --arg a "$MR_DP" --arg b "$MR_RP" '[.[] | select(.id != $a and .id != $b and (.title | startswith("Stellar Surfer")))][0].id // empty')
-  echo "Modrinth mod project detected: ${MR_MOD:-none}"
+  # needs a token with USER_READ + PROJECT_READ; without it the jar is skipped on Modrinth (upload it by hand)
+  uid=$(curl -sS --fail -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user" 2>/dev/null | jq -r '.id // empty' || true)
+  if [ -n "$uid" ]; then
+    MR_MOD=$(curl -sS --fail -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user/$uid/projects" 2>/dev/null \
+      | jq -r --arg a "$MR_DP" --arg b "$MR_RP" '[.[] | select(.id != $a and .id != $b and (.title | startswith("Stellar Surfer")))][0].id // empty' || true)
+  fi
+  echo "Modrinth mod project detected: ${MR_MOD:-none (set modrinth.mod_id in .github/publish.json)}"
 fi
 if [ -z "$MR_DP" ] || [ -z "$MR_RP" ]; then
   uid=$(curl -sS --fail-with-body -A "$UA" -H "Authorization: $MR_TOKEN" "$MR/user" | jq -r .id)
