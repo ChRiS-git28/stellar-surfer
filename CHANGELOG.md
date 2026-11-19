@@ -7,6 +7,13 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.3] — 2026-11-19
+
+### Aurora class aura
+- **DP + RP** New Aurora aura: the wavy ribbons circling the player are gone. Soft northern-light veils now ripple in an arc behind you (green, teal and violet, with shimmering rays), plus a few rising sparks. Visible without shaders (translucent blend).
+
+---
+
 ## [1.1.2] — 2026-11-19
 
 ### White Hole
