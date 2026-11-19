@@ -11,8 +11,8 @@ scoreboard players operation @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned
 scoreboard players operation @e[type=marker,tag=stlboy_sn,predicate=stlboy:owned] stlboy.lvl = @s stlboy.lvl
 execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:18,lifetime_variation:6,size:0.22f,size_variation:0.088f,end_size:0.0f,color:"#FFF2C2FF",end_color:"#FF7A3C00",friction:0.9f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.05 0.05 0.05 0.05 1 force
 # --- suite perdue au patch p74, restauree ---
-execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.beam_burst player @a ~ ~ ~ 1.5 0.7
-execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.awaken player @a ~ ~ ~ 1 1.4
+execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.wh_beam_burst player @a ~ ~ ~ 1.5 0.7
+execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.wh_awaken player @a ~ ~ ~ 1 1.4
 kill @e[tag=stlboy_orb,predicate=stlboy:owned]
 resource set @s stlboy:graviton_well_cd 400
 resource set @s stlboy:graviton_nova_cd 800

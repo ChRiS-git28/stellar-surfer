@@ -203,27 +203,39 @@
    "required": false
   },
   {
-   "id": "ars_nouveau:spell_proj_arc",
+   "id": "ars_nouveau:arcing_spell_proj",
    "required": false
   },
   {
-   "id": "ars_nouveau:spell_proj_homing",
+   "id": "ars_nouveau:homing_spell_proj",
    "required": false
   },
   {
-   "id": "ars_nouveau:enchanted_falling_block",
+   "id": "ars_nouveau:follow_proj",
    "required": false
   },
   {
-   "id": "ars_elemental:spell_proj_homing",
+   "id": "ars_nouveau:spell_arrow",
    "required": false
   },
   {
-   "id": "ars_elemental:flash_lightning",
+   "id": "ars_nouveau:ice_shard",
    "required": false
   },
   {
-   "id": "ars_elemental:spell_proj_arc",
+   "id": "ars_elemental:phalanx_projectile",
+   "required": false
+  },
+  {
+   "id": "ars_elemental:water_jet",
+   "required": false
+  },
+  {
+   "id": "ars_elemental:ice_spike",
+   "required": false
+  },
+  {
+   "id": "ars_elemental:dripstone_spike",
    "required": false
   }
  ]

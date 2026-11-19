@@ -33,11 +33,11 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound stlboy:cosmic.resonate player @s ~ ~ ~ 0.9 1.5"
+     "command": "playsound minecraft:block.amethyst_block.resonate player @s ~ ~ ~ 0.9 1.5"
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound stlboy:cosmic.shard player @s ~ ~ ~ 0.8 1.1"
+     "command": "playsound minecraft:entity.experience_orb.pickup player @s ~ ~ ~ 0.8 1.1"
     },
     {
      "type": "apoli:execute_command",

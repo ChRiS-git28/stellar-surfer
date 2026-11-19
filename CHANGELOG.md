@@ -7,6 +7,16 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.14] — 2026-11-19 · *Familiar Sounds*
+
+### Sounds
+- **DP/RP** Back to the Minecraft sounds everywhere, except the **Wormhole**, which keeps its own space sounds (events `cosmic.wh_*`).
+
+### Compatibility
+- **DP** Ars Nouveau and Ars Elemental spell projectiles: ids checked against their source code and corrected (spell, arcing, homing and following projectiles, spell arrows, ice shards, phalanx, water jet, spikes).
+
+---
+
 ## [1.0.13] — 2026-11-19 · *Sound of Space*
 
 ### Classes

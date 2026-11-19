@@ -2,7 +2,7 @@
 scoreboard players set @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.pt 0
 effect give @e[tag=stlboy_sn_in] minecraft:darkness 3 0 true
 effect give @a[tag=stlboy_sn_in] minecraft:blindness 3 0 true
-execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.charge player @a ~ ~ ~ 0.5 0.6
+execute at @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] run playsound stlboy:cosmic.wh_charge player @a ~ ~ ~ 0.5 0.6
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.lvl matches 0 as @e[tag=stlboy_sn_in] run function stlboy:cosmic/hit {cd:2.0}
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.lvl matches 1 as @e[tag=stlboy_sn_in] run function stlboy:cosmic/hit {cd:2.35}
 execute if score @e[type=marker,tag=stlboy_sn,limit=1,predicate=stlboy:owned] stlboy.lvl matches 2 as @e[tag=stlboy_sn_in] run function stlboy:cosmic/hit {cd:2.565}

@@ -32,7 +32,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound stlboy:cosmic.select player @s ~ ~ ~ 0.9 1.4"
+     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
     },
     {
      "type": "apoli:execute_command",

@@ -8,5 +8,5 @@ execute if score @s stlboy.pal matches 3 run data modify storage stlboy:tmp al.c
 execute if score @s stlboy.pal matches 4 run data modify storage stlboy:tmp al.c set value "#7DFFB0"
 execute if score @s stlboy.pal matches 5 run data modify storage stlboy:tmp al.c set value "#FF5A3C"
 function stlboy:blessing/align_m with storage stlboy:tmp al
-playsound stlboy:cosmic.select player @a ~ ~ ~ 0.7 1.6
+playsound minecraft:block.beacon.power_select player @a ~ ~ ~ 0.7 1.6
 title @s actionbar {"translate":"stlboy.ring.aligned_msg","fallback":"✦ The ring now carries your light. Give it to an ally: your stars will spare them.","color":"gold"}

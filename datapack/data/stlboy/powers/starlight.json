@@ -259,7 +259,7 @@
             },
             {
              "type": "apoli:execute_command",
-             "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.8 1.4"
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
             }
            ]
           }
@@ -999,7 +999,7 @@
             },
             {
              "type": "apoli:execute_command",
-             "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.8 1.4"
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
             }
            ]
           }
@@ -1739,7 +1739,7 @@
             },
             {
              "type": "apoli:execute_command",
-             "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.8 1.4"
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
             }
            ]
           }
@@ -2479,7 +2479,7 @@
             },
             {
              "type": "apoli:execute_command",
-             "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.8 1.4"
+             "command": "playsound minecraft:entity.enderman.teleport player @a ~ ~ ~ 0.8 1.4"
             }
            ]
           }

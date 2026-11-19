@@ -287,7 +287,7 @@
            },
            {
             "type": "apoli:execute_command",
-            "command": "playsound stlboy:cosmic.beam_burst player @a ~ ~ ~ 0.55 1.6"
+            "command": "playsound minecraft:entity.warden.sonic_boom player @a ~ ~ ~ 0.55 1.6"
            },
            {
             "type": "apoli:execute_command",
@@ -295,7 +295,7 @@
            },
            {
             "type": "apoli:execute_command",
-            "command": "playsound stlboy:cosmic.nova player @a ~ ~ ~ 0.25 1.8"
+            "command": "playsound minecraft:entity.generic.explode player @a ~ ~ ~ 0.25 1.8"
            },
            {
             "type": "apoli:execute_command",
@@ -1590,7 +1590,7 @@
      },
      "if_action": {
       "type": "apoli:execute_command",
-      "command": "playsound stlboy:cosmic.chime player @s ~ ~ ~ 0.4 1.8"
+      "command": "playsound minecraft:block.amethyst_block.chime player @s ~ ~ ~ 0.4 1.8"
      }
     }
    ]

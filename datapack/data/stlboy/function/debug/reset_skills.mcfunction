@@ -7,5 +7,5 @@ tag @s remove stlboy_cls_neptune
 tag @s remove stlboy_cls_aurora
 tag @s remove stlboy_cls_betelgeuse
 scoreboard players reset @s stlboy.palx
-playsound stlboy:cosmic.off player @s ~ ~ ~ 0.8 1.2
+playsound minecraft:block.beacon.deactivate player @s ~ ~ ~ 0.8 1.2
 tellraw @s [{"text":"[debug] ","color":"gray"},{"translate":"stlboy.debug.reset_skills","fallback":"Skill tree reset, points refunded.","color":"white"}]

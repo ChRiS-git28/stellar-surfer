@@ -1,162 +1,207 @@
 {
  "cosmic.awaken": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/awaken",
-    "stream": true
+    "name": "minecraft:block.end_portal.spawn",
+    "type": "event"
    }
   ]
  },
  "cosmic.resonate": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/resonate",
-    "stream": false
+    "name": "minecraft:block.amethyst_block.resonate",
+    "type": "event"
    }
   ]
  },
  "cosmic.on": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/on",
-    "stream": false
+    "name": "minecraft:block.beacon.activate",
+    "type": "event"
    }
   ]
  },
  "cosmic.off": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/off",
-    "stream": false
+    "name": "minecraft:block.beacon.deactivate",
+    "type": "event"
    }
   ]
  },
  "cosmic.chime": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/chime",
-    "stream": false
+    "name": "minecraft:block.amethyst_block.chime",
+    "type": "event"
    }
   ]
  },
  "cosmic.lock": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/lock",
-    "stream": false
+    "name": "minecraft:block.end_portal_frame.fill",
+    "type": "event"
    }
   ]
  },
  "cosmic.select": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/select",
-    "stream": false
+    "name": "minecraft:block.beacon.power_select",
+    "type": "event"
    }
   ]
  },
  "cosmic.beam_burst": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/beam_burst",
-    "stream": false
+    "name": "minecraft:entity.warden.sonic_boom",
+    "type": "event"
    }
   ]
  },
  "cosmic.hum": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/hum",
-    "stream": false
+    "name": "minecraft:block.beacon.ambient",
+    "type": "event"
    }
   ]
  },
  "cosmic.shard": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/shard",
-    "stream": false
+    "name": "minecraft:block.amethyst_block.hit",
+    "type": "event"
    }
   ]
  },
  "cosmic.rankup": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/rankup",
-    "stream": false
+    "name": "minecraft:entity.player.levelup",
+    "type": "event"
    }
   ]
  },
  "cosmic.nova": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/nova",
-    "stream": true
+    "name": "minecraft:entity.generic.explode",
+    "type": "event"
    }
   ]
  },
  "cosmic.zap": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/zap",
-    "stream": false
+    "name": "minecraft:entity.blaze.shoot",
+    "type": "event"
    }
   ]
  },
  "cosmic.deny": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/deny",
-    "stream": false
+    "name": "minecraft:block.respawn_anchor.deplete",
+    "type": "event"
    }
   ]
  },
  "cosmic.charge": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/charge",
-    "stream": false
+    "name": "minecraft:block.respawn_anchor.charge",
+    "type": "event"
    }
   ]
  },
  "cosmic.pulse": {
-  "subtitle": "subtitles.stlboy.cosmic",
+  "replace": true,
   "sounds": [
    {
-    "name": "stlboy:cosmic/pulse",
-    "stream": false
+    "name": "minecraft:block.conduit.attack.target",
+    "type": "event"
    }
   ]
  },
- "cosmic.finale": {
+ "cosmic.wh_awaken": {
   "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "stlboy:cosmic/finale",
+    "name": "stlboy:wormhole/awaken",
     "stream": true
    }
   ]
  },
- "cosmic.star": {
+ "cosmic.wh_beam_burst": {
   "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "stlboy:cosmic/star",
+    "name": "stlboy:wormhole/beam_burst",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.wh_charge": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:wormhole/charge",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.wh_deny": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:wormhole/deny",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.wh_off": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:wormhole/off",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.wh_pulse": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:wormhole/pulse",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.wh_resonate": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:wormhole/resonate",
     "stream": false
    }
   ]

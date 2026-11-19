@@ -68,4 +68,4 @@ summon minecraft:block_display ~-0.35 ~4.3 ~-0.35 {Tags:["stlboy_shrine","stlboy
 summon minecraft:block_display ~-0.35 ~8.3 ~-0.35 {Tags:["stlboy_shrine","stlboy_shr_ring3"],block_state:{Name:"minecraft:prismarine"},brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,1.4f,0.7f]}}
 summon minecraft:block_display ~-0.35 ~12.3 ~-0.35 {Tags:["stlboy_shrine","stlboy_shr_ring3"],block_state:{Name:"minecraft:prismarine"},brightness:{sky:15,block:15},transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,0f,0f],scale:[0.7f,1.4f,0.7f]}}
 playsound stlboy:cosmic.on player @s ~ ~ ~ 0.6 1.4
-playsound stlboy:cosmic.on player @a[distance=..48] ~ ~ ~ 0.8 1.3
+playsound minecraft:block.beacon.activate player @a[distance=..48] ~ ~ ~ 0.8 1.3
