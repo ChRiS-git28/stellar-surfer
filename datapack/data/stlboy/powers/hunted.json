@@ -64,11 +64,11 @@
       "actions": [
        {
         "type": "apoli:execute_command",
-        "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+        "command": "playsound stlboy:cosmic.deny player @s ~ ~ ~ 0.7 1.4"
        },
        {
         "type": "apoli:execute_command",
-        "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+        "command": "playsound stlboy:cosmic.awaken player @a ~ ~ ~ 0.6 1.4"
        },
        {
         "type": "apoli:execute_command",
@@ -139,11 +139,11 @@
         "actions": [
          {
           "type": "apoli:execute_command",
-          "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+          "command": "playsound stlboy:cosmic.deny player @s ~ ~ ~ 0.7 1.4"
          },
          {
           "type": "apoli:execute_command",
-          "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+          "command": "playsound stlboy:cosmic.awaken player @a ~ ~ ~ 0.6 1.4"
          },
          {
           "type": "apoli:execute_command",
@@ -203,7 +203,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
+     "command": "playsound stlboy:cosmic.zap player @a ~ ~ ~ 0.6 0.6"
     }
    ]
   }
@@ -247,11 +247,11 @@
         "actions": [
          {
           "type": "apoli:execute_command",
-          "command": "playsound minecraft:entity.warden.listening_angry player @s ~ ~ ~ 0.7 1.4"
+          "command": "playsound stlboy:cosmic.deny player @s ~ ~ ~ 0.7 1.4"
          },
          {
           "type": "apoli:execute_command",
-          "command": "playsound minecraft:block.trial_spawner.ominous_activate player @a ~ ~ ~ 0.6 1.4"
+          "command": "playsound stlboy:cosmic.awaken player @a ~ ~ ~ 0.6 1.4"
          },
          {
           "type": "apoli:execute_command",
@@ -325,7 +325,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:entity.shulker_bullet.hit player @a ~ ~ ~ 0.6 0.6"
+     "command": "playsound stlboy:cosmic.zap player @a ~ ~ ~ 0.6 0.6"
     }
    ]
   }

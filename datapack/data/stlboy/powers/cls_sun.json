@@ -32,7 +32,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+     "command": "playsound stlboy:cosmic.select player @s ~ ~ ~ 0.9 1.4"
     },
     {
      "type": "apoli:execute_command",
@@ -56,6 +56,14 @@
   },
   {
    "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
+    "translate": "badge.stlboy.cls_sun.passive",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/info.png",
    "text": {
     "translate": "badge.stlboy.cls_sun.1",
@@ -70,5 +78,12 @@
     "fallback": ""
    }
   }
- ]
+ ],
+ "passive": {
+  "type": "apoli:invulnerability",
+  "damage_condition": {
+   "type": "apoli:in_tag",
+   "tag": "minecraft:is_fire"
+  }
+ }
 }

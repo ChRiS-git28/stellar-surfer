@@ -7,6 +7,23 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.0.13] — 2026-11-19 · *Sound of Space*
+
+### Classes
+- **DP/RP** Every class now has a **permanent passive**, shown in the skill tree: Nebula *Nebular Veil* (-15% damage taken in the air), Sun *Solar Heart* (immune to fire and lava), Neptune *Inner Tide* (swim and mine underwater freely), Aurora *Boreal Dawn* (1 health every 5 s), Betelgeuse *Giant's Mass* (+4 max health, +50% knockback resistance).
+- **DP** Solar Flare flames now cover the whole target, scaling with its hitbox like vanilla fire.
+
+### Visuals & sounds
+- **RP** **18 original space sound effects**, fully synthesized for Stellar Surfer (no third-party samples), including a star chime and a constellation finale.
+- **DP** Nearly 200 vanilla sounds of the origin replaced by these space sounds.
+- **DP** Constellations are bigger around their target (frame and stars).
+- **DP** Orb pieces spin on themselves again.
+
+### Licensing
+- **RP** Removed 24 files that were exact copies of Minecraft and Origins textures (HUD, Origins screen). Nothing changes visually; the pack now only ships original assets.
+
+---
+
 ## [1.0.12] — 2026-11-19 · *Spellbreaker*
 
 ### Compatibility

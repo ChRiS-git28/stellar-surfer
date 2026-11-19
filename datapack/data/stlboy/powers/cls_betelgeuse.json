@@ -32,7 +32,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+     "command": "playsound stlboy:cosmic.select player @s ~ ~ ~ 0.9 1.4"
     },
     {
      "type": "apoli:execute_command",
@@ -58,9 +58,32 @@
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
+    "translate": "badge.stlboy.cls_betelgeuse.passive",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
     "translate": "badge.stlboy.cls_betelgeuse.shard",
     "fallback": ""
    }
   }
- ]
+ ],
+ "passive": {
+  "type": "apoli:attribute",
+  "modifiers": [
+   {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": 4.0
+   },
+   {
+    "attribute": "minecraft:generic.knockback_resistance",
+    "operation": "addition",
+    "value": 0.5
+   }
+  ]
+ }
 }

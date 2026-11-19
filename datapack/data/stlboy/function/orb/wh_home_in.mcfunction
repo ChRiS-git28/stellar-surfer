@@ -6,4 +6,4 @@ particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:24,li
 particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:18,lifetime_variation:4,size:0.2f,size_variation:0.06f,end_size:0.0f,color:"#B07DFFFF",end_color:"#9EE8FF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.3 ~ 1.2 0.1 1.2 0 40 force
 playsound minecraft:block.respawn_anchor.set_spawn player @a ~ ~ ~ 1 1.4
 playsound stlboy:cosmic.awaken player @a ~ ~ ~ 1 1.2
-playsound minecraft:block.amethyst_block.resonate player @a ~ ~ ~ 1 0.8
+playsound stlboy:cosmic.resonate player @a ~ ~ ~ 1 0.8

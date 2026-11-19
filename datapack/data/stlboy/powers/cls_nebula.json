@@ -32,7 +32,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+     "command": "playsound stlboy:cosmic.select player @s ~ ~ ~ 0.9 1.4"
     },
     {
      "type": "apoli:execute_command",
@@ -58,9 +58,28 @@
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
+    "translate": "badge.stlboy.cls_nebula.passive",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
     "translate": "badge.stlboy.cls_nebula.shard",
     "fallback": ""
    }
   }
- ]
+ ],
+ "passive": {
+  "type": "apoli:modify_damage_taken",
+  "condition": {
+   "type": "apoli:on_block",
+   "inverted": true
+  },
+  "modifier": {
+   "operation": "multiply_total_multiplicative",
+   "value": -0.15
+  }
+ }
 }

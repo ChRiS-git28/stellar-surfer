@@ -1,145 +1,163 @@
 {
  "cosmic.awaken": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.end_portal.spawn",
-    "type": "event"
+    "name": "stlboy:cosmic/awaken",
+    "stream": true
    }
   ]
  },
  "cosmic.resonate": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.amethyst_block.resonate",
-    "type": "event"
+    "name": "stlboy:cosmic/resonate",
+    "stream": false
    }
   ]
  },
  "cosmic.on": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.beacon.activate",
-    "type": "event"
+    "name": "stlboy:cosmic/on",
+    "stream": false
    }
   ]
  },
  "cosmic.off": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.beacon.deactivate",
-    "type": "event"
+    "name": "stlboy:cosmic/off",
+    "stream": false
    }
   ]
  },
  "cosmic.chime": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.amethyst_block.chime",
-    "type": "event"
+    "name": "stlboy:cosmic/chime",
+    "stream": false
    }
   ]
  },
  "cosmic.lock": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.end_portal_frame.fill",
-    "type": "event"
+    "name": "stlboy:cosmic/lock",
+    "stream": false
    }
   ]
  },
  "cosmic.select": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.beacon.power_select",
-    "type": "event"
+    "name": "stlboy:cosmic/select",
+    "stream": false
    }
   ]
  },
  "cosmic.beam_burst": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:entity.warden.sonic_boom",
-    "type": "event"
+    "name": "stlboy:cosmic/beam_burst",
+    "stream": false
    }
   ]
  },
  "cosmic.hum": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.beacon.ambient",
-    "type": "event"
+    "name": "stlboy:cosmic/hum",
+    "stream": false
    }
   ]
  },
  "cosmic.shard": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.amethyst_block.hit",
-    "type": "event"
+    "name": "stlboy:cosmic/shard",
+    "stream": false
    }
   ]
  },
  "cosmic.rankup": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:entity.player.levelup",
-    "type": "event"
+    "name": "stlboy:cosmic/rankup",
+    "stream": false
    }
   ]
  },
  "cosmic.nova": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:entity.generic.explode",
-    "type": "event"
+    "name": "stlboy:cosmic/nova",
+    "stream": true
    }
   ]
  },
  "cosmic.zap": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:entity.blaze.shoot",
-    "type": "event"
+    "name": "stlboy:cosmic/zap",
+    "stream": false
    }
   ]
  },
  "cosmic.deny": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.respawn_anchor.deplete",
-    "type": "event"
+    "name": "stlboy:cosmic/deny",
+    "stream": false
    }
   ]
  },
  "cosmic.charge": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.respawn_anchor.charge",
-    "type": "event"
+    "name": "stlboy:cosmic/charge",
+    "stream": false
    }
   ]
  },
  "cosmic.pulse": {
-  "replace": true,
+  "subtitle": "subtitles.stlboy.cosmic",
   "sounds": [
    {
-    "name": "minecraft:block.conduit.attack.target",
-    "type": "event"
+    "name": "stlboy:cosmic/pulse",
+    "stream": false
+   }
+  ]
+ },
+ "cosmic.finale": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:cosmic/finale",
+    "stream": true
+   }
+  ]
+ },
+ "cosmic.star": {
+  "subtitle": "subtitles.stlboy.cosmic",
+  "sounds": [
+   {
+    "name": "stlboy:cosmic/star",
+    "stream": false
    }
   ]
  }

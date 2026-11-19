@@ -1,7 +1,7 @@
 # Une Memoire d'Aster s'eveille (en tant que le joueur)
 tag @s add stlboy_m_wither
-playsound minecraft:block.beacon.activate player @s ~ ~ ~ 1 1.6
-playsound minecraft:ui.toast.challenge_complete player @s ~ ~ ~ 0.8 1.2
+playsound stlboy:cosmic.on player @s ~ ~ ~ 1 1.6
+playsound stlboy:cosmic.rankup player @s ~ ~ ~ 0.8 1.2
 particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:20,lifetime_variation:5,size:0.14f,size_variation:0.042f,end_size:0.0f,color:"#F4F8FFFF",end_color:"#B07CFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 0.4 0.8 0.4 0.2 60
 particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:24,lifetime_variation:6,size:0.18f,size_variation:0.054f,end_size:0.0f,color:"#B07CFFDD",end_color:"#3A1A7A00",friction:0.92f,gravity:-0.004f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~1 ~ 0.3 0.6 0.3 0.5 40
 tellraw @s ["",{"text":"\n✦ ","color":"gold"},{"translate":"stlboy.memory.awake","fallback":"A Memory awakens:","color":"gold"},{"text":" "},{"translate":"stlboy.memory.wither.name","fallback":"Memory of the Wither","color":"white","bold":true},{"text":"\n  "},{"translate":"stlboy.memory.wither.lore","fallback":"Decay has a face. You wore it down.","color":"gray","italic":true},{"text":"\n  "},{"translate":"stlboy.memory.wither.fx","fallback":"+2 hearts, +1 cosmic damage on Constellations, immune to Wither","color":"green"},{"text":"\n"}]

@@ -598,11 +598,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+      "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.6 1.5"
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+      "command": "playsound stlboy:cosmic.shard player @a ~ ~ ~ 0.5 1.6"
      },
      {
       "type": "apoli:execute_command",
@@ -957,11 +957,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+      "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.6 1.5"
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+      "command": "playsound stlboy:cosmic.shard player @a ~ ~ ~ 0.5 1.6"
      },
      {
       "type": "apoli:execute_command",
@@ -1393,11 +1393,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+      "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.6 1.5"
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+      "command": "playsound stlboy:cosmic.shard player @a ~ ~ ~ 0.5 1.6"
      }
     ]
    },
@@ -3581,11 +3581,11 @@
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:item.chorus_fruit.teleport player @a ~ ~ ~ 0.6 1.5"
+      "command": "playsound stlboy:cosmic.pulse player @a ~ ~ ~ 0.6 1.5"
      },
      {
       "type": "apoli:execute_command",
-      "command": "playsound minecraft:block.amethyst_cluster.hit player @a ~ ~ ~ 0.5 1.6"
+      "command": "playsound stlboy:cosmic.shard player @a ~ ~ ~ 0.5 1.6"
      },
      {
       "type": "apoli:execute_command",

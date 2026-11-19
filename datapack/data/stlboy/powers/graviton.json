@@ -6160,7 +6160,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "playsound minecraft:entity.breeze.wind_burst player @a ~ ~ ~ 0.8 1.4"
+               "command": "playsound stlboy:cosmic.nova player @a ~ ~ ~ 0.8 1.4"
               },
               {
                "type": "apoli:execute_command",
@@ -9542,7 +9542,7 @@
               },
               {
                "type": "apoli:execute_command",
-               "command": "playsound minecraft:entity.breeze.wind_burst player @a ~ ~ ~ 0.7 1.0"
+               "command": "playsound stlboy:cosmic.nova player @a ~ ~ ~ 0.7 1.0"
               }
              ]
             }

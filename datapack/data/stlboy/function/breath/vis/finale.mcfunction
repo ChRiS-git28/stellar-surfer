@@ -4,5 +4,4 @@ execute positioned ~ ~0.9 ~ run particle apoli:custom{texture:"stlboy:textures/p
 execute positioned ~ ~0.9 ~ run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:22,lifetime_variation:6,size:0.24f,size_variation:0.08f,end_size:0.0f,color:"#FFF6D8FF",end_color:"#B07CFF00",friction:0.88f,gravity:0.0f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 6)"} ~ ~ ~ 0.1 0.1 0.1 0.38 46 force
 execute positioned ~ ~1.2 ~ run particle apoli:custom{texture:"stlboy:textures/particle/twinkle.png",lifetime:34,lifetime_variation:8,size:0.14f,size_variation:0.05f,end_size:0.0f,color:"#FFE08AFF",end_color:"#FF6AD500",friction:0.95f,gravity:0.008f,physics:false,emissive:true,blend:"additive",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~ ~ 0.9 0.6 0.9 0.04 30 force
 execute at @e[type=minecraft:item_display,tag=stlboy_cstar,predicate=stlboy:owned,distance=..8] run function stlboy:breath/vis/burst
-playsound minecraft:block.amethyst_block.resonate player @a ~ ~ ~ 1.0 1.8
-playsound minecraft:entity.firework_rocket.twinkle player @a ~ ~ ~ 0.7 1.4
+playsound stlboy:cosmic.finale player @a ~ ~ ~ 1.0 1.0

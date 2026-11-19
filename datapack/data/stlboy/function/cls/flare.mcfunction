@@ -4,4 +4,5 @@ $scoreboard players set #fl stlboy.tmp $(t)
 scoreboard players operation #fl stlboy.tmp *= #20 stlboy.const
 execute unless score @s stlboy.sfl >= #fl stlboy.tmp run scoreboard players operation @s stlboy.sfl = #fl stlboy.tmp
 scoreboard players operation @s stlboy.sfo = #own stlboy.tmp
+execute unless entity @s[tag=stlboy_flm] run function stlboy:cls/flare_measure
 tag @s add stlboy_flare

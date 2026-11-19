@@ -32,7 +32,7 @@
     },
     {
      "type": "apoli:execute_command",
-     "command": "playsound minecraft:block.beacon.power_select player @s ~ ~ ~ 0.9 1.4"
+     "command": "playsound stlboy:cosmic.select player @s ~ ~ ~ 0.9 1.4"
     },
     {
      "type": "apoli:execute_command",
@@ -58,9 +58,25 @@
    "type": "origins:tooltip",
    "sprite": "stlboy:textures/gui/badge/star.png",
    "text": {
+    "translate": "badge.stlboy.cls_aurora.passive",
+    "fallback": ""
+   }
+  },
+  {
+   "type": "origins:tooltip",
+   "sprite": "stlboy:textures/gui/badge/star.png",
+   "text": {
     "translate": "badge.stlboy.cls_aurora.shard",
     "fallback": ""
    }
   }
- ]
+ ],
+ "passive": {
+  "type": "apoli:action_over_time",
+  "interval": 100,
+  "entity_action": {
+   "type": "apoli:heal",
+   "amount": 1.0
+  }
+ }
 }

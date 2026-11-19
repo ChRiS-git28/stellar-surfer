@@ -86,6 +86,8 @@ scoreboard objectives add stlboy.mgc dummy
 scoreboard objectives add stlboy.mgt dummy
 scoreboard objectives add stlboy.sfl dummy
 scoreboard objectives add stlboy.sfo dummy
+scoreboard objectives add stlboy.sfh dummy
+scoreboard objectives add stlboy.sfw dummy
 scoreboard objectives add stlboy.palx dummy
 scoreboard objectives add stlboy.own dummy
 scoreboard objectives add stlboy.oid dummy
