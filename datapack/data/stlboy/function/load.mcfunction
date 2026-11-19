@@ -99,3 +99,5 @@ scoreboard objectives add stlboy.fl dummy
 scoreboard objectives add stlboy.fv dummy
 scoreboard objectives add stlboy.wj dummy
 kill @e[type=minecraft:marker,tag=stlboy_sn_exit]
+scoreboard objectives add stlboy.mid dummy
+kill @e[type=minecraft:block_display,tag=stlboy_tr_rock]

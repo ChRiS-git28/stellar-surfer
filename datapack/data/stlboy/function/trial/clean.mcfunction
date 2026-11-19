@@ -8,3 +8,4 @@ kill @e[type=minecraft:vex,tag=stlboy_tr_cecho]
 kill @e[type=minecraft:item,tag=stlboy_tr_mote]
 scoreboard players set @s stlboy.trr 0
 kill @e[type=minecraft:fireball,tag=stlboy_tr_fb]
+kill @e[type=minecraft:block_display,tag=stlboy_tr_rock]

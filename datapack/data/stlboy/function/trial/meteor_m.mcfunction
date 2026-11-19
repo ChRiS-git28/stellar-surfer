@@ -1,1 +1,2 @@
-$execute at @s run summon minecraft:marker ~$(x) ~$(y) ~$(z) {Tags:["stlboy_tr","stlboy_tr_met"]}
+# (macro x, z, yaw) point d'impact relatif a la position d'execution
+$execute positioned ~$(x) ~ ~$(z) run function stlboy:trial/meteor_new {yaw:$(yaw)}

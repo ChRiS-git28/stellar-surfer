@@ -526,7 +526,7 @@
  "badge.stlboy.astral_body.2": "§7Starlight Veil: projectile damage §f-40 %§7 before Rank 3, §f-25 %§7 until Rank 7, then §f-15 %§7. §fDodging§7 burns the projectiles around you (tridents and enchanted weapons just drop).",
  "badge.stlboy.grace.2": "§cLow Grace§7 → Mining Fatigue. Far from the stars, a §fsoft starglow§7 follows you and lights your way.",
  "badge.stlboy.astral_body.3": "§7A body of light feels neither heat, cold nor thirst: §fimmune to temperature§7 and §falways hydrated§7 with Legendary Survival Overhaul, Tough As Nails and Cold Sweat.",
- "badge.stlboy.cls_sun.1": "§6Solar Flare§7: burns like fire (1 damage per second, water or Fire Resistance put it out) but §fignores invulnerability frames§7, with its own solar flames.",
+ "badge.stlboy.cls_sun.1": "§6Solar Flare§7: burns like fire (2 damage per second, water or Fire Resistance put it out) but §fignores invulnerability frames§7, with its own solar flames.",
  "badge.stlboy.cls_nebula.shard": "§bStar Shards · Veiled Dust§7: hits slow (§fSlowness I, 2 s§7) and reveal the target (§fGlowing, 3 s§7).",
  "badge.stlboy.cls_sun.shard": "§6Star Shards · Searing Shard§7: hits set a §6Solar Flare§7 for §f2 s§7.",
  "badge.stlboy.cls_neptune.shard": "§9Star Shards · Tidal Shard§7: hits drag the target down (§fSlowness II, 2 s§7).",

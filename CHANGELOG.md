@@ -7,6 +7,28 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.0] — 2026-11-19 · *First Light Reborn* — first full release
+
+This release gathers every beta since 1.0.3. Highlights:
+
+### Classes & survival
+- Five classes (Nebula, Sun, Neptune, Aurora, Betelgeuse), each with a **permanent passive**, its **own aura** and **Star Shards** that change nature.
+- **Solar Flare** (Sun): burns like fire for **2 damage per second**, ignores invulnerability frames, covers the whole target; flames now clearly visible without shaders.
+- Smaller body, Starlight Veil against projectiles, dodge parry, no friendly fire on villagers / golems / pets, starglow instead of Darkness underground.
+
+### Cosmic powers
+- Wormhole: Rank 10 trip home with your allies; **Event Horizon** and **Light Curtain** destroy projectiles and spells (Iron's Spells, Hazen n Stuff, Ars Nouveau, Ars Elemental); thrown weapons just drop.
+- Constellations lie flat around the target, scaled to its size, links drawn cleanly from star to star, flash finale.
+- Smooth orbs that spin again, gentle Stellar Magnetism with Rank priority between Surfers.
+
+### Trials
+- **Meteor Rain** rebuilt: a closed arena (you cannot leave the ring), real 3D meteors falling from the sky with fire trails, red warning rings and an escalating rain.
+
+### Compatibility
+- Temperature and thirst immunity (Legendary Survival Overhaul, Tough As Nails, Cold Sweat), Enhanced AI bites, NeoForge mod jar.
+
+---
+
 ## [1.0.14] — 2026-11-19 · *Familiar Sounds*
 
 ### Sounds

@@ -528,7 +528,7 @@
  "badge.stlboy.astral_body.2": "§7Voile stellaire : dégâts des projectiles §f-40 %§7 avant le Rang 3, §f-25 %§7 jusqu'au Rang 7, puis §f-15 %§7. §fEsquiver§7 brûle les projectiles autour de toi (tridents et armes enchantées tombent simplement).",
  "badge.stlboy.grace.2": "§cGrâce basse§7 → Fatigue de minage. Loin des étoiles, une §flueur d'étoile§7 douce te suit et éclaire ton chemin.",
  "badge.stlboy.astral_body.3": "§7Un corps de lumière ne connaît ni le chaud, ni le froid, ni la soif : §finsensible à la température§7 et §ftoujours hydraté§7 avec Legendary Survival Overhaul, Tough As Nails et Cold Sweat.",
- "badge.stlboy.cls_sun.1": "§6Éruption solaire§7 : brûle comme le feu (1 dégât par seconde, l'eau ou la Résistance au feu l'éteignent) mais §fignore les frames d'invulnérabilité§7, avec ses propres flammes solaires.",
+ "badge.stlboy.cls_sun.1": "§6Éruption solaire§7 : brûle comme le feu (2 dégâts par seconde, l'eau ou la Résistance au feu l'éteignent) mais §fignore les frames d'invulnérabilité§7, avec ses propres flammes solaires.",
  "badge.stlboy.cls_nebula.shard": "§bÉclats d'étoile · Poussière voilée§7 : chaque touche ralentit (§fLenteur I, 2 s§7) et révèle la cible (§fSurbrillance, 3 s§7).",
  "badge.stlboy.cls_sun.shard": "§6Éclats d'étoile · Éclat ardent§7 : chaque touche déclenche une §6Éruption solaire§7 de §f2 s§7.",
  "badge.stlboy.cls_neptune.shard": "§9Éclats d'étoile · Éclat de marée§7 : chaque touche alourdit la cible (§fLenteur II, 2 s§7).",
