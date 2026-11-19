@@ -32,14 +32,17 @@ cf_upload() { # project_id file changelog display_name [game_version_ids_json]
 if [ "$TARGETS" = "modrinth" ]; then
   echo "CurseForge: not selected"
 elif [ -n "${CF_TOKEN:-}" ]; then
-  cf_upload "$(jq -r .curseforge.datapack_id $CFG)" "$DP" "$CL/datapack.md" "$NAME_DP"
-  cf_upload "$(jq -r .curseforge.resourcepack_id $CFG)" "$RP" "$CL/resourcepack.md" "$NAME_RP"
+  if [ "$TARGETS" != "modrinth+cf-mod" ]; then   # modrinth+cf-mod = CurseForge packs already sent, only the jar is missing there
+    cf_upload "$(jq -r .curseforge.datapack_id $CFG)" "$DP" "$CL/datapack.md" "$NAME_DP"
+    cf_upload "$(jq -r .curseforge.resourcepack_id $CFG)" "$RP" "$CL/resourcepack.md" "$NAME_RP"
+  fi
   CF_MOD=$(jq -r '.curseforge.mod_id // empty' $CFG)
   if [ -n "$CF_MOD" ] && [ -f "$JAR" ]; then
     # the jar is a mod: Minecraft version + NeoForge loader (id read from CurseForge's official list)
-    neo=$(curl -sS --fail-with-body -A "$UA" -H "X-Api-Token: $CF_TOKEN" "https://minecraft.curseforge.com/api/game/versions" \
-      | jq '[.[] | select(.name == "NeoForge")][0].id')
-    GV_MOD=$(jq -c --argjson n "$neo" '.curseforge.game_version_ids + [$n]' $CFG)
+    # plus the environment (Client + Server), required for mods
+    vers=$(curl -sS --fail-with-body -A "$UA" -H "X-Api-Token: $CF_TOKEN" "https://minecraft.curseforge.com/api/game/versions")
+    extra=$(echo "$vers" | jq -c '[([.[] | select(.name == "NeoForge")][0].id), ([.[] | select(.name == "Client")][0].id), ([.[] | select(.name == "Server")][0].id)] | map(select(. != null))')
+    GV_MOD=$(jq -c --argjson n "$extra" '.curseforge.game_version_ids + $n' $CFG)
     echo "CurseForge mod game versions: $GV_MOD"
     cf_upload "$CF_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" "$GV_MOD"
   else

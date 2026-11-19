@@ -13,7 +13,7 @@ on:
       targets:
         description: "Where to publish"
         type: choice
-        options: [all, modrinth, curseforge]
+        options: [all, modrinth, curseforge, modrinth+cf-mod]
         default: all
       channel:
         description: "Version type (empty = .github/publish.json)"
