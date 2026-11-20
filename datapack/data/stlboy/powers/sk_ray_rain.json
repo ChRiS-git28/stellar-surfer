@@ -13,7 +13,11 @@
    "resource": "stlboy:stardust_rank",
    "comparison": ">=",
    "compare_to": 8
-  }
+  },
+  "placement": [
+   -0.59,
+   -8.27
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

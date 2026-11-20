@@ -16,6 +16,10 @@
   "order": 16,
   "excludes": [
    "stlboy:sk_ult_harvest"
+  ],
+  "placement": [
+   -1.26,
+   11.96
   ]
  },
  "badges": [

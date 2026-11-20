@@ -13,7 +13,11 @@
    "comparison": ">=",
    "compare_to": 5
   },
-  "order": 2
+  "order": 2,
+  "placement": [
+   1.62,
+   4.24
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

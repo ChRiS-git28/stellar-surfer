@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_move_veil"
   ],
-  "order": 11
+  "order": 11,
+  "placement": [
+   -4.21,
+   7.05
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

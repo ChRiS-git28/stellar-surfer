@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_move_ghost"
   ],
-  "order": 15
+  "order": 15,
+  "placement": [
+   -6.1,
+   5.37
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

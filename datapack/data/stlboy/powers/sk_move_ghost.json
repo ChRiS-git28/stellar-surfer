@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_move_nroll"
   ],
-  "order": 14
+  "order": 14,
+  "placement": [
+   -5.22,
+   6.29
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

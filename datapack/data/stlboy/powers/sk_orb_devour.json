@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_orb_linger"
   ],
-  "order": 4
+  "order": 4,
+  "placement": [
+   5.85,
+   2.13
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

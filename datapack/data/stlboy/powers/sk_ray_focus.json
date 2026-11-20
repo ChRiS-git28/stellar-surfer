@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_ray_wide"
   ],
-  "order": 5
+  "order": 5,
+  "placement": [
+   -4.13,
+   -7.1
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

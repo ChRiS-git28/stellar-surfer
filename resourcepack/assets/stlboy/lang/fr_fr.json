@@ -541,5 +541,17 @@
  "badge.stlboy.cls_aurora.passive": "§a✦ Passif · Aube boréale§7 : tu §frécupères 1 PV§7 toutes les 5 secondes.",
  "badge.stlboy.cls_betelgeuse.passive": "§c✦ Passif · Masse de géante§7 : §f+4 PV max§7 et §f+50 % de résistance au recul§7.",
  "badge.stlboy.cls_betelgeuse.hunt": "§c✦ Fierté de géante§7 : la §cTraque§7 faiblit avec ton Rang. Elle s'éteint §f10 % plus vite par Rang§7 (§f−50 %§7 au Rang 10). §fRang 4§7 : plus d'attraction vers le bas. §fRang 7§7 : les projectiles ne sont plus aimantés vers toi. §fRang 10§7 : plus de ralentissement.",
- "subtitles.stlboy.cosmic": "Résonance cosmique"
+ "subtitles.stlboy.cosmic": "Résonance cosmique",
+ "gui.stellar_surfer.skill.title": "Voie stellaire",
+ "gui.stellar_surfer.skill.classic": "Vue classique",
+ "gui.stellar_surfer.skill.points": "✦ %s points de compétence",
+ "gui.stellar_surfer.skill.hint": "Clic : débloquer · Maj+clic : rembourser · Glisser : se déplacer · Molette : zoom",
+ "gui.stellar_surfer.skill.cost": "Coût : %s pt",
+ "gui.stellar_surfer.skill.owned": "✦ Débloquée",
+ "gui.stellar_surfer.skill.refund": " · Maj+clic pour rembourser",
+ "gui.stellar_surfer.skill.excluded": "Fermée par %s",
+ "gui.stellar_surfer.skill.locked": "Verrouillée",
+ "gui.stellar_surfer.skill.parent": "Débloque d'abord l'étoile précédente",
+ "gui.stellar_surfer.skill.buy": "Clic pour débloquer",
+ "gui.stellar_surfer.skill.poor": "Pas assez de points (ou une condition manque)"
 }

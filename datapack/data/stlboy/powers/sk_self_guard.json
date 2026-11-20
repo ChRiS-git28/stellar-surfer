@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_self_hunter"
   ],
-  "order": 4
+  "order": 4,
+  "placement": [
+   -5.97,
+   -1.74
+  ]
  },
  "attrs": {
   "type": "apoli:attribute",

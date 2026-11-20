@@ -16,6 +16,10 @@
   "order": 30,
   "excludes": [
    "stlboy:sk_ult_flare"
+  ],
+  "placement": [
+   9.07,
+   -3.85
   ]
  },
  "badges": [

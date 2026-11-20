@@ -19,6 +19,10 @@
    "stlboy:cls_sun",
    "stlboy:cls_aurora",
    "stlboy:cls_betelgeuse"
+  ],
+  "placement": [
+   1.53,
+   2.18
   ]
  },
  "mark": {

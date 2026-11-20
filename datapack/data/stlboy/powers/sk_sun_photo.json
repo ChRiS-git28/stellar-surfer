@@ -13,7 +13,11 @@
    "comparison": ">=",
    "compare_to": 4
   },
-  "order": 30
+  "order": 30,
+  "placement": [
+   7.79,
+   -1.91
+  ]
  },
  "badges": [
   {

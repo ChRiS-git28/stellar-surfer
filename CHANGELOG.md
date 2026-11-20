@@ -7,6 +7,23 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.5] — 2026-11-20
+
+### Skill tree
+- **DP** Stellar Path is now a symmetric five-pointed star: one branch per class (Nebula on top, then Sun, Neptune, Aurora, Betelgeuse), each opening in a balanced fan with no crossing links. Positions are written in the skills (`placement`), so the datapack and the mod show the same shape.
+- **DP + RP** Starry background for the tree in the Apoli screen.
+- **Mod** New constellation skill screen replacing the Apoli one: a turning five-pointed star at the heart, one colour and one star model per class (spiral nebula, sun, ringed planet, aurora crystal, red giant), rays toward the classes, orbiting motes, light flowing in open branches, opening and unlock animations, pan and zoom.
+
+### Visuals
+- **RP** Round orb particles (wisp) redone in end-rod style: crisp opaque core, short halo, animated twinkle.
+- **Mod** Glow halos on orbs, motes and constellation stars (bloom without shaders). Fixed: the halos no longer show as coloured squares in the Stellar Breath beam.
+- **Mod** Stellar Surfer skin for the Origins window, only while Stellar Surfer is displayed; every other origin keeps your Origins theme (no Origins texture is replaced).
+
+### Figura avatar
+- Star Shard throws redone: bigger motions added on top of the current pose, release right when the shard leaves, flash and spark burst from the throwing hand; a two-hand double throw replaces the kick.
+
+---
+
 ## [1.1.4] — 2026-11-19
 
 ### Particles visible without shaders

@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_orb_dense"
   ],
-  "order": 7
+  "order": 7,
+  "placement": [
+   3.64,
+   5.2
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

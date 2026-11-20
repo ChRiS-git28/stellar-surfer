@@ -1,11 +1,13 @@
-"""Build the NeoForge mod jar (no code, lowcodefml): datapack data/ + resource pack assets/ in one file.
-Usage: python build_jar.py <datapack dir> <resourcepack dir> <logo.png> <version> <out.jar>"""
+"""Build the NeoForge mod jar: datapack data/ + resource pack assets/ in one file, plus the compiled client visual layer.
+Usage: python build_jar.py <datapack dir> <resourcepack dir> <logo.png> <version> <out.jar> [classes dir]
+Without a classes dir the jar has no code (lowcodefml); with it, it is a javafml mod (see build_mod.py)."""
 import os, sys, zipfile, json
 dp, rp, logo, ver, out = sys.argv[1:6]
-TOML = f'''modLoader="lowcodefml"
+classes = sys.argv[6] if len(sys.argv) > 6 else None
+TOML = f'''modLoader="{'javafml' if classes else 'lowcodefml'}"
 loaderVersion="[1,)"
 license="All Rights Reserved"
-issueTrackerURL="https://github.com/ChRiS-git28/stellar-surfer/issues"
+issueTrackerURL="https://github.com/InLighTs28/stellar-surfer/issues"
 
 [[mods]]
 modId="stellar_surfer"
@@ -13,9 +15,9 @@ version="{ver}"
 displayName="Stellar Surfer"
 logoFile="stellar_surfer.png"
 authors="InLighTs"
-displayURL="https://github.com/ChRiS-git28/stellar-surfer"
+displayURL="https://github.com/InLighTs28/stellar-surfer"
 description=\'\'\'Fall from the stars, ride the endless sky and bend gravity to your will: a new origin for Origins.
-Datapack and Cosmic Visuals resource pack bundled in one mod. Do not install the separate zips with this jar.\'\'\'
+Datapack and Cosmic Visuals resource pack bundled in one mod, plus a client visual layer (constellation skill tree, glowing orbs). Do not install the separate zips with this jar.\'\'\'
 
 [[dependencies.stellar_surfer]]
 modId="minecraft"
@@ -45,6 +47,11 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("META-INF/neoforge.mods.toml", TOML)
     z.writestr("pack.mcmeta", json.dumps(META, indent=1))
     z.write(logo, "stellar_surfer.png")
+    if classes:
+        for d, _, fs in os.walk(classes):
+            for f in fs:
+                p = os.path.join(d, f)
+                z.write(p, os.path.relpath(p, classes).replace(os.sep, "/"))
     for base, top in ((dp, "data"), (rp, "assets")):
         root = os.path.join(base, top)
         for d, _, fs in os.walk(root):

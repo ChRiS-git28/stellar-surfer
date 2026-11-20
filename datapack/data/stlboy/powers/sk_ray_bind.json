@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_ray_deadeye"
   ],
-  "order": 7
+  "order": 7,
+  "placement": [
+   0.66,
+   -8.27
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

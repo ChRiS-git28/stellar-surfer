@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_self_guard"
   ],
-  "order": 5
+  "order": 5,
+  "placement": [
+   -5.51,
+   -2.95
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",

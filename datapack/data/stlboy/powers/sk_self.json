@@ -13,7 +13,11 @@
    "comparison": ">=",
    "compare_to": 1
   },
-  "order": 1
+  "order": 1,
+  "placement": [
+   -4.22,
+   -1.3
+  ]
  },
  "attrs": {
   "type": "apoli:attribute",

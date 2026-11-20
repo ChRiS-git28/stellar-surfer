@@ -539,5 +539,17 @@
  "badge.stlboy.cls_aurora.passive": "§a✦ Passive · Boreal Dawn§7: you §frecover 1 health§7 every 5 seconds.",
  "badge.stlboy.cls_betelgeuse.passive": "§c✦ Passive · Giant's Mass§7: §f+4 max health§7 and §f+50% knockback resistance§7.",
  "badge.stlboy.cls_betelgeuse.hunt": "§c✦ Giant's Pride§7: §cHunted§7 weakens as you rank up. It ends §f10% faster per Rank§7 (§f−50%§7 at Rank 10). §fRank 4§7: no more drag down. §fRank 7§7: projectiles are no longer pulled to you. §fRank 10§7: no more slowdown.",
- "subtitles.stlboy.cosmic": "Cosmic resonance"
+ "subtitles.stlboy.cosmic": "Cosmic resonance",
+ "gui.stellar_surfer.skill.title": "Stellar Path",
+ "gui.stellar_surfer.skill.classic": "Classic view",
+ "gui.stellar_surfer.skill.points": "✦ %s skill points",
+ "gui.stellar_surfer.skill.hint": "Click: unlock · Shift+click: refund · Drag: move · Wheel: zoom",
+ "gui.stellar_surfer.skill.cost": "Cost: %s pt",
+ "gui.stellar_surfer.skill.owned": "✦ Unlocked",
+ "gui.stellar_surfer.skill.refund": " · Shift+click to refund",
+ "gui.stellar_surfer.skill.excluded": "Closed by %s",
+ "gui.stellar_surfer.skill.locked": "Locked",
+ "gui.stellar_surfer.skill.parent": "Unlock the previous star first",
+ "gui.stellar_surfer.skill.buy": "Click to unlock",
+ "gui.stellar_surfer.skill.poor": "Not enough points (or a condition is missing)"
 }

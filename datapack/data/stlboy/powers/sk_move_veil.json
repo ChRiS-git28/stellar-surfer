@@ -16,7 +16,11 @@
   "excludes": [
    "stlboy:sk_move_wake"
   ],
-  "order": 10
+  "order": 10,
+  "placement": [
+   -3.1,
+   7.65
+  ]
  },
  "mark": {
   "type": "apoli:action_on_callback",
