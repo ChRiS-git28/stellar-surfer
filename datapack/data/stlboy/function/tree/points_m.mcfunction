@@ -1,0 +1,1 @@
+$data modify entity @e[type=minecraft:text_display,tag=stlboy_tpts,predicate=stlboy:owned,limit=1] text set value '{"text":"✦ $(p) ","color":"#FFD27A","extra":[{"translate":"stlboy.tree.points","fallback":"skill points","color":"#C9B8E8"}]}'

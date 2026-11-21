@@ -38,9 +38,9 @@ public final class GlowRenderer {
             case 7115 -> new float[]{0xE8B860, 0.42f};          // gold mote
             case 7116 -> new float[]{0xA070F0, 0.42f};          // violet mote
             case 7002 -> new float[]{0x9FC8FF, 0.55f};          // constellation star
-            case 7130 -> new float[]{0x8050E0, 2.2f};           // Black Hole core
-            case 7133 -> new float[]{0xFFE0A0, 2.4f};           // White Hole core
-            case 7012, 7137 -> new float[]{0xD070F0, 2.8f};     // Supernova / wormhole core
+            case 7130 -> new float[]{0x6040B0, 1.5f};           // Black Hole core
+            case 7133 -> new float[]{0xC8A870, 1.6f};           // White Hole core
+            case 7012, 7137 -> new float[]{0x7A3890, 1.1f};     // Supernova / wormhole core: small and dim, its spinning rings stay visible
             default -> null;
         };
     }

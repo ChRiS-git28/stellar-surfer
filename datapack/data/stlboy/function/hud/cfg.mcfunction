@@ -37,6 +37,7 @@ execute if score @s stlboy.hud matches 61..63 run resource set @s stlboy:hud_lx 
 execute store result score #mn stlboy.tmp run resource get @s stlboy:hud_min
 execute if score @s stlboy.hud matches 60 if score #mn stlboy.tmp matches 1 run resource set @s stlboy:hud_min 0
 execute if score @s stlboy.hud matches 60 if score #mn stlboy.tmp matches 0 run resource set @s stlboy:hud_min 1
-execute if score @s stlboy.hud matches 10..63 run playsound minecraft:block.amethyst_block.chime master @s ~ ~ ~ 0.6 1.6
+execute if score @s stlboy.hud matches 70 run function stlboy:hud/selffx
+execute if score @s stlboy.hud matches 10..70 run playsound minecraft:block.amethyst_block.chime master @s ~ ~ ~ 0.6 1.6
 function stlboy:hud/menu
 scoreboard players set @s stlboy.hud 0

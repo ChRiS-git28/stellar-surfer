@@ -553,5 +553,11 @@
  "gui.stellar_surfer.skill.locked": "Verrouillée",
  "gui.stellar_surfer.skill.parent": "Débloque d'abord l'étoile précédente",
  "gui.stellar_surfer.skill.buy": "Clic pour débloquer",
- "gui.stellar_surfer.skill.poor": "Pas assez de points (ou une condition manque)"
+ "gui.stellar_surfer.skill.poor": "Pas assez de points (ou une condition manque)",
+ "stlboy.sigil.selffx": "Mes particules de classe",
+ "stlboy.sigil.selffx.hint": "Masque ton aura et ta traînée de classe pour toi seul (meilleure vue à la première personne). Les autres joueurs les voient toujours.",
+ "key.stlboy.tree": "Stellar Surfer — Voie stellaire",
+ "stlboy.tree.hint": "✦ Voie stellaire ✦\nClic gauche sur une étoile : détails · Clic droit : débloquer · K : fermer",
+ "stlboy.tree.points": "points de compétence",
+ "stlboy.tree.no": "✦ Pas encore : il manque des points, le rang ou l'étoile précédente (ou un autre choix l'a fermée) ✦"
 }

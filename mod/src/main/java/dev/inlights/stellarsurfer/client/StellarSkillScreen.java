@@ -61,6 +61,8 @@ public class StellarSkillScreen extends Screen {
     private boolean dragging, zoomFitted;
     private long openedAt;
     private int layoutHash;
+    /** opening fade (0 -> 1 over 0.4 s), applied to every sprite, line and fill */
+    private static float fadeIn = 1f;
 
     public StellarSkillScreen(ResourceLocation root) {
         super(Component.translatableWithFallback("gui.stellar_surfer.skill.title", "Stellar Path"));
@@ -182,7 +184,9 @@ public class StellarSkillScreen extends Screen {
     @Override
     public void renderBackground(GuiGraphics g, int mouseX, int mouseY, float partial) {
         float t = (System.currentTimeMillis() - openedAt) / 1000f;
-        g.fillGradient(0, 0, width, height, 0xF406051A, 0xF4120926);
+        float k = Mth.clamp(t / 0.4f, 0f, 1f);
+        fadeIn = k * k * (3 - 2 * k);
+        g.fillGradient(0, 0, width, height, fade(0xF406051A), fade(0xF4120926));
         tinted(g, HALO, width * 0.22f + 30 * Mth.sin(t * 0.07f), height * 0.32f, 440, 0x3A1E6E, 0.55f);
         tinted(g, HALO, width * 0.8f, height * 0.72f + 25 * Mth.cos(t * 0.05f), 400, 0x123C6A, 0.5f);
         tinted(g, HALO, width * 0.62f + scrollX * 0.05f, height * 0.18f + scrollY * 0.05f, 280, 0x5A1E50, 0.35f);
@@ -191,7 +195,7 @@ public class StellarSkillScreen extends Screen {
             float y = ((s[1] * height + scrollY * 0.15f * s[3]) % height + height) % height;
             float a = 0.35f + 0.65f * (0.5f + 0.5f * Mth.sin(t * (0.8f + s[3]) + s[2]));
             int sz = s[3] > 1.6f ? 2 : 1;
-            g.fill((int) x, (int) y, (int) x + sz, (int) y + sz, (((int) (a * 200) & 255) << 24) | 0xDCE6FF);
+            g.fill((int) x, (int) y, (int) x + sz, (int) y + sz, fade((((int) (a * 200) & 255) << 24) | 0xDCE6FF));
         }
         if (layoutHash != stateHash() || nodes.isEmpty()) relayout();
         renderTree(g, mouseX, mouseY, t);
@@ -200,7 +204,8 @@ public class StellarSkillScreen extends Screen {
     private void renderTree(GuiGraphics g, int mouseX, int mouseY, float t) {
         g.pose().pushPose();
         g.pose().translate(width / 2f + scrollX, height / 2f + scrollY + 8, 0);
-        g.pose().scale(zoom, zoom, 1f);
+        float pop = 0.9f + 0.1f * fadeIn;                       // the window settles in while fading in
+        g.pose().scale(zoom * pop, zoom * pop, 1f);
 
         // five rays from the heart toward the classes
         for (ResourceLocation c : visibleChildren(root)) {
@@ -290,6 +295,11 @@ public class StellarSkillScreen extends Screen {
         g.pose().popPose();
     }
 
+    private static int fade(int argb) {
+        int a = (int) (((argb >>> 24) & 255) * fadeIn);
+        return (a << 24) | (argb & 0xFFFFFF);
+    }
+
     private static int lighten(int rgb) {
         int r = (rgb >> 16) & 255, gg = (rgb >> 8) & 255, b = rgb & 255;
         return ((r + (255 - r) / 2) << 16) | ((gg + (255 - gg) / 2) << 8) | (b + (255 - b) / 2);
@@ -298,6 +308,7 @@ public class StellarSkillScreen extends Screen {
     @Override
     public void render(GuiGraphics g, int mouseX, int mouseY, float partial) {
         super.render(g, mouseX, mouseY, partial);
+        if (fadeIn < 0.6f) return;
         Component name = ClientSkillState.treeName(root);
         g.drawCenteredString(font, name == null ? title : name.copy().withStyle(ChatFormatting.BOLD), width / 2, 10, 0xE8D8FF);
         int pts = ClientSkillState.points(root);
@@ -414,7 +425,7 @@ public class StellarSkillScreen extends Screen {
         int n = (tex == STAR || THEMES.values().stream().anyMatch(th -> th.model == tex)) ? 32 : 64;
         RenderSystem.enableBlend();
         RenderSystem.defaultBlendFunc();
-        RenderSystem.setShaderColor(((rgb >> 16) & 255) / 255f, ((rgb >> 8) & 255) / 255f, (rgb & 255) / 255f, Mth.clamp(alpha, 0f, 1f));
+        RenderSystem.setShaderColor(((rgb >> 16) & 255) / 255f, ((rgb >> 8) & 255) / 255f, (rgb & 255) / 255f, Mth.clamp(alpha * fadeIn, 0f, 1f));
         g.pose().pushPose();
         g.pose().translate(cx - size / 2f, cy - size / 2f, 0);
         g.pose().scale(size / 64f, size / 64f, 1f);
@@ -440,7 +451,7 @@ public class StellarSkillScreen extends Screen {
         g.pose().translate(x0, y0, 0);
         g.pose().mulPose(Axis.ZP.rotation((float) Math.atan2(y1 - y0, x1 - x0)));
         g.pose().scale(1f, w, 1f);
-        g.fill(0, -1, Math.round(len), 1, argb);
+        g.fill(0, -1, Math.round(len), 1, fade(argb));
         g.pose().popPose();
     }
 }

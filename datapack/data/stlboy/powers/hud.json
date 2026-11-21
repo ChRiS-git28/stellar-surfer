@@ -8,12 +8,12 @@
   "text": "",
   "extra": [
    {
-    "text": "",
     "font": "stlboy:origin",
-    "color": "white"
+    "color": "white",
+    "text": "\n\n\n\n\n\n"
    },
    {
-    "text": "\n\n\n\n\n\n\n\n\n\n"
+    "text": "\n\n\n\n"
    },
    {
     "translate": "power.stlboy.hud.description",

@@ -7,6 +7,33 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.7] — 2026-11-21
+
+### Stellar Path in the datapack version
+- **DP + RP** New holographic Stellar Path (key **K**): the same five-pointed constellation as the mod's screen appears in front of you, coloured by class. Left-click a star for its details, right-click to unlock it (same rules and points as Apoli). Closes with K, after 2 minutes or when you walk away.
+
+### Constellation
+- **DP** The Constellation now forms as a crown above the target's head instead of a square at mid-height: it no longer sinks into the ground on slopes, and every line stays attached to its stars.
+
+### Class particles
+- **DP + RP** New option in `/trigger stlboy.hud`: *My class particles*. Hides your own aura and trail for you only (better first-person view); other players still see them.
+- **DP** Smaller Nebula clouds.
+
+### Shrines
+- **DP** Each trial shrine has its own architecture: circular colonnade (Ring Run), scorched crater (Meteors), five-pointed star with obelisks (Constellation), basin with floating islets (Star Motes), open amethyst geode (Echo), symmetric glass gallery (Mirror), standing obsidian ring (Horizon).
+- **DP** In creative mode a shrine starts its trial right away (no rank, skill or open-sky requirement) for testing.
+
+### Descriptions
+- **RP** Pictures in the origin and Celestial Sigil descriptions are cut into line-high strips: they scroll and clip like text instead of spilling out of the window.
+
+### NeoForge version
+- **Mod** The skill screen fades in smoothly. Smaller, dimmer glow on orb cores so the Wormhole's spinning rings stay visible.
+
+### Figura avatar
+- One single surf-in / surf-out animation per take-off and landing; braking tilts the board backward; the cosmic skin now follows the exact shape of the skin (both layers); orb cast pose only when an orb is really out (not on cooldown).
+
+---
+
 ## [1.1.6] — 2026-11-21
 
 ### Orbs

@@ -26,8 +26,11 @@ scoreboard players set #cn stlboy.tmp 30
 scoreboard players operation #at30 stlboy.tmp = #ag stlboy.tmp
 scoreboard players operation #at30 stlboy.tmp %= #cn stlboy.tmp
 scoreboard players operation #ag30 stlboy.tmp = #at30 stlboy.tmp
+# particules de classe masquees pour soi (option du menu /trigger stlboy.hud) : envoyees a tous les autres joueurs
+execute if entity @s[tag=stlboy_nofx] run tag @s add stlboy_fx_skip
 execute if entity @s[tag=stlboy_cls_nebula] run function stlboy:aura/nebula
 execute if entity @s[tag=stlboy_cls_sun] run function stlboy:aura/sun
 execute if entity @s[tag=stlboy_cls_neptune] run function stlboy:aura/neptune
 execute if entity @s[tag=stlboy_cls_aurora] run function stlboy:aura/aurora
 execute if entity @s[tag=stlboy_cls_betelgeuse] run function stlboy:aura/betelgeuse
+tag @s remove stlboy_fx_skip

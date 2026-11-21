@@ -21,3 +21,5 @@ execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_ling
 execute if entity @s[tag=stlboy_orb_nova] run scoreboard players operation @s stlboy.life += @s stlboy.life
 execute if entity @s[tag=stlboy_orb_well] run advancement grant @a[tag=stlboy_surfer,predicate=stlboy:owner] only stlboy:stardust/first_singularity
 execute if entity @s[tag=stlboy_orb_nova] run advancement grant @a[tag=stlboy_surfer,predicate=stlboy:owner] only stlboy:stardust/first_nova
+# l'avatar Figura apprend tout de suite qu'une orbe est sortie
+execute as @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] run function stlboy:fig/mark
