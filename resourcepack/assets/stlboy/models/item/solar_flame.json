@@ -1,0 +1,55 @@
+{
+ "textures": {
+  "t": "stlboy:item/solar_flame",
+  "particle": "stlboy:item/solar_flame"
+ },
+ "elements": [
+  {
+   "from": [
+    0,
+    0,
+    8
+   ],
+   "to": [
+    16,
+    16,
+    8
+   ],
+   "shade": false,
+   "faces": {
+    "north": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#t"
+    },
+    "south": {
+     "uv": [
+      0,
+      0,
+      16,
+      16
+     ],
+     "texture": "#t"
+    }
+   }
+  }
+ ],
+ "display": {
+  "fixed": {
+   "rotation": [
+    0,
+    0,
+    0
+   ],
+   "scale": [
+    1,
+    1,
+    1
+   ]
+  }
+ }
+}

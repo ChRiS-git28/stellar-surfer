@@ -7,6 +7,28 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.9] — 2026-11-21
+
+### Gameplay
+- **DP** Elytra can no longer be used (a Surfer already flies). A short message explains why.
+- **DP + RP** **Solar Flare** now lasts **3 s** by default (4 s with the advanced skill), shortened by Fire Protection (-15 % per level, up to -80 %) and by fire magic resistance (Iron's Spells). It looks like vanilla fire: a sheet of animated solar flames covering the whole target and facing the camera, instead of flames at the feet.
+
+### Visuals
+- **DP** Constellation: no more lines between the stars; the four stars now orbit around the target.
+- **DP** Far fewer sparkles in the Stellar Breath beam (the helix is about 10 times lighter and starts 3 blocks ahead), for a clear view.
+
+### Origins window (resource pack)
+- **RP** Stellar Surfer skin for the Origins window in the resource pack version too (only the 10 textures of the *default* Origins theme are replaced; any pack placed above it keeps priority). The NeoForge version keeps skinning only the Stellar Surfer page.
+- **DP + RP** The banner at the top of the origin description is replaced by a concrete summary: surfing, abilities, classes and weaknesses.
+
+### Removed
+- The *Stellar Surfer Visuals* add-on (1.1.8) is discontinued.
+
+### Figura avatar
+- The player's cape follows the animated model; crouching in the air no longer squashes the body; no extra animation when the surf starts or ends; idle poses only after 1 minute AFK; brighter cosmic skin; with shaders the model no longer turns into a translucent veil.
+
+---
+
 ## [1.1.8] — 2026-11-21
 
 ### Cosmic Strength

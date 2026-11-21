@@ -1,0 +1,2 @@
+# (macro sx, sy, ty)
+$summon minecraft:item_display ~ ~ ~ {Tags:["stlboy_flfx","stlboy_flnew"],item:{id:"minecraft:structure_void",count:1,components:{"minecraft:custom_model_data":7150}},item_display:"none",billboard:"vertical",brightness:{sky:15,block:15},teleport_duration:1,view_range:1f,shadow_radius:0f,transformation:{left_rotation:[0f,0f,0f,1f],right_rotation:[0f,0f,0f,1f],translation:[0f,$(ty)f,0f],scale:[$(sx)f,$(sy)f,1f]}}

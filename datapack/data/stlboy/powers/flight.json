@@ -3363,5 +3363,12 @@
   "hud_render": {
    "should_render": false
   }
+ },
+ "no_elytra": {
+  "type": "apoli:prevent_elytra_flight",
+  "entity_action": {
+   "type": "apoli:execute_command",
+   "command": "title @s actionbar {\"translate\":\"stlboy.no_elytra\",\"fallback\":\"✦ A star needs no wings ✦\",\"color\":\"#B8A8D8\"}"
+  }
  }
 }

@@ -46,10 +46,9 @@
   "text": "",
   "extra": [
    {
-    "font": "stlboy:origin",
-    "color": "white",
-    "italic": false,
-    "text": "\n\n"
+    "translate": "origin.stlboy.stellarsurfer.header",
+    "fallback": "",
+    "italic": false
    },
    {
     "text": "\n\n"

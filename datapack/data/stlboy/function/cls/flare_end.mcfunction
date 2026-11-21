@@ -1,5 +1,7 @@
 # Fin de l'eruption solaire (en tant que la cible)
 tag @s remove stlboy_flare
+scoreboard players operation #fid stlboy.tmp = @s stlboy.fid
+kill @e[type=minecraft:item_display,tag=stlboy_flfx,predicate=stlboy:same_fid]
 tag @s remove stlboy_flm
 scoreboard players reset @s stlboy.sfl
 scoreboard players reset @s stlboy.sfo

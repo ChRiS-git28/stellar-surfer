@@ -27,4 +27,5 @@ function stlboy:orb/crash_tick
 # marque stellaire des points de reapparition (seulement si quelqu'un est proche)
 execute as @e[type=minecraft:marker,tag=stlboy_home] at @s if entity @a[distance=..48] run function stlboy:anchor/home_fx
 execute as @e[tag=stlboy_flare] at @s run function stlboy:cls/flare_tick
+execute as @e[type=minecraft:item_display,tag=stlboy_flfx] run function stlboy:cls/flare_orphan
 execute as @a[tag=stlboy_surfer] at @s run function stlboy:aura/tick

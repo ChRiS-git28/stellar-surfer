@@ -100,5 +100,8 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
         for d, _, fs in os.walk(root):
             for f in fs:
                 p = os.path.join(d, f)
-                z.write(p, prefix + os.path.relpath(p, base).replace(os.sep, "/")); n += 1
+                rel = os.path.relpath(p, base).replace(os.sep, "/")
+                # the mod skins the Origins window for Stellar Surfer only (Java), so it skips the pack's global reskin
+                if classes and rel.startswith("assets/origins/textures/gui/choose_origin/"): continue
+                z.write(p, prefix + rel); n += 1
 print(os.path.basename(out), n, "files", os.path.getsize(out) // 1024, "KB")
