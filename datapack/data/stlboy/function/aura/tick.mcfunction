@@ -1,5 +1,7 @@
 # Aura de classe (en tant que le Surfer, a sa position, chaque tick) : particules propres au theme de la classe
 execute if entity @s[gamemode=spectator] run return 0
+# Ghost Step et toute invisibilite : aucune particule de classe ne trahit le Surfer
+execute if predicate stlboy:invisible run return 0
 execute store result score #ag stlboy.tmp run time query gametime
 scoreboard players set #c8 stlboy.tmp 8
 scoreboard players operation #ak stlboy.tmp = #ag stlboy.tmp

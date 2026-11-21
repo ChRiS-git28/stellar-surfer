@@ -1,4 +1,6 @@
 # Sillage du surf a la couleur du Surfer (en tant que le Surfer)
+# Ghost Step et toute invisibilite : aucune particule de classe ne trahit le Surfer
+execute if predicate stlboy:invisible run return 0
 execute if entity @s[tag=stlboy_nofx] run tag @s add stlboy_fx_skip
 execute if score @s stlboy.pal matches 1 if entity @s[tag=stlboy_cls_nebula] run particle apoli:custom{texture:"stlboy:textures/particle/neb_swirl.png",lifetime:18,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:"#FFFFFFFF",end_color:"#FFFFFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.6 ~ 0.12 0.12 0.12 0 2 normal @a[tag=!stlboy_fx_skip]
 execute if score @s stlboy.pal matches 1 unless entity @s[tag=stlboy_cls_nebula] run particle apoli:custom{texture:"stlboy:textures/particle/wisp.png",lifetime:18,lifetime_variation:4,size:0.15f,size_variation:0.045f,end_size:0.0f,color:"#9EE8FFFF",end_color:"#B07DFF00",friction:0.92f,gravity:0.0f,physics:false,emissive:true,blend:"translucent",easing:"ease_out_quad",roll:"rUni(0, 360)",roll_speed:"rNor(0, 3)"} ~ ~0.6 ~ 0.12 0.12 0.12 0 2 normal @a[tag=!stlboy_fx_skip]

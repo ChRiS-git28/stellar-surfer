@@ -3085,7 +3085,7 @@
  },
  "fig_surf": {
   "type": "apoli:action_over_time",
-  "interval": 5,
+  "interval": 2,
   "entity_action": {
    "type": "apoli:if_else",
    "condition": {

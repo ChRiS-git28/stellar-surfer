@@ -7,6 +7,23 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.10] — 2026-11-21
+
+### Aurora
+- **DP** Ghost Step (and any invisibility) now hides every class particle: aura and surf trail no longer give the Surfer away.
+- **DP** Richer Aurora aura: the veils slowly shift colour (green → teal → violet), ripple upward, sparkles fall from their tops and a soft halo pulses at your feet.
+
+### Figura support
+- **DP** The surf signal for the avatar refreshes twice as fast, so the avatar plays exactly one take-off and one landing animation.
+
+### Figura avatar
+- Cosmic skin fixed (Figura gives no access to the player's skin pixels): your skin with your class galaxy glowing over it, tinted second layer; no more error in chat.
+- One surf-in / surf-out per take-off and landing; braking only on a real slowdown (no more brake while boosting).
+- New: 6 stylish surf tricks (flat 360, front flip, grab, superman, cork, scissor kick) with a spinning star, every 7 to 13 s of steady surf.
+- No sparks while invisible (Ghost Step).
+
+---
+
 ## [1.1.9] — 2026-11-21
 
 ### Gameplay
