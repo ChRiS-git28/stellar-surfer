@@ -556,5 +556,5 @@
  "stlboy.sigil.selffx.hint": "Hide your own class aura and trail for you only (better view in first person). Other players still see them.",
  "effect.stlboy.cosmic_strength": "Cosmic Strength",
  "stlboy.no_elytra": "✦ A star needs no wings: the sky already carries you ✦",
- "origin.stlboy.stellarsurfer.header": "§d✦ §fSurfs the sky§7 on a star — no elytra needed\n§b✦ §fStellar Breath§7 beam · §fStar Shards§7 · §fBlack & White Holes\n§e✦ §fFive classes§7 and a §fStellar Path§7 of skills\n§c✦ §7Light armour only · §cHunted§7 when wounded"
+ "origin.stlboy.stellarsurfer.header": "§d▌ §7ROLE §fstar-born sky surfer\n§b▌ §7POWERS §fStellar Breath · Star Shards · Black & White Holes\n§e▌ §7PATH §ffive classes, one Stellar Path\n§c▌ §7WEAKNESS §clight armour only · hunted when wounded"
 }

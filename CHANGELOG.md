@@ -7,6 +7,14 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.11] — 2026-11-21
+
+### Origins window
+- **RP** The resource pack no longer reskins the Origins window: the 1.1.9 global reskin replaced the window of every origin and of other packs. Only the NeoForge version keeps its Stellar Surfer skin, on the Stellar Surfer page only.
+- **DP + RP** A real banner again at the top of the origin description, in the style of the CurseForge banner (starry nebula, pixel-art STELLAR SURFER title), followed by a short fact sheet: role, powers, path, weakness. The banner is cut into line strips, so it scrolls cleanly.
+
+---
+
 ## [1.1.10] — 2026-11-21
 
 ### Aurora
