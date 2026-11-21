@@ -1,0 +1,17 @@
+# Adds the CurseForge links to the Modrinth descriptions (run by hand, or when the links script changes).
+name: Modrinth descriptions - CurseForge links
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [".github/scripts/modrinth_links.sh"]
+permissions:
+  contents: read
+jobs:
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          MR_TOKEN: ${{ secrets.MODRINTH_TOKEN }}
+        run: bash .github/scripts/modrinth_links.sh
