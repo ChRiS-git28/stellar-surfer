@@ -208,6 +208,14 @@
           "tag": "c:bosses",
           "inverted": true
          }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
+          "inverted": true
+         }
         }
        ]
       },
@@ -310,6 +318,14 @@
          "condition": {
           "type": "apoli:in_tag",
           "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
           "inverted": true
          }
         }
@@ -416,6 +432,14 @@
           "tag": "c:bosses",
           "inverted": true
          }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
+          "inverted": true
+         }
         }
        ]
       },
@@ -491,6 +515,14 @@
          "condition": {
           "type": "apoli:in_tag",
           "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
           "inverted": true
          }
         }
@@ -608,6 +640,14 @@
           "tag": "c:bosses",
           "inverted": true
          }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
+          "inverted": true
+         }
         }
        ]
       },
@@ -683,6 +723,14 @@
          "condition": {
           "type": "apoli:in_tag",
           "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
           "inverted": true
          }
         }
@@ -800,6 +848,14 @@
           "tag": "c:bosses",
           "inverted": true
          }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
+          "inverted": true
+         }
         }
        ]
       },
@@ -875,6 +931,14 @@
          "condition": {
           "type": "apoli:in_tag",
           "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
           "inverted": true
          }
         }
@@ -990,6 +1054,14 @@
          "condition": {
           "type": "apoli:in_tag",
           "tag": "c:bosses",
+          "inverted": true
+         }
+        },
+        {
+         "type": "apoli:target_condition",
+         "condition": {
+          "type": "apoli:in_tag",
+          "tag": "stlboy:passive_mobs",
           "inverted": true
          }
         }

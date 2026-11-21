@@ -79,14 +79,14 @@
   "type": "apoli:attribute",
   "modifiers": [
    {
-    "attribute": "minecraft:generic.water_movement_efficiency",
+    "attribute": "minecraft:player.block_interaction_range",
     "operation": "addition",
-    "value": 1.0
+    "value": 1.5
    },
    {
-    "attribute": "minecraft:player.submerged_mining_speed",
+    "attribute": "minecraft:player.entity_interaction_range",
     "operation": "addition",
-    "value": 0.8
+    "value": 1.5
    }
   ]
  }

@@ -7,6 +7,29 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.6] — 2026-11-21
+
+### Orbs
+- **DP** Black Hole and White Hole no longer move passive creatures (farm animals, villagers, golems, pets, fish, armor stands...): they are neither pulled, pushed nor hit by the White Hole's touch. New tag `stlboy:passive_mobs`.
+
+### Neptune: master of space, not water
+- **DP + RP** New passive *Folded Space*: you reach blocks and creatures 1.5 blocks farther (replaces the underwater swimming/mining passive).
+- **DP + RP** Water bubbles and drops are gone: the Neptune aura, trail and shards now use folding space ripples that orbit you and collapse inward. Tidal Shard renamed Gravity Shard.
+
+### Nebula
+- **DP + RP** New aura, trail and shard look: spiral gas clouds that grow and shift colour (violet, pink, cyan) around you, with star dust.
+
+### Texts
+- **RP** Skill descriptions: "Exclusive with" is now "Exclude" (FR: "Exclut").
+
+### NeoForge version
+- **Mod** The Cosmic Visuals resources are now a built-in pack, always active and on top of the pack list: orb and item models can no longer be hidden by other packs or mods (orbs showed as giant vanilla items).
+
+### Figura avatar
+- The second skin layer (hat, jacket, sleeves, pants) is kept. The avatar is downloadable as a zip from the private repo's "latest" release.
+
+---
+
 ## [1.1.5] — 2026-11-20
 
 ### Skill tree

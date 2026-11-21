@@ -52,10 +52,15 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
             for f in fs:
                 p = os.path.join(d, f)
                 z.write(p, os.path.relpath(p, classes).replace(os.sep, "/"))
-    for base, top in ((dp, "data"), (rp, "assets")):
+    # with code, the resource pack is a built-in pack (resourcepacks/cosmic_visuals) that the mod puts on top of the list
+    rp_prefix = "resourcepacks/cosmic_visuals/" if classes else ""
+    if classes:
+        z.writestr(rp_prefix + "pack.mcmeta", open(os.path.join(rp, "pack.mcmeta"), encoding="utf-8").read())
+        if os.path.exists(os.path.join(rp, "pack.png")): z.write(os.path.join(rp, "pack.png"), rp_prefix + "pack.png")
+    for base, top, prefix in ((dp, "data", ""), (rp, "assets", rp_prefix)):
         root = os.path.join(base, top)
         for d, _, fs in os.walk(root):
             for f in fs:
                 p = os.path.join(d, f)
-                z.write(p, os.path.relpath(p, base).replace(os.sep, "/")); n += 1
+                z.write(p, prefix + os.path.relpath(p, base).replace(os.sep, "/")); n += 1
 print(os.path.basename(out), n, "files", os.path.getsize(out) // 1024, "KB")
