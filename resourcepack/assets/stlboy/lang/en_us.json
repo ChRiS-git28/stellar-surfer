@@ -258,7 +258,7 @@
  "badge.stlboy.starlight.1": "§7Starlight keeps you from starving under open sky, slowly (up to 3 shanks by day, 4 at night, 6 in the §5End§7). §fTo fill up, absorb cosmic materials.§7",
  "badge.stlboy.starlight.2": "§7Cosmic kills feed you: the stronger the prey, the more you absorb.",
  "badge.stlboy.starlight.3": "§eRight-click§7 a cosmic material to absorb it. The rarer, the more it restores.",
- "badge.stlboy.starlight.4": "§6§l✦ Cosmic Diet ✦§r\n§7◇ §f+1  §7Glowstone§8 (night vision)§7 · Redstone§8 (haste)§7 · Lapis · Quartz · Prismarine Crystals§8 (water breathing)§7 · Gunpowder · Firework Star\n§b◆ §f+2  §bAmethyst§8 (resistance)§b · Ender Pearl§8 (blink)§b · Blaze Powder§8 (fire res.)§b · Magma Cream§8 (fire res.)§b · Breeze Rod§8 (speed)§b · Wind Charge§8 (jump)§b · Emerald§8 (hero)§b · Prismarine Shard\n§d❖ §f+4  §dEcho Shard§8 (clear darkness)§d · Shulker Shell§8 (resistance II)§d · Bottle o' Enchanting§8 (XP)§d · Ghast Tear§8 (regen)§d · Diamond§8 (absorption)§d · Blaze Rod · Ominous Bottle · Trial Key\n§6★ §f+8  §6Nether Star§8 (regen, res., absorption)§6 · End Crystal§8 (regen, haste)§6 · Heart of the Sea§8 (conduit)§6 · Dragon's Breath§8 (strength, speed)§6 · Totem§8 (absorption IV)§6 · Netherite Scrap§8 (resistance III)§6 · Ominous Trial Key",
+ "badge.stlboy.starlight.4": "§6§l✦ Cosmic Diet ✦§r\n§7◇ §f+1  §7Glowstone§8 (night vision)§7 · Redstone§8 (haste)§7 · Lapis · Quartz · Prismarine Crystals§8 (water breathing)§7 · Gunpowder · Firework Star\n§b◆ §f+2  §bAmethyst§8 (resistance)§b · Ender Pearl§8 (blink)§b · Blaze Powder§8 (fire res.)§b · Magma Cream§8 (fire res.)§b · Breeze Rod§8 (speed)§b · Wind Charge§8 (jump)§b · Emerald§8 (hero)§b · Prismarine Shard\n§d❖ §f+4  §dEcho Shard§8 (clear darkness)§d · Shulker Shell§8 (resistance II)§d · Bottle o' Enchanting§8 (XP)§d · Ghast Tear§8 (regen)§d · Diamond§8 (absorption)§d · Blaze Rod · Ominous Bottle · Trial Key\n§6★ §f+8  §6Nether Star§8 (regen, res., absorption)§6 · End Crystal§8 (regen, haste)§6 · Heart of the Sea§8 (conduit)§6 · Dragon's Breath§8 (cosmic strength, speed)§6 · Totem§8 (absorption IV)§6 · Netherite Scrap§8 (resistance III)§6 · Ominous Trial Key",
  "badge.stlboy.stellar_breath.0": "§eHold Primary§7 → §6charge§7 (§f3 s§7, §f2.4 s§7 at Rank 3, §f2 s§7 at Rank 6, §f1.5 s§7 at Rank 9), then a continuous §bbeam§7. §cDamage taken while charging breaks it.",
  "badge.stlboy.stellar_breath.1": "§7Hits stack §6stars§7 on a foe. §e4 stars§7 → §bConstellation§7 burst, which §cexecutes§7 foes under 5% HP (12% at max).",
  "badge.stlboy.stellar_breath.2": "§7Executions give §dStardust§7, end the Hunt and grant speed. §8Costs hunger.",
@@ -554,8 +554,5 @@
  "gui.stellar_surfer.skill.poor": "Not enough points (or a condition is missing)",
  "stlboy.sigil.selffx": "My class particles",
  "stlboy.sigil.selffx.hint": "Hide your own class aura and trail for you only (better view in first person). Other players still see them.",
- "key.stlboy.tree": "Stellar Surfer — Stellar Path",
- "stlboy.tree.hint": "✦ Stellar Path ✦\nLeft-click a star: details · Right-click: unlock · K: close",
- "stlboy.tree.points": "skill points",
- "stlboy.tree.no": "✦ Not yet: points, rank or the previous star are missing (or another choice closed it) ✦"
+ "effect.stlboy.cosmic_strength": "Cosmic Strength"
 }

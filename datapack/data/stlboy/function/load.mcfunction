@@ -103,7 +103,6 @@ scoreboard objectives add stlboy.mid dummy
 kill @e[type=minecraft:block_display,tag=stlboy_tr_rock]
 scoreboard objectives add stlboy.shc dummy
 scoreboard objectives add stlboy.bha dummy
-# Voie stellaire en hologramme : minuteur et nettoyage au rechargement
-scoreboard objectives add stlboy.trc dummy
+# Ancienne Voie stellaire en hologramme (retiree) : nettoyage des restes
 kill @e[tag=stlboy_tree]
 tag @a remove stlboy_tree_open

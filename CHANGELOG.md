@@ -7,6 +7,23 @@ Format: one section per version, newest first. `DP` = datapack, `RP` = resource 
 
 ---
 
+## [1.1.8] — 2026-11-21
+
+### Cosmic Strength
+- **DP + RP** Dragon's Breath no longer gives vanilla Strength (useless to a Surfer): it gives **Cosmic Strength**, a new effect. Cosmic damage +30 %, and the effects of cosmic abilities (shard slowness, orb stun, Constellation bind) are one level stronger and last 50 % longer.
+
+### Stellar Path
+- **DP** The holographic star map (key K) is removed.
+- **New: Stellar Surfer Visuals**, a small client add-on for the datapack version: the exact constellation skill tree of the NeoForge version, the Stellar Surfer skin of the Origins window and the glowing orbs, with the datapack + resource pack. Do not install it with the all-in-one mod.
+
+### Modrinth
+- Descriptions link to the CurseForge pages of the datapack, resource pack and mod.
+
+### Figura avatar
+- Shader compatibility (Iris / Oculus): glowing parts switch to a shader-friendly render while a shader pack is on. Every avatar change is now published as its own release in the private repo.
+
+---
+
 ## [1.1.7] — 2026-11-21
 
 ### Stellar Path in the datapack version

@@ -7,6 +7,7 @@ CL="changelogs/$VER"
 DP="dist/StellarSurfer-Datapack-$VER.zip"
 RP="dist/StellarSurfer-ResourcePack-$VER.zip"
 JAR="dist/StellarSurfer-NeoForge-$VER.jar"
+VIS="dist/StellarSurfer-Visuals-$VER.jar"     # client add-on for the datapack version (optional)
 CL_MOD="$CL/mod.md"; [ -f "$CL_MOD" ] || CL_MOD="$CL/datapack.md"
 UA="stellar-surfer-publisher/1.0 (GitHub Actions)"
 for f in "$DP" "$RP" "$CL/datapack.md" "$CL/resourcepack.md"; do
@@ -44,7 +45,13 @@ elif [ -n "${CF_TOKEN:-}" ]; then
     extra=$(echo "$vers" | jq -c '[([.[] | select(.name == "NeoForge")][0].id), ([.[] | select(.name == "Client")][0].id), ([.[] | select(.name == "Server")][0].id)] | map(select(. != null))')
     GV_MOD=$(jq -c --argjson n "$extra" '.curseforge.game_version_ids + $n' $CFG)
     echo "CurseForge mod game versions: $GV_MOD"
-    cf_upload "$CF_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" "$GV_MOD"
+    cf_res=$(cf_upload "$CF_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" "$GV_MOD"); echo "$cf_res"
+    parent=$(echo "$cf_res" | jq -r '.id // empty' 2>/dev/null || true)
+    if [ -n "$parent" ] && [ -f "$VIS" ]; then
+      # Visuals add-on = additional file of the mod file (no game versions on additional files)
+      meta=$(jq -n --rawfile cl "$CL_MOD" --arg dn "Stellar Surfer Visuals $VER (client add-on for the datapack version)" --argjson p "$parent" --arg rt "$CHANNEL"         '{changelog: $cl, changelogType: "markdown", displayName: $dn, parentFileID: $p, releaseType: $rt}')
+      curl -sS --fail-with-body -A "$UA" -H "X-Api-Token: $CF_TOKEN" --form-string "metadata=$meta" -F "file=@$VIS"         "https://minecraft.curseforge.com/api/projects/$CF_MOD/upload-file"; echo " (Visuals add-on)"
+    fi
   else
     echo "CurseForge mod: no jar or no mod_id, skipped"
   fi
@@ -101,7 +108,14 @@ if [ "$TARGETS" != "modrinth-mod" ]; then   # modrinth-mod = only the jar on Mod
   [ -n "$MR_RP" ] && mr_upload "$MR_RP" "$RP" "$CL/resourcepack.md" "$NAME_RP" '["minecraft"]' '[]'
 fi
 if [ -n "$MR_MOD" ] && [ -f "$JAR" ]; then
-  mr_upload "$MR_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" '["neoforge"]' '[]'
+  if [ -f "$VIS" ]; then
+    # the mod version carries 2 files: the all-in-one mod (primary) and the Visuals add-on for the datapack version
+    data=$(jq -n --rawfile cl "$CL_MOD" --arg n "$NAME_MOD" --arg v "$VER" --arg p "$MR_MOD" --arg gv "$(jq -r .game_version $CFG)" --arg vt "$CHANNEL"       '{name: $n, version_number: $v, changelog: $cl, dependencies: [], game_versions: [$gv], version_type: $vt,
+        loaders: ["neoforge"], featured: true, project_id: $p, file_parts: ["file", "visuals"], primary_file: "file"}')
+    curl -sS --fail-with-body -A "$UA" -H "Authorization: $MR_TOKEN" --form-string "data=$data"       -F "file=@$JAR;type=application/java-archive" -F "visuals=@$VIS;type=application/java-archive" "$MR/version" | jq -r '"Modrinth version " + .id + " (mod + Visuals add-on)"'
+  else
+    mr_upload "$MR_MOD" "$JAR" "$CL_MOD" "$NAME_MOD" '["neoforge"]' '[]'
+  fi
 else
   echo "Modrinth mod: no jar or no project, skipped"
 fi

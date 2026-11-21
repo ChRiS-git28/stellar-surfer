@@ -4,6 +4,7 @@ Without a classes dir the jar has no code (lowcodefml); with it, it is a javafml
 import os, sys, zipfile, json
 dp, rp, logo, ver, out = sys.argv[1:6]
 classes = sys.argv[6] if len(sys.argv) > 6 else None
+VISUALS = len(sys.argv) > 7 and sys.argv[7] == "visuals"   # client add-on for the datapack version: code only
 TOML = f'''modLoader="{'javafml' if classes else 'lowcodefml'}"
 loaderVersion="[1,)"
 license="All Rights Reserved"
@@ -40,12 +41,49 @@ versionRange="*"
 ordering="AFTER"
 side="BOTH"
 '''
+if VISUALS:
+    TOML = f'''modLoader="javafml"
+loaderVersion="[1,)"
+license="All Rights Reserved"
+issueTrackerURL="https://github.com/InLighTs28/stellar-surfer/issues"
+
+[[mods]]
+modId="stellar_surfer"
+version="{ver}"
+displayName="Stellar Surfer Visuals"
+logoFile="stellar_surfer.png"
+authors="InLighTs"
+displayURL="https://github.com/InLighTs28/stellar-surfer"
+displayTest="IGNORE_ALL_VERSION"
+description="Client add-on for the DATAPACK version of Stellar Surfer: constellation skill tree, Stellar Surfer skin of the Origins window, glowing orbs. Needs the Stellar Surfer datapack and resource pack. Do not install it with the all-in-one Stellar Surfer mod."
+
+[[dependencies.stellar_surfer]]
+modId="minecraft"
+type="required"
+versionRange="[1.21.1,1.22)"
+ordering="NONE"
+side="CLIENT"
+
+[[dependencies.stellar_surfer]]
+modId="origins"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="CLIENT"
+
+[[dependencies.stellar_surfer]]
+modId="apoli"
+type="required"
+versionRange="*"
+ordering="AFTER"
+side="CLIENT"
+'''
 META = {"pack": {"description": "Stellar Surfer " + ver, "pack_format": 48, "supported_formats": [34, 48]}}
 n = 0
 with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
     z.writestr("META-INF/MANIFEST.MF", "Manifest-Version: 1.0\r\nImplementation-Title: stellar_surfer\r\nImplementation-Version: " + ver + "\r\n\r\n")
     z.writestr("META-INF/neoforge.mods.toml", TOML)
-    z.writestr("pack.mcmeta", json.dumps(META, indent=1))
+    if not VISUALS: z.writestr("pack.mcmeta", json.dumps(META, indent=1))
     z.write(logo, "stellar_surfer.png")
     if classes:
         for d, _, fs in os.walk(classes):
@@ -54,10 +92,10 @@ with zipfile.ZipFile(out, "w", zipfile.ZIP_DEFLATED) as z:
                 z.write(p, os.path.relpath(p, classes).replace(os.sep, "/"))
     # with code, the resource pack is a built-in pack (resourcepacks/cosmic_visuals) that the mod puts on top of the list
     rp_prefix = "resourcepacks/cosmic_visuals/" if classes else ""
-    if classes:
+    if classes and not VISUALS:
         z.writestr(rp_prefix + "pack.mcmeta", open(os.path.join(rp, "pack.mcmeta"), encoding="utf-8").read())
         if os.path.exists(os.path.join(rp, "pack.png")): z.write(os.path.join(rp, "pack.png"), rp_prefix + "pack.png")
-    for base, top, prefix in ((dp, "data", ""), (rp, "assets", rp_prefix)):
+    for base, top, prefix in (() if VISUALS else ((dp, "data", ""), (rp, "assets", rp_prefix))):
         root = os.path.join(base, top)
         for d, _, fs in os.walk(root):
             for f in fs:

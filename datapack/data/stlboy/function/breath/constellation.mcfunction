@@ -26,6 +26,7 @@ execute if score @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] stlboy.cha
 execute if entity @s[type=!#c:bosses] run function stlboy:breath/exec_check
 advancement grant @a[tag=stlboy_surfer,predicate=stlboy:owner,limit=1] only stlboy:stardust/first_constellation
 execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_bind,limit=1] run effect give @s minecraft:slowness 3 2 true
+execute if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_cstr,limit=1] if entity @a[tag=stlboy_surfer,predicate=stlboy:owner,tag=stlboy_sk_bind,limit=1] run effect give @s minecraft:slowness 5 3 true
 # appartenance (multi-Surfer)
 execute as @e[tag=stlboy_cst] unless score @s stlboy.own matches 1.. run scoreboard players operation @s stlboy.own = #own stlboy.tmp
 execute as @e[tag=stlboy_vis] unless score @s stlboy.own matches 1.. run scoreboard players operation @s stlboy.own = #own stlboy.tmp

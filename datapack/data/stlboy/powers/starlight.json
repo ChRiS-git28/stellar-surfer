@@ -38,7 +38,7 @@
    "sprite": "stlboy:textures/gui/badge/food.png",
    "text": {
     "translate": "badge.stlboy.starlight.4",
-    "fallback": "§6§l✦ Cosmic Diet ✦§r\n§7◇ §f+1  §7Glowstone§8 (night vision)§7 · Redstone§8 (haste)§7 · Lapis · Quartz · Prismarine Crystals§8 (water breathing)§7 · Gunpowder · Firework Star\n§b◆ §f+2  §bAmethyst§8 (resistance)§b · Ender Pearl§8 (blink)§b · Blaze Powder§8 (fire res.)§b · Magma Cream§8 (fire res.)§b · Breeze Rod§8 (speed)§b · Wind Charge§8 (jump)§b · Emerald§8 (hero)§b · Prismarine Shard\n§d❖ §f+4  §dEye of Ender§8 (reveal)§d · Echo Shard§8 (clear darkness)§d · Shulker Shell§8 (resistance II)§d · Bottle o' Enchanting§8 (XP)§d · Ghast Tear§8 (regen)§d · Diamond§8 (absorption)§d · Blaze Rod · Ominous Bottle · Trial Key\n§6★ §f+8  §6Nether Star§8 (regen, res., absorption)§6 · End Crystal§8 (regen, haste)§6 · Heart of the Sea§8 (conduit)§6 · Dragon's Breath§8 (strength, speed)§6 · Totem§8 (absorption IV)§6 · Netherite Scrap§8 (resistance III)§6 · Ominous Trial Key"
+    "fallback": "§6§l✦ Cosmic Diet ✦§r\n§7◇ §f+1  §7Glowstone§8 (night vision)§7 · Redstone§8 (haste)§7 · Lapis · Quartz · Prismarine Crystals§8 (water breathing)§7 · Gunpowder · Firework Star\n§b◆ §f+2  §bAmethyst§8 (resistance)§b · Ender Pearl§8 (blink)§b · Blaze Powder§8 (fire res.)§b · Magma Cream§8 (fire res.)§b · Breeze Rod§8 (speed)§b · Wind Charge§8 (jump)§b · Emerald§8 (hero)§b · Prismarine Shard\n§d❖ §f+4  §dEye of Ender§8 (reveal)§d · Echo Shard§8 (clear darkness)§d · Shulker Shell§8 (resistance II)§d · Bottle o' Enchanting§8 (XP)§d · Ghast Tear§8 (regen)§d · Diamond§8 (absorption)§d · Blaze Rod · Ominous Bottle · Trial Key\n§6★ §f+8  §6Nether Star§8 (regen, res., absorption)§6 · End Crystal§8 (regen, haste)§6 · Heart of the Sea§8 (conduit)§6 · Dragon's Breath§8 (cosmic strength, speed)§6 · Totem§8 (absorption IV)§6 · Netherite Scrap§8 (resistance III)§6 · Ominous Trial Key"
    }
   }
  ],
@@ -737,9 +737,9 @@
            "type": "apoli:and",
            "actions": [
             {
-             "type": "apoli:apply_effect",
-             "effect": {
-              "effect": "minecraft:strength",
+ "type": "apoli:apply_effect",
+ "effect": {
+ "effect": "stlboy:cosmic_strength",
               "duration": 600,
               "amplifier": 1,
               "is_ambient": false,
@@ -1477,9 +1477,9 @@
            "type": "apoli:and",
            "actions": [
             {
-             "type": "apoli:apply_effect",
-             "effect": {
-              "effect": "minecraft:strength",
+ "type": "apoli:apply_effect",
+ "effect": {
+ "effect": "stlboy:cosmic_strength",
               "duration": 600,
               "amplifier": 1,
               "is_ambient": false,
@@ -2217,9 +2217,9 @@
            "type": "apoli:and",
            "actions": [
             {
-             "type": "apoli:apply_effect",
-             "effect": {
-              "effect": "minecraft:strength",
+ "type": "apoli:apply_effect",
+ "effect": {
+ "effect": "stlboy:cosmic_strength",
               "duration": 600,
               "amplifier": 1,
               "is_ambient": false,
@@ -2957,9 +2957,9 @@
            "type": "apoli:and",
            "actions": [
             {
-             "type": "apoli:apply_effect",
-             "effect": {
-              "effect": "minecraft:strength",
+ "type": "apoli:apply_effect",
+ "effect": {
+ "effect": "stlboy:cosmic_strength",
               "duration": 600,
               "amplifier": 1,
               "is_ambient": false,

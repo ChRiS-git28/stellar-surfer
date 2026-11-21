@@ -8,6 +8,7 @@ import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.event.AddPackFindersEvent;
 
@@ -30,6 +31,13 @@ public final class StellarSurfer {
 
     private static void addPacks(AddPackFindersEvent event) {
         if (event.getPackType() != PackType.CLIENT_RESOURCES) return;
+        // the "Visuals" client add-on (for the datapack version) has no bundled pack: the player uses the resource pack
+        try {
+            var file = ModList.get().getModFileById(MODID).getFile();
+            if (!java.nio.file.Files.exists(file.findResource("resourcepacks", "cosmic_visuals", "pack.mcmeta"))) return;
+        } catch (Throwable t) {
+            return;
+        }
         event.addPackFinders(ResourceLocation.fromNamespaceAndPath(MODID, "resourcepacks/cosmic_visuals"), PackType.CLIENT_RESOURCES,
                 Component.literal("Stellar Surfer — Cosmic Visuals"), PackSource.BUILT_IN, true, Pack.Position.TOP);
     }
